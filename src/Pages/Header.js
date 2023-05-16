@@ -1,19 +1,31 @@
+import reducer, { initialState } from "../Context/Reducer";
+import { useStateValue } from "../Context/StateProvider";
 import "./Header.css";
 import React from "react";
 
 function Header() {
+  const [{ isChecked }, dispatch] = useStateValue();
+
+  const handleCheckboxChange = () => {
+    dispatch({ type: "handle_checked" });
+  };
+
   return (
-    <header class="main_header">
+    <header className="main_header">
       <p>Photo Fetcher</p>
-      <nav class="navbar">
-        <div class="switch_toogle">
-          <label class="switch">
-            <input type="checkbox" />
-            <span class="slider round"></span>
+      <nav className="navbar">
+        <div className="switch_toogle">
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+            />
+            <span className="slider round"></span>
           </label>
         </div>
         <p>Make photos grayscale</p>
-        <button class="newPhotos">Fetch New Photos</button>
+        <button className="newPhotos">Fetch New Photos</button>
       </nav>
     </header>
   );

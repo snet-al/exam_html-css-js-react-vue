@@ -1,53 +1,34 @@
-import React from 'react'
-import "./Home.css"
+import React, { useState } from "react";
+import "./Home.css";
+import data from "../Store/MockData.json";
+import { useStateValue } from "../Context/StateProvider";
 
 function Home() {
+  const [test, setTest] = useState(data);
+  const [{ isChecked }] = useStateValue();
+  console.log(isChecked);
+
   return (
     <main>
-    <section class="body_section">
-      <article class="card">
-        <img
-          src="https://fastly.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68"
-          alt=""
-        />
-        <header class="card_text">
-          <p>Paul Jarvis</p>
-          <a href="https://picsum.photos/"> https://picsum.photos/</a>
-        </header>
-      </article>
-      <article class="card">
-        <img
-          src="https://images.unsplash.com/1/type-away-numero-dos.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-          alt=""
-        />
-        <header class="card_text">
-          <p>Alejandro Escamilla</p>
-          <a href="https://picsum.photos/"> https://picsum.photos/</a>
-        </header>
-      </article>
-      <article class="card">
-        <img
-          src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
-          alt=""
-        />
-        <header class="card_text">
-          <p>Alejandro Escamilla</p>
-          <a href="https://picsum.photos/"> https://picsum.photos/</a>
-        </header>
-      </article>
-      <article class="card">
-        <img
-          src="https://images.unsplash.com/3/doctype-hi-res.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2065&q=80"
-          alt=""
-        />
-        <header class="card_text">
-          <p>Alex Dorohovich</p>
-          <a href="https://picsum.photos/"> https://picsum.photos/</a>
-        </header>
-      </article>
-    </section>
-  </main>
-  )
+      <section className="body_section">
+        {test.map((item) => (
+          <article key={item.id} className="card">
+            <img
+              src={item.image}
+              alt=""
+              className={isChecked ? "grayscale" : ""}
+            />
+            <figcaption className="card_text">
+              <p>{item.author}</p>
+              <a href="https://picsum.photos/" target="_blank">
+                https://picsum.photos/
+              </a>
+            </figcaption>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
 }
 
-export default Home
+export default Home;
