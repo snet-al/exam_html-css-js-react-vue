@@ -9,7 +9,7 @@ const Card = () => {
     { id: 4, img: `${Image}`, description: 'Lorem ipsum dolor sit.' },
   ]
   
-  const displayImages=cardData.map((card)=>(
+  const displayImages= cardData.map((card)=>(
      <>
      <article key={card.id} class="card">
       <img class="card-image" src={card.img} alt="Background Image"/>

@@ -1,24 +1,11 @@
-import HeaderText from "./components/HeaderText/HeaderText"
-import Card from "./components/Card/Card"
-import SecondaryHeader from "./components/SecondaryHeaderText/SecondaryHeaderText"
-import Button from "./components/Button/Button"
-import Switcher from "./components/Switcher/Switcher"
-import './App.css';
+import Header from "./components/Header/Header"
+import Main from "./components/Main/Main";
 
 function App() {
   return (
     <>
-    <header>
-        <HeaderText/> <br />
-        <hgroup>
-          <Switcher/>
-          <SecondaryHeader/>
-          <Button/>
-        </hgroup>
-      </header>
-      <section className='container'>
-        <Card/>
-      </section>
+    <Header/>
+    <Main/>
     </>
   );
 }
