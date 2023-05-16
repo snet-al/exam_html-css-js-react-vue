@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto;
 
   justify-content: center;
 }
@@ -38,11 +38,15 @@ body {
 .card_text > a {
   color: #f1f1f1;
   margin-left: 20px;
-  margin-bottom: 20px;
+
   text-decoration: none;
   font-size: small;
 }
 .main_header {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.main_header > p {
   font-size: x-large;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -116,7 +120,7 @@ input:checked + .slider:before {
   justify-content: space-between;
   align-items: center;
 }
-.switch_toogle .navbar > p {
+.switch_toggle .navbar > p {
   flex: 1;
 }
 .navbar > p {
