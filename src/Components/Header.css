@@ -1,0 +1,21 @@
+.main_header {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.main_header > p {
+  font-size: x-large;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.switch_toogle .navbar > p {
+  flex: 1;
+}
+.navbar > p {
+  margin-left: 10px;
+  flex: 1;
+}
