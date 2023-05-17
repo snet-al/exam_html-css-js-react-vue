@@ -1,7 +1,7 @@
 import "./Header.css";
 import React from "react";
-import Button_Fetch from "./Button_Fetch/Button_Fetch";
-import Toggle from "./Toggle/Toggle";
+import Button_Fetch from "../Components/Button_Fetch/Button_Fetch";
+import Toggle from "../Components/Toggle/Toggle";
 
 function Header() {
   return (
