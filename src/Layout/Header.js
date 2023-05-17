@@ -1,4 +1,3 @@
-import reducer, { initialState } from "../Context/Reducer";
 import { useStateValue } from "../Context/StateProvider";
 import "./Header.css";
 import React from "react";

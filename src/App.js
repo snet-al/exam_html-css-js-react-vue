@@ -1,7 +1,7 @@
 import "./App.css";
 import reducer, { initialState } from "./Context/Reducer";
 import { StateProvider } from "./Context/StateProvider";
-import Header from "./Pages/Header";
+import Header from "./Layout/Header";
 import Home from "./Pages/Home";
 
 function App() {
