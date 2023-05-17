@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Card.css"
 import Image from "../../assests/images/img.jpg"
-import { useGlobalContext } from '../../context/context'
+import {useGlobalContext} from '../../context/context'
 
 const Card = () => {
   const {switcher}=useGlobalContext()
