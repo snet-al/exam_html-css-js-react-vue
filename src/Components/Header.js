@@ -1,16 +1,15 @@
 import "./Header.css";
 import React from "react";
-import Button_Fetch from "./Button_Fetch/Button_Fetch";
-import Toggle from "./Toggle/Toggle";
-
+import ToggleButton from "./toggleButton/ToggleButton";
+import FetchButton from "./fetchButton/ButtonFetch";
 function Header() {
   return (
     <header className="main_header">
       <p>Photo Fetcher</p>
       <nav className="navbar">
-        <Toggle />
+        <ToggleButton />
         <p>Make photos grayscale</p>
-        <Button_Fetch />
+        <FetchButton />
       </nav>
     </header>
   );

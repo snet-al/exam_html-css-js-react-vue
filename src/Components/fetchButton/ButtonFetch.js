@@ -1,5 +1,5 @@
 import React from "react";
-import "./Button_Fetch.css";
+import "./ButtonFetch.css";
 
 function Button_Fetch() {
   return <button className="newPhotos">Fetch New Photos</button>;
