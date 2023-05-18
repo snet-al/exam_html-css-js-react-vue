@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import Figure from "./figure/PicFigure";
+import Figure from "./figure/Figure";
 
 function Home() {
   const authors = [
