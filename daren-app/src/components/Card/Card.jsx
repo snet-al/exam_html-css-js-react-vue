@@ -1,12 +1,12 @@
 import React from 'react'
 import "./Card.css"
 
-const Card = ({id , img, description, switcher}) => {
+function Card({id , img, description, switcher}) {
   return (
     <>
-    <article key={id} class="card">
+    <article title='bledi' key={id} class="card">
      <img className={`card-image ${switcher?'image-grayscale': ''}`} src={img} alt="Background Image"/>
-      <figcaption class="card-overlay">
+      <figcaption className={'card-overlay'}>
          {description}
      </figcaption>
     </article>

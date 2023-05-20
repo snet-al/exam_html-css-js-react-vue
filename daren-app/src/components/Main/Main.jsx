@@ -1,27 +1,29 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import "./Main.css"
 import Card from '../Card/Card'
 import Image from "../../assests/images/img.jpg"
 import { useGlobalContext } from '../../context/context'
-const Main = () => {
+
+const Main = (props) => {
   const {switcher}=useGlobalContext()
 
-  const cardData=[
-    { id: 1, img: `${Image}`, description: 'Lorem ipsum dolor sit.' },
-    { id: 2, img: `${Image}`, description: 'Lorem ipsum dolor sit.' },
-    { id: 3, img: `${Image}`, description: 'Lorem ipsum dolor sit.' },
-    { id: 4, img: `${Image}`, description: 'Lorem ipsum dolor sit.' },
+  const cardData = [
+    { id: 1, img: `${Image}`, description: 'Bledi ipsum dolor sit.' },
+    { id: 2, img: `${Image}`, description: 'Daren ipsum dolor sit.' },
+    { id: 3, img: `${Image}`, description: 'Devi ipsum dolor sit.' },
+    { id: 4, img: `${Image}`, description: 'Asip ipsum dolor sit.' },
   ]
-  const displayImages= cardData.map((card)=>(
-    <>
-     <Card id={card.id}  img={card.img} description={card.description} switcher={switcher}/>
-    </>
- ))
+
   return (
     <>
      <main>
        <section className='container'>   
-         {displayImages}
+         {cardData.map((card)=> (
+          <>
+          <Card id={card.id}  img={card.img} description={card.description} switcher={switcher}/>
+          </>
+          ))
+        }
         </section>
       </main>
     </>
