@@ -4,16 +4,13 @@ import HeaderText from '../HeaderText/HeaderText'
 import Switcher from '../Switcher/Switcher'
 import SecondaryHeader from '../SecondaryHeaderText/SecondaryHeaderText'
 import Button from '../Button/Button'
+import Hgroup from '../Hgroup/Hgroup'
 
 const Header = () => {
   return (
    <>
     <HeaderText/> 
-    <hgroup> 
-        <Switcher/>
-        <SecondaryHeader/>
-        <Button/>
-     </hgroup>
+    <Hgroup Button={Button} SecondaryHeader={SecondaryHeader} Switcher={Switcher} /> 
    </>
   )
 }
