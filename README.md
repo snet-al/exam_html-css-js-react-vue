@@ -14,6 +14,9 @@ After learning html, css, js, and react/vue there is this simple example to impl
   The base of react is an extension of html, so a mechanism for creating new html components.
   After you are done with the changes, you will make a Pull Request to the repo from this branch.
   
+#### 2.1 To the same branch with the name {username}_main_react_components
+  We will start separating the components of UI. Inside the components folder create a new folder UI and place there the UI components.
+  
 ### 3. Create another branch with the name {username}_main_react-pages
   
   The purpose of this is to add a PAGES folder to your react app.
