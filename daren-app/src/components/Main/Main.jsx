@@ -13,16 +13,18 @@ const Main = () => {
     { id: 4, img: `${Image}`, description: 'Lorem ipsum dolor sit.' },
   ]
 
-  const displayImages= cardData.map((card)=>(
-    <>
-     <Card id={card.id}  img={card.img} description={card.description} switcher={switcher}/>
-    </>
- ))
+ 
   return (
     <>
      <main>
        <section className='container'>   
-          {displayImages}
+          {cardData.map((card)=>
+            (
+    
+             <Card id={card.id}  img={card.img} description={card.description} switcher={switcher}/>
+    
+            ))  
+          }
         </section>
       </main>
     </>
