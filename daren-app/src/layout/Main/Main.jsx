@@ -22,7 +22,13 @@ const Main = () => {
     <>
      <main>
        <section className='container'>   
-          {displayImages}
+          {
+            cardData.map((card)=>(
+              <>
+               <Card id={card.id}  img={card.img} description={card.description} switcher={switcher}/>
+              </>
+            ))
+          }
         </section>
       </main>
     </>
