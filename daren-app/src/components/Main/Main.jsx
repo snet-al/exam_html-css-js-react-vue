@@ -18,11 +18,8 @@ const Main = () => {
     <>
      <main>
        <section className='container'>   
-          {cardData.map((card)=>
-            (
-    
+          {cardData.map((card)=>(
              <Card id={card.id}  img={card.img} description={card.description} switcher={switcher}/>
-    
             ))  
           }
         </section>

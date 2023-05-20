@@ -9,8 +9,11 @@ const Header = () => {
   return (
    <>
     <HeaderText/> 
-    <Hgroup Button={Button} SecondaryHeader={SecondaryHeader} Switcher={Switcher}/>
-        
+    <Hgroup >
+       <Switcher/>
+       <SecondaryHeader/>
+       <Button/>
+     </Hgroup>
    </>
   )
 }
