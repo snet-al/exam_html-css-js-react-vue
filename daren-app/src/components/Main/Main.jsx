@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Main.css"
-import Card from '../../components/Card/Card'
+import Card from '../Card/Card'
 import Image from '../../assests/images/img.jpg'
 import { useGlobalContext } from '../../context/context'
 

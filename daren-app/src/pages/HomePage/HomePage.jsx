@@ -1,13 +1,16 @@
 import React from 'react'
 import './HomePage.css';
-import Header  from '../../layout/Header/Header';
-import Main from '../../layout/Main/Main';
+import Main from '../../components/Main/Main';
+import Layout from '../../layout/Layout';
 
 const HomePage = () => {
   return (
     <>
-    <Header/>
-    <Main/>
+      <Layout>
+        <Main/>
+      </Layout>  
+     
+  
     </>
   )
 }
