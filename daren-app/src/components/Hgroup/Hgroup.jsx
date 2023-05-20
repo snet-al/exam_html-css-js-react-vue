@@ -1,14 +1,12 @@
 import React from 'react'
 import './Hgroup.css'
 
-const Hgroup = ({Button:Button, SecondaryHeader:SecondaryHeader, Switcher:Switcher}) => {
+const Hgroup = ({children}) => {
   return (
     <>
-        <hgroup>
-            <Switcher/>
-            <SecondaryHeader/>
-            <Button/>
-        </hgroup>
+      <hgroup>
+        {children}
+      </hgroup>
     </>
   )
 }
