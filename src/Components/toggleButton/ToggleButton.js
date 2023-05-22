@@ -1,7 +1,7 @@
 import React from "react";
 import "./ToggleButton.css";
 
-function Toggle() {
+function ToggleButton() {
   return (
     <div className="switch_toogle">
       <label className="switch">
@@ -12,4 +12,4 @@ function Toggle() {
   );
 }
 
-export default Toggle;
+export default ToggleButton;
