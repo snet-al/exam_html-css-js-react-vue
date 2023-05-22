@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Switcher.css"
-import { useGlobalContext } from '../../context/context'
+import { useGlobalContext } from '../../../context/context'
 const Switcher = () => {
   const {handleSwitcher}=useGlobalContext()
   return (
