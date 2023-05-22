@@ -1,0 +1,21 @@
+.main-header {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.main-header > h1 {
+  font-weight: normal;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.switch-toogle .menu-header > p {
+  flex: 1;
+}
+.menu-header > p {
+  margin-left: 10px;
+  flex: 1;
+}
