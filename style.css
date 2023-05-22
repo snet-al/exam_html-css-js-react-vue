@@ -13,11 +13,11 @@ hgroup{
     display: flex;
     justify-content: space-between;
     gap: 4px;
-    padding-left: 2%;
+    padding-left: 7px;
 }
 h1{
     font-size: 3rem;
-    padding-left: 1%;
+    padding-left: 3px;
 }
 h3{
     font-size: medium;
