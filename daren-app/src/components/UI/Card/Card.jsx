@@ -8,7 +8,7 @@ const Card = ({id , img, description,links, switcher}) => {
      <img className={`card-image ${switcher?'image-grayscale': ''}`} src={img} alt="Background Image"/>
       <figcaption class="card-overlay">
          {description}
-         <a href="https://picsum.photos/">{links}</a>
+         <a href={links}>{links}</a>
      </figcaption>
     </article>
     </>
