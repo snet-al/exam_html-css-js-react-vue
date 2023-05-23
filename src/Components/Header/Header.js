@@ -1,8 +1,8 @@
 import "./Header.css";
 import React from "react";
-import ToggleButton from "../UI/toggleButton/ToggleButton";
-import FetchButton from "../UI/fetchButton/ButtonFetch";
-import HeaderText from "./HeaderText";
+import ToggleButton from "../UI/ButtonToggle/ButtonToggle";
+import FetchButton from "../UI/ButtonFetch/ButtonFetch";
+import HeaderText from "../HeaderText/HeaderText";
 function Header() {
   return (
     <header className="main-header">

@@ -1,6 +1,6 @@
 import React from "react";
-import Img from "../Img.js";
-import Link from "../Link.js";
+import Img from "../Img/Img.js";
+import Link from "../Links/Link.js";
 function Figure({ id, image, author }) {
   return (
     <figure className="card" key={id}>
