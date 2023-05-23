@@ -1,14 +1,15 @@
 import React from "react";
-
+import Img from "../Img.js";
+import Link from "../Link.js";
 function Figure({ id, image, author }) {
   return (
-    <article className="card" key={id}>
-      <img src={image} alt="" />
+    <figure className="card" key={id}>
+      <Img image={image} />
       <figcaption className="card-text">
         <p>{author}</p>
-        <a href="https://picsum.photos/"> https://picsum.photos/</a>
+        <Link image={image} />
       </figcaption>
-    </article>
+    </figure>
   );
 }
 

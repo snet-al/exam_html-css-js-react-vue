@@ -12,10 +12,11 @@
   justify-content: space-between;
   align-items: center;
 }
-.switch-toogle .menu-header > p {
+.switch-toogle .menu-header > h4 {
   flex: 1;
 }
-.menu-header > p {
+.menu-header > h4 {
+  font-weight: normal;
   margin-left: 10px;
   flex: 1;
 }

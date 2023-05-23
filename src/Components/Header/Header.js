@@ -1,14 +1,15 @@
 import "./Header.css";
 import React from "react";
-import ToggleButton from "./UI/toggleButton/ToggleButton";
-import FetchButton from "./UI/fetchButton/ButtonFetch";
+import ToggleButton from "../UI/toggleButton/ToggleButton";
+import FetchButton from "../UI/fetchButton/ButtonFetch";
+import HeaderText from "./HeaderText";
 function Header() {
   return (
     <header className="main-header">
-      <h1>Photo Fetcher</h1>
+      <HeaderText />
       <hgroup className="menu-header">
         <ToggleButton />
-        <p>Make photos grayscale</p>
+        <h4>Make photos grayscale</h4>
         <FetchButton />
       </hgroup>
     </header>
