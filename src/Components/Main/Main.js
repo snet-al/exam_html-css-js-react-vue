@@ -1,8 +1,8 @@
 import React from "react";
-import "./Home.css";
+import "./Main.css";
 import Figure from "../Figure/Figure";
 
-function Home() {
+function Main() {
   const authors = [
     {
       id: 1,
@@ -45,4 +45,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Main;
