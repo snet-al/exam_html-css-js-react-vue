@@ -1,5 +1,7 @@
 import React from 'react';
 import './HomePage.css';
+import { photos } from '../../store/dummyData';
+
 
 function Toggle({ onChange }) {
   return (
@@ -28,6 +30,7 @@ function HomePage() {
 
   return (
     <div>
+
       <div className="row">
         <Toggle onChange={handleToggle} />
         <h5 className="toggletext">Make photos grayscale</h5>
@@ -37,27 +40,16 @@ function HomePage() {
       </div>
 
       <div className="grid-container">
-        <PhotoGrid
-          imageUrl="https://fastly.picsum.photos/id/49/200/200.jpg?hmac=w2wY6ewoLUCpaqq77gzCIdeKq2xKmTkssFtL_4K34H0"
-          title="Lukas Budimaier"
-          url="https://unsplash.com/photos/pwaaqfoMibi"
-        />
-        <PhotoGrid
-          imageUrl="https://fastly.picsum.photos/id/455/200/200.jpg?hmac=YZhCbBjCYF0ha5dR9ElToDVwWcw05w0e4pAv5S9nZYg"
-          title="Lukas Budimaier"
-          url="https://unsplash.com/photos/pwaaqfoMibi"
-        />
-        <PhotoGrid
-          imageUrl="https://fastly.picsum.photos/id/435/200/200.jpg?hmac=yk7-HtvV0x2Z6OB4YhbyAbYxX0nQQCNTzs_MgegSkcE"
-          title="Lukas Budimaier"
-          url="https://unsplash.com/photos/pwaaqfoMibi"
-        />
-        <PhotoGrid
-          imageUrl="https://fastly.picsum.photos/id/499/200/200.jpg?hmac=6OuceXs-LrhY-PtwyqBs_bARD8YWZEj9XuZ_ZY894Wc"
-          title="Lukas Budimaier"
-          url="https://unsplash.com/photos/pwaaqfoMibi"
-        />
+        {photos.map((photo) => (
+          <PhotoGrid
+            key={photo.id}
+            imageUrl={photo.imageUrl}
+            title={photo.title}
+            url={photo.url}
+          />
+        ))}
       </div>
+      
     </div>
   );
 }
