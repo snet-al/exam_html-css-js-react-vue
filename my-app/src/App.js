@@ -1,11 +1,10 @@
 import React from 'react';
 import Layout from './pages/Layout/Layout';
-import Page from './pages/Page';
-
+import HomePage from './pages/HomePage/HomePage';
 function App() {
   return (
     <Layout>
-      <Page />
+      <HomePage />
     </Layout>
   );
 }

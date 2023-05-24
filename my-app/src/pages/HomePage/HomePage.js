@@ -1,5 +1,5 @@
 import React from 'react';
-import './Page.css';
+import './HomePage.css';
 
 function Toggle({ onChange }) {
   return (
@@ -22,7 +22,7 @@ function PhotoGrid({ imageUrl, title, url }) {
   );
 }
 
-function Page() {
+function HomePage() {
   const handleToggle = () => {};
   const handleFetch = () => {};
 
@@ -62,4 +62,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default HomePage;
