@@ -1,10 +1,12 @@
 import React from 'react';
+import Layout from './pages/Layout/Layout';
 import Page from './pages/Page';
 
 function App() {
-
   return (
-   <Page />
+    <Layout>
+      <Page />
+    </Layout>
   );
 }
 

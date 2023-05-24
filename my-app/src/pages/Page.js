@@ -1,10 +1,10 @@
 import React from 'react';
 import './Page.css';
 
-function Toggle() {
+function Toggle({ onChange }) {
   return (
     <label className="toggle">
-      <input type="checkbox" />
+      <input type="checkbox" onChange={onChange} />
       <span className="slider"></span>
     </label>
   );
@@ -23,14 +23,11 @@ function PhotoGrid({ imageUrl, title, url }) {
 }
 
 function Page() {
-
-  const handleToggle = () => { };
-  const handleFetch = () => { };
+  const handleToggle = () => {};
+  const handleFetch = () => {};
 
   return (
     <div>
-      <h1>Photo Fetcher</h1>
-
       <div className="row">
         <Toggle onChange={handleToggle} />
         <h5 className="toggletext">Make photos grayscale</h5>
