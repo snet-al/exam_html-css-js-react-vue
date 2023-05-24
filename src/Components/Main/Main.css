@@ -36,3 +36,6 @@
   text-decoration: none;
   font-size: small;
 }
+.grayscale {
+  filter: grayscale(1);
+}
