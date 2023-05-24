@@ -35,6 +35,7 @@ function Main() {
       <section className="body-section">
         {authors.map((authors) => (
           <Figure
+            key={authors.id}
             id={authors.id}
             image={authors.image}
             author={authors.author}
