@@ -31,17 +31,11 @@ function Main() {
   ];
 
   return (
-    <main>
-      <section className="body-section">
-        {authors.map((authors) => (
-          <Figure
-            id={authors.id}
-            image={authors.image}
-            author={authors.author}
-          />
-        ))}
-      </section>
-    </main>
+    <section className="body-section">
+      {authors.map((authors) => (
+        <Figure id={authors.id} image={authors.image} author={authors.author} />
+      ))}
+    </section>
   );
 }
 
