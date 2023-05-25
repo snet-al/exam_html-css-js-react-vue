@@ -12,13 +12,13 @@ function Toggle({ onChange }) {
 
 function PhotoGrid({ imageUrl, title, url }) {
   return (
-    <div className="grid-item">
+    <figure className="grid-item">
       <img src={imageUrl} alt={title} />
-      <div className="text">
+      <figcaption className="text">
         <h3>{title}</h3>
         <p>{url}</p>
-      </div>
-    </div>
+      </figcaption>
+    </figure>
   );
 }
 
@@ -27,7 +27,7 @@ function HomePage() {
   const handleFetch = () => {};
 
   return (
-    <div>
+    <main>
       <div className="row">
         <Toggle onChange={handleToggle} />
         <h5 className="toggletext">Make photos grayscale</h5>
@@ -36,7 +36,7 @@ function HomePage() {
         </button>
       </div>
 
-      <div className="grid-container">
+      <section className="grid-container">
         <PhotoGrid
           imageUrl="https://fastly.picsum.photos/id/49/200/200.jpg?hmac=w2wY6ewoLUCpaqq77gzCIdeKq2xKmTkssFtL_4K34H0"
           title="Lukas Budimaier"
@@ -57,8 +57,8 @@ function HomePage() {
           title="Lukas Budimaier"
           url="https://unsplash.com/photos/pwaaqfoMibi"
         />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 
