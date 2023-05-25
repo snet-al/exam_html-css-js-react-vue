@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,51 +8,60 @@
 </head>
 
 <body>
-  <h1>Photo Fetcher</h1>
-  <div class="row">
-    <label class="toggle">
-      <input type="checkbox">
-      <span class="slider"></span>
-    </label>
-    <span class="toggletext">Make photos grayscale</span>
-    <button class="button">Fetch New Photos</button>
-  </div>
+  <header>
 
-  <div class="grid-container">
-    <div class="grid-item">
-      <img src="https://fastly.picsum.photos/id/49/200/200.jpg?hmac=w2wY6ewoLUCpaqq77gzCIdeKq2xKmTkssFtL_4K34H0" alt="Photo 1">
-      <div class="text">
-        <h3>Lukas Budimaier</h3>
-        <p>https://unsplash.com/photos/pwaaqfoMibi</p>
-      </div>
+    <h1>Photo Fetcher</h1>
+    <div class="row">
+      <label class="toggle">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="toggletext">Make photos grayscale</span>
+      <button class="button">Fetch New Photos</button>
     </div>
+  </header>
+   
+  <main>
 
-    <div class="grid-item">
-      <img src="https://fastly.picsum.photos/id/455/200/200.jpg?hmac=YZhCbBjCYF0ha5dR9ElToDVwWcw05w0e4pAv5S9nZYg" alt="Photo 2">
-      <div class="text">
-        <h3>Lukas Budimaier</h3>
-        <p>https://unsplash.com/photos/pwaaqfoMibi</p>
-      </div>
-    </div>
+    <section class="grid-container">
 
-    <div class="grid-item">
-      <img src="https://fastly.picsum.photos/id/435/200/200.jpg?hmac=yk7-HtvV0x2Z6OB4YhbyAbYxX0nQQCNTzs_MgegSkcE" alt="Photo 3">
-      <div class="text">
-        <h3>Lukas Budimaier</h3>
-        <p>https://unsplash.com/photos/pwaaqfoMibi</p>
-      </div>
-    </div>
+      <figure class="grid-item">
+        <img src="https://fastly.picsum.photos/id/49/200/200.jpg?hmac=w2wY6ewoLUCpaqq77gzCIdeKq2xKmTkssFtL_4K34H0" alt="Photo 1">
+        <figcaption class="text">
+          <h3>Lukas Budimaier</h3>
+          <p>https://unsplash.com/photos/pwaaqfoMibi</p>
+        </figcaption>
+      </figure>
 
-    <div class="grid-item">
-      <img src="https://fastly.picsum.photos/id/499/200/200.jpg?hmac=6OuceXs-LrhY-PtwyqBs_bARD8YWZEj9XuZ_ZY894Wc" alt="Photo 4">
-      <div class="text">
-        <h3>Lukas Budimaier</h3>
-        <p>https://unsplash.com/photos/pwaaqfoMibi</p>
-      </div>
-    </div>
-  </div>
+      <figure class="grid-item">
+        <img src="https://fastly.picsum.photos/id/455/200/200.jpg?hmac=YZhCbBjCYF0ha5dR9ElToDVwWcw05w0e4pAv5S9nZYg" alt="Photo 1">
+        <figcaption class="text">
+          <h3>Lukas Budimaier</h3>
+          <p>https://unsplash.com/photos/pwaaqfoMibi</p>
+        </figcaption>
+      </figure>
+
+      <figure class="grid-item">
+        <img src="https://fastly.picsum.photos/id/435/200/200.jpg?hmac=yk7-HtvV0x2Z6OB4YhbyAbYxX0nQQCNTzs_MgegSkcE" alt="Photo 1">
+        <figcaption class="text">
+          <h3>Lukas Budimaier</h3>
+          <p>https://unsplash.com/photos/pwaaqfoMibi</p>
+        </figcaption>
+      </figure>
+
+      <figure class="grid-item">
+        <img src="https://fastly.picsum.photos/id/49/200/200.jpg?hmac=w2wY6ewoLUCpaqq77gzCIdeKq2xKmTkssFtL_4K34H0" alt="Photo 1">
+        <figcaption class="text">
+          <h3>Lukas Budimaier</h3>
+          <p>https://unsplash.com/photos/pwaaqfoMibi</p>
+        </figcaption>
+      </figure>
+
+    </section>
+  </main>
   
   <script src="index.js"></script>
 </body>
 
 </html>
+
