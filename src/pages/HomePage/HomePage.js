@@ -14,13 +14,13 @@ function Toggle({ onChange }) {
 
 function PhotoGrid({ imageUrl, title, url }) {
   return (
-    <div className="grid-item">
+    <figure className="grid-item">
       <img src={imageUrl} alt={title} />
-      <div className="text">
+      <figcaption className="text">
         <h3>{title}</h3>
         <p>{url}</p>
-      </div>
-    </div>
+      </figcaption>
+    </figure>
   );
 }
 
@@ -29,7 +29,7 @@ function HomePage() {
   const handleFetch = () => {};
 
   return (
-    <div>
+    <main>
 
       <div className="row">
         <Toggle onChange={handleToggle} />
@@ -39,7 +39,7 @@ function HomePage() {
         </button>
       </div>
 
-      <div className="grid-container">
+      <section className="grid-container">
         {photos.map((photo) => (
           <PhotoGrid
             key={photo.id}
@@ -48,9 +48,9 @@ function HomePage() {
             url={photo.url}
           />
         ))}
-      </div>
+      </section>
       
-    </div>
+    </main>
   );
 }
 
