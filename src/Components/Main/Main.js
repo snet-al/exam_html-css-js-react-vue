@@ -2,7 +2,7 @@ import React from "react";
 import "./Main.css";
 import Figure from "../Figure/Figure";
 
-function Main({ isChecked }) {
+function Main() {
   const authors = [
     {
       id: 1,
@@ -29,13 +29,11 @@ function Main({ isChecked }) {
       author: "Alex Dorohovich",
     },
   ];
-  console.log(isChecked);
   return (
     <section className="body-section">
       {authors.map((authors) => (
         <Figure
           key={authors.id}
-          ischecked={isChecked}
           id={authors.id}
           image={authors.image}
           author={authors.author}

@@ -1,21 +1,11 @@
-import React, { useState, cloneElement  } from "react";
+import React from "react";
 import Header from "../components/Header/Header";
 
 function Layout({ children }) {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheckboxChange = (isChecked) => {
-    setIsChecked(isChecked);
-  };
-
   return (
     <>
-      <Header onCheckboxChange={handleCheckboxChange} />
-      <main>
-        {React.Children.map(children, (child) => {
-          return cloneElement(child, { isChecked });
-        })}
-      </main>
+      <Header />
+      <main>{children}</main>
     </>
   );
 }
