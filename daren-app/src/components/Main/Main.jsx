@@ -7,13 +7,12 @@ import data from "../../store/dummyData.json"
 
 const Main = () => {
   const {switcher}=useGlobalContext()
- 
   return (
     <>
      <main>
        <section className='container'>   
           {data.map((card)=>(
-             <Card id={card.id}  img={card.src} description={card.description} links={card.links} switcher={switcher}/>
+             <Card id={card.id} img={card.src} description={card.description} links={card.links} switcher={switcher}/>
             ))  
           }
         </section>
