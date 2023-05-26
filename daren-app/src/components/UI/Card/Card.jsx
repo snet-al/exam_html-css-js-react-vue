@@ -4,9 +4,9 @@ import "./Card.css"
 const Card = ({id , img, description,links, switcher}) => {
   return (
     <>
-    <article key={id} class="card">
+    <article key={id} className="card">
      <img className={`card-image ${switcher?'image-grayscale': ''}`} src={img} alt="Background Image"/>
-      <figcaption class="card-overlay">
+      <figcaption className="card-overlay">
          {description}
          <a href={links}>{links}</a>
      </figcaption>
