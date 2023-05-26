@@ -1,44 +1,15 @@
 import React from 'react';
 import './App.css';
-
-function Toggle() {
-  return (
-    <label className="toggle">
-      <input type="checkbox" />
-      <span className="slider"></span>
-    </label>
-  );
-}
-
-function PhotoGrid({ imageUrl, title, url }) {
-  return (
-    <figure className="grid-item">
-      <img src={imageUrl} alt={title} />
-      <figcaption className="text">
-        <h3>{title}</h3>
-        <p>{url}</p>
-      </figcaption>
-    </figure>
-  );
-}
+import Header from './components/Header/Header';
+import PhotoGrid from './components/PhotoGrid/PhotoGrid';
 
 function App() {
-
-  const handleToggle = () => { };
-  const handleFetch = () => { };
+  const handleToggle = () => {};
+  const handleFetch = () => {};
 
   return (
-    <main>
-      <h1>Photo Fetcher</h1>
-
-      <div className="row">
-        <Toggle onChange={handleToggle} />
-        <h5 className="toggletext">Make photos grayscale</h5>
-        <button className="button" onClick={handleFetch}>
-          Fetch New Photos
-        </button>
-      </div>
-
+    <div className="main">
+      <Header handleToggle={handleToggle} handleFetch={handleFetch} />
       <section className="grid-container">
         <PhotoGrid
           imageUrl="https://fastly.picsum.photos/id/49/200/200.jpg?hmac=w2wY6ewoLUCpaqq77gzCIdeKq2xKmTkssFtL_4K34H0"
@@ -61,7 +32,7 @@ function App() {
           url="https://unsplash.com/photos/pwaaqfoMibi"
         />
       </section>
-    </main>
+    </div>
   );
 }
 
