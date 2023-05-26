@@ -6,7 +6,7 @@ const Card = ({id , img, description,links, switcher}) => {
     <>
     <article key={id} class="card">
      <img className={`card-image ${switcher?'image-grayscale': ''}`} src={img} alt="Background Image"/>
-      <figcaption class="card-overlay">
+      <figcaption className="card-overlay">
          {description}
          <a href={links}>{links}</a>
      </figcaption>
