@@ -1,41 +1,15 @@
 import React from 'react';
 import './HomePage.css';
-
-function Toggle({ onChange }) {
-  return (
-    <label className="toggle">
-      <input type="checkbox" onChange={onChange} />
-      <span className="slider"></span>
-    </label>
-  );
-}
-
-function PhotoGrid({ imageUrl, title, url }) {
-  return (
-    <figure className="grid-item">
-      <img src={imageUrl} alt={title} />
-      <figcaption className="text">
-        <h3>{title}</h3>
-        <p>{url}</p>
-      </figcaption>
-    </figure>
-  );
-}
+import Header from '../../components/Header/Header';
+import PhotoGrid from '../../components/PhotoGrid/PhotoGrid';
 
 function HomePage() {
   const handleToggle = () => {};
   const handleFetch = () => {};
 
   return (
-    <main>
-      <div className="row">
-        <Toggle onChange={handleToggle} />
-        <h5 className="toggletext">Make photos grayscale</h5>
-        <button className="button" onClick={handleFetch}>
-          Fetch New Photos
-        </button>
-      </div>
-
+    <div className="main">
+      <Header handleToggle={handleToggle} handleFetch={handleFetch} />
       <section className="grid-container">
         <PhotoGrid
           imageUrl="https://fastly.picsum.photos/id/49/200/200.jpg?hmac=w2wY6ewoLUCpaqq77gzCIdeKq2xKmTkssFtL_4K34H0"
@@ -58,7 +32,7 @@ function HomePage() {
           url="https://unsplash.com/photos/pwaaqfoMibi"
         />
       </section>
-    </main>
+    </div>
   );
 }
 
