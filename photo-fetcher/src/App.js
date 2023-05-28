@@ -1,10 +1,11 @@
 import React from "react";
-import PhotoFetcher from "./components/PhotoFetcher";
+import HomePage from "./pages/Homepage/Homepage";
+import "./index.css"
 
 const App = () => {
   return (
     <div>
-      <PhotoFetcher />
+      <HomePage/>
     </div>
   );
 };
