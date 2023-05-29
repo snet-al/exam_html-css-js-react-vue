@@ -36,7 +36,7 @@ const HomePage = () => {
 
   const handleFetchClick = () => {
     fetchPhotos();
-    console.log("j")
+    console.log("jj")
   }
 
   return (
