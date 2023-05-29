@@ -19,7 +19,7 @@
   }
   
   .text h3,
-  .text p {
+  .text h4 {
     margin: 0;
     color: #fff;
   }
@@ -28,7 +28,7 @@
     font-size: 20px;
   }
   
-  .text p {
+  .text h4 {
     font-size: 16px;
   }
   
