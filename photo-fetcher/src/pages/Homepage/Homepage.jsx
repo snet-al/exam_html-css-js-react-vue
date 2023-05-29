@@ -9,7 +9,7 @@ const HomePage = () => {
   useEffect(() => {
     fetchPhotos();
   }, []);
-
+  
   const fetchPhotos = () => {
     fetch('https://picsum.photos/v2/list?page=2&limit=20')
       .then(response => response.json())
