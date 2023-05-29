@@ -1,6 +1,7 @@
 import React from 'react';
-import Layout from './pages/Layout/Layout';
 import HomePage from './pages/HomePage/HomePage';
+import Layout from './Layout/Layout';
+
 function App() {
   return (
     <Layout>

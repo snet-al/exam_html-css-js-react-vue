@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './HomePage.css';
 import Header from '../../components/Header/Header';
-import PhotoGrid from '../../components/PhotoGrid/PhotoGrid';
+import Photo from '../../components/Photo/Photo';
 
 function HomePage() {
   const [photos, setPhotos] = useState([]);
@@ -9,9 +9,9 @@ function HomePage() {
   const [pageNumber, setPageNumber] = useState(1);
   const [limit, setLimit] = useState(4);
 
-  useEffect(() => {
-    fetchPhotos(pageNumber);
-  }, []);
+  // useEffect(() => {
+  //   fetchPhotos(pageNumber);
+  // }, []);
 
   useEffect(() => {
     fetchPhotos(pageNumber)
@@ -43,7 +43,7 @@ function HomePage() {
       <Header handleToggle={handleToggle} handleFetch={handleFetch} />
       <section className="grid-container">
         {photos && photos.map(photo => (
-          <PhotoGrid
+          <Photo
             key={photo.id}
             imageUrl={photo.download_url}
             title={photo.author}

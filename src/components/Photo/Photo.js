@@ -1,7 +1,7 @@
 import React from 'react';
-import './PhotoGrid.css';
+import './Photo.css';
 
-function PhotoGrid({ imageUrl, title, url, isGrayscale }) {
+function Photo({ imageUrl, title, url, isGrayscale }) {
   const imageStyle = {
     filter: isGrayscale ? 'grayscale(100%)' : 'none'
   };
@@ -11,10 +11,10 @@ function PhotoGrid({ imageUrl, title, url, isGrayscale }) {
       <img src={imageUrl} alt={title} style={imageStyle} />
       <figcaption className="text">
         <h3>{title}</h3>
-        <p>{url}</p>
+        <h4>{url}</h4>
       </figcaption>
     </figure>
   );
 }
 
-export default PhotoGrid;
+export default Photo;
