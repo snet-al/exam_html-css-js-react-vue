@@ -1,7 +1,6 @@
-
 import React from 'react';
 import './Header.css';
-import Toggle from '../Toggle/Toggle.js';
+import Toggle from '../Toggle/Toggle';
 
 function Header({ handleToggle, handleFetch }) {
   return (

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import './HomePage.css';
 import Header from '../../components/Header/Header';
@@ -6,6 +5,7 @@ import PhotoGrid from '../../components/PhotoGrid/PhotoGrid';
 
 function HomePage() {
   const [photos, setPhotos] = useState([]);
+  const [isGrayscale, setIsGrayscale] = useState(false);
 
   useEffect(() => {
     fetchPhotos();
@@ -24,14 +24,16 @@ function HomePage() {
       });
   };
 
-  const handleToggle = () => {};
+  const handleToggle = () => {
+    setIsGrayscale(!isGrayscale);
+  };
 
   const handleFetch = () => {
     fetchPhotos();
   };
 
   return (
-    <div className="main">
+    <div className={`main ${isGrayscale ? 'grayscale' : ''}`}>
       <Header handleToggle={handleToggle} handleFetch={handleFetch} />
       <section className="grid-container">
         {photos.map(photo => (
@@ -40,6 +42,7 @@ function HomePage() {
             imageUrl={photo.download_url}
             title={photo.author}
             url={photo.url}
+            isGrayscale={isGrayscale}
           />
         ))}
       </section>
@@ -47,6 +50,7 @@ function HomePage() {
   );
 }
 
-
 export default HomePage;
+
+
 
