@@ -1,31 +1,25 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.css';
 import { photos } from '../../store/dummyData';
-import Header from '../../components/Header/Header';
-import PhotoGrid from '../../components/PhotoGrid/PhotoGrid';
+import Photo from '../../components/Photo/Photo';
 
 function HomePage() {
-  const handleToggle = () => {};
-  const handleFetch = () => {};
+  const [images, setImages] = useState(photos);
 
   return (
     <div className="main">
-      <Header handleToggle={handleToggle} handleFetch={handleFetch} />
       <section className="grid-container">
-         {photos.map((photo) => (
-           <PhotoGrid
-             key={photo.id}
-             imageUrl={photo.imageUrl}
-             title={photo.title}
+        {images.map((photo) => (
+          <Photo
+            key={photo.id}
+            imageUrl={photo.imageUrl}
+            title={photo.title}
             url={photo.url}
-           />
-         ))}
-       </section>
-
+          />
+        ))}
+      </section>
     </div>
   );
 }
 
 export default HomePage;
-
