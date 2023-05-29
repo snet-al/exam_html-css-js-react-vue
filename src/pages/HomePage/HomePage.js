@@ -6,13 +6,19 @@ import PhotoGrid from '../../components/PhotoGrid/PhotoGrid';
 function HomePage() {
   const [photos, setPhotos] = useState([]);
   const [isGrayscale, setIsGrayscale] = useState(false);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [limit, setLimit] = useState(4);
 
   useEffect(() => {
-    fetchPhotos();
+    fetchPhotos(pageNumber);
   }, []);
 
-  const fetchPhotos = () => {
-    const apiUrl = 'https://picsum.photos/v2/list?limit=4';
+  useEffect(() => {
+    fetchPhotos(pageNumber)
+  }, [pageNumber]);
+
+  const fetchPhotos = (page) => {
+    const apiUrl = `https://picsum.photos/v2/list?limit=${limit}&page=${page}`;
 
     fetch(apiUrl)
       .then(response => response.json())
@@ -29,14 +35,14 @@ function HomePage() {
   };
 
   const handleFetch = () => {
-    fetchPhotos();
+    setPageNumber(prevPageNumber => prevPageNumber + 1);
   };
 
   return (
     <div className={`main ${isGrayscale ? 'grayscale' : ''}`}>
       <Header handleToggle={handleToggle} handleFetch={handleFetch} />
       <section className="grid-container">
-        {photos.map(photo => (
+        {photos && photos.map(photo => (
           <PhotoGrid
             key={photo.id}
             imageUrl={photo.download_url}
