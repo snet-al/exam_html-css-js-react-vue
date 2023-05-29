@@ -1,6 +1,4 @@
 import React from 'react';
-// import "../PhotoGrid/PhotoGrid.css"
-// import "../../index.css"
 
 const PhotoGrid = ({ photos, grayscale }) => {
   return (
