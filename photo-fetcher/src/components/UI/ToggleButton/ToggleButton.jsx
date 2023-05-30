@@ -1,6 +1,4 @@
 import React from 'react';
-// import '../ToggleButton/ToggleButton.css';
-// import "../../../index.css"
 
 const ToggleButton = ({ grayscale, toggleGrayscale }) => {
   return (

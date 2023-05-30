@@ -1,6 +1,6 @@
 import React from 'react';
-import ToggleButton from '../Buttons/ToggleButton/ToggleButton';
-import FetchButton from '../Buttons/FetchButton/FetchButton';
+import ToggleButton from '../UI/ToggleButton/ToggleButton';
+import FetchButton from '../UI/FetchButton/FetchButton';  
 import "../../index.css"
 
 const Header = ({ grayscale, toggleGrayscale, handleFetchClick }) => {

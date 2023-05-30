@@ -1,6 +1,4 @@
 import React from 'react';
-// import "../FetchButton/FetchButton.css"
-// import "../../../index.css"
 
 const FetchButton = ({ handleFetchClick , text }) => {
   return (

@@ -1,13 +1,15 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 
-const PublicLayout = ({ children , toggleGrayscale ,handleFetchClick}) => {
+const DefaultLayout = ({ children , toggleGrayscale ,handleFetchClick}) => {
   return (
     <div>
       <Header toggleGrayscale={toggleGrayscale} handleFetchClick={handleFetchClick}/>
+      <main>
       {children}
+      </main>
     </div>
   );
 };
 
-export default PublicLayout;
+export default DefaultLayout;

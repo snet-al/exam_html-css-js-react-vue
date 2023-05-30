@@ -168,3 +168,14 @@ toggle-button:nth-child(2) {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
 }
+
+.more-photos-button {
+  width: 750px;
+  background-color: #6b4ad5;
+  border: none;
+  color: white;
+  padding: 7.5px 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
