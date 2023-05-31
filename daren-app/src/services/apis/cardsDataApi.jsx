@@ -1,12 +1,12 @@
-import axios from 'axios';
+import axios from "axios"
 
-const cardsDataApi = async (width,height) => {
-  try {
-    const response = await axios.get(`https://picsum.photos/${width}/${height}`);
-    return response.request.responseURL;
-  } catch (error) {
-    console.error('Error fetching image:', error);
-  }
-};
+const CardsDataApi = async() => {
+    try {
+        const response = await axios.get('https://picsum.photos/200/200');
+        return response.request.responseURL;
+      } catch (error) {
+        console.error('Error fetching image:', error);
+      }
+}
 
-export default cardsDataApi;
+export default CardsDataApi;
