@@ -1,4 +1,4 @@
-export const photoServices = async () => {
+export const fetchItems = async () => {
     try {
       const response = await fetch("https://picsum.photos/v2/list");
       const data = await response.json();
