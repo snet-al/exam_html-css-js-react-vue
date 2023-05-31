@@ -15,7 +15,7 @@ function Main() {
         <Figure
           key={authors.id}
           id={authors.id}
-          image={authors.image}
+          href={authors.href}
           author={authors.author}
         />
       ))}
