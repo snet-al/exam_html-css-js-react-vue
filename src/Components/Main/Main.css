@@ -38,6 +38,11 @@
   margin-bottom: 20px;
   text-decoration: none;
   font-size: small;
+  display: inline-block;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .grayscale {
   filter: grayscale(1);

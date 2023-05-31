@@ -1,9 +1,9 @@
 import React from "react";
 
-function Link({ image }) {
+function Link({ href }) {
   return (
-    <a target="_blank" rel="noreferrer" href={image}>
-      https://picsum.photos/
+    <a target="_blank" rel="noreferrer" href={href}>
+     {href}
     </a>
   );
 }
