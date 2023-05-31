@@ -1,13 +1,13 @@
 import React from "react";
 import Img from "../Img/Img.js";
 import Link from "../Links/Link.js";
-function Figure({ id, image, author }) {
+function Figure({ id, href, author }) {
   return (
     <figure className="card" key={id}>
-      <Img image={image} />
+      <Img href={href} />
       <figcaption className="card-text">
         <p>{author}</p>
-        <Link image={image} />
+        <Link href={href} />
       </figcaption>
     </figure>
   );
