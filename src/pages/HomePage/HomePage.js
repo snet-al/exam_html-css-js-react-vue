@@ -10,13 +10,11 @@ const getRandomItems = (data, count) => {
 function HomePage() {
   const [authors, setAuthors] = useState([]);
   useEffect(() => {
-    const fetchData = async () => {
+    (async () => {
       const data = await fetchItems();
       const randomItems = getRandomItems(data, 4);
       setAuthors(randomItems);
-    };
-
-    fetchData();
+    })();
   }, []);
   return (
     <Layout>
