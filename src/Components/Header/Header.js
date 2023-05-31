@@ -1,7 +1,7 @@
 import "./Header.css";
 import React from "react";
 import ToggleButton from "../UI/ButtonToggle/ButtonToggle";
-import FetchButton from "../UI/ButtonFetch/ButtonFetch";
+import SpecialButton from "../UI/ButtonSpecial/ButtonSpecial";
 import HeaderText from "../HeaderText/HeaderText";
 function Header() {
   return (
@@ -10,7 +10,7 @@ function Header() {
       <hgroup className="menu-header">
         <ToggleButton />
         <h4>Make photos grayscale</h4>
-        <FetchButton />
+        <SpecialButton buttonText={"Fetch New Photos"} />
       </hgroup>
     </header>
   );
