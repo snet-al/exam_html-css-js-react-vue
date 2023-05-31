@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './HomePage.css';
 import Header from '../../components/Header/Header';
 import Photo from '../../components/Photo/Photo';
+import { fetchPhotos } from '../../services/fetchPhotos';
 
 function HomePage() {
   const [photos, setPhotos] = useState([]);
@@ -9,26 +10,12 @@ function HomePage() {
   const [pageNumber, setPageNumber] = useState(1);
   const [limit, setLimit] = useState(4);
 
-  // useEffect(() => {
-  //   fetchPhotos(pageNumber);
-  // }, []);
-
   useEffect(() => {
-    fetchPhotos(pageNumber)
-  }, [pageNumber]);
-
-  const fetchPhotos = (page) => {
-    const apiUrl = `https://picsum.photos/v2/list?limit=${limit}&page=${page}`;
-
-    fetch(apiUrl)
-      .then(response => response.json())
+    fetchPhotos(pageNumber, limit)
       .then(data => {
         setPhotos(data);
-      })
-      .catch(error => {
-        console.error('Error fetching photos:', error);
       });
-  };
+  }, [pageNumber]);
 
   const handleToggle = () => {
     setIsGrayscale(!isGrayscale);
@@ -57,6 +44,5 @@ function HomePage() {
 }
 
 export default HomePage;
-
 
 
