@@ -12,7 +12,7 @@ const Main = () => {
   useEffect(() => {
     const fetchImage = async () => {
       try {
-        const url = await apiService(200,300);
+        const url = await apiService(200,200);
         setImageUrl(url);
       } catch (error) {
         console.log(error)
