@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DefaultLayout from "../../layouts/DefaultLayout/DefaultLayout";
 import Photo from "../../components/Photo/Photo";
-import MorePhotosButton from "../../components/UI/MorePhotosButton/MorePhotosButton";
 import LoadingIndicator from "../../components/LoadingIndicator/LoadingIndicator";
 import Button from "../../components/UI/Button/Button";
 import { fetchPhotos } from "../../photoservice/photoservice";
