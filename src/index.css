@@ -127,7 +127,7 @@ toggle-button:nth-child(2) {
   margin-right: auto;
 }
 
-.buttons {
+.layout {
   display: flex;
   justify-content: space-between;
   gap: 110px;
