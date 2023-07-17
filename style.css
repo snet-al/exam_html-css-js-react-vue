@@ -1,0 +1,94 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.slider {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ababab;
+    transition: .3s;
+    transition-property: transform;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    top: 2px;
+    left: 2px;
+    background-color: white;
+    transition: .3s;
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round::before {
+    border-radius: 50%;
+}
+
+
+body {
+    max-width: 750px;
+    margin: auto;
+}
+
+figure img {
+    display: block;
+}
+
+header > p {
+    font-size: 28px;
+}
+
+section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button{
+    background-color: rgb(93, 46, 211);
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    width: 150px;
+}
+
+.extraPadding {
+    padding-bottom: 40px;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+input:checked + .slider {
+    background-color: rgb(91, 235, 192);
+}
+
+input:checked + .slider::before {
+    transform: translateX(30px);
+}
