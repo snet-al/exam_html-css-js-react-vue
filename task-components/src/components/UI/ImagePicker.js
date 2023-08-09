@@ -1,12 +1,10 @@
 import React from "react";
-import Header from "./Header";
-import "../App.css";
-import image1 from "../image1.jpg";
+import "../../App.css";
+import image1 from "../../image1.jpg";
 
 const ImagePicker = () => {
   return (
     <div>
-     <Header/>
       <div className="container">
         <div className="column">
           <img src={image1} alt="Image 1" />

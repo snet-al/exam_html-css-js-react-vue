@@ -1,11 +1,11 @@
 import React from "react";
-import ImagePicker from "./components/ImagePicker";
 import './App.css';
+import Homepage from "./PAGES/Homepage";
 
 function App() {
   return (
     <div className="App">
-      <ImagePicker/>
+      <Homepage/>
     </div>
   );
 }
