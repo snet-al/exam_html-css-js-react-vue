@@ -3,16 +3,16 @@ import "../../App.css";
 import Toggle from "./Toggle";
 import Button from "./Button";
 
-const Header = () => {
+const Header = ({onChange, onFetchMoreClick }) => {
   return (
-    <div>
+    <header>
       <h1 className="title">Photo Fetcher</h1>
       <div className="first-container">
-        <Toggle/>
+        <Toggle onChange={onChange} />
         <p className="toggle-text">Make photos grayscale</p>
-        <Button/>
+        <Button onClick={onFetchMoreClick}/>
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -1,12 +1,12 @@
 // Layout.js
 import React from "react";
 import "../App.css";
-import Homepage from "../PAGES/Homepage";
+import HomePage from "../pages/HomePage";
 
 function Layout() {
   return (
     <div>
-      <Homepage />
+      <HomePage />
     </div>
   );
 }

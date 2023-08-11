@@ -1,8 +1,8 @@
 import React from "react";
 
-const Button = () => {
+const Button = ({ onClick }) => {
   return (
-    <button className="layout-btn">
+    <button className="layout-btn" onClick={onClick}>
       Fetch New Photos
     </button>
   );
