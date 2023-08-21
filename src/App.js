@@ -1,5 +1,5 @@
 import React from "react";
-import ImageGalleryPage from "./Components/ImageGalleryPage/ImageGalleryPage";
+import ImageGalleryPage from "./components/ImageGalleryPage/ImageGalleryPage";
 import './App.css';
 
 function App() {

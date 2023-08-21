@@ -1,5 +1,5 @@
 import React from "react";
-import image1 from "../../Assets/images/image1.jpg";
+import image1 from "../../assets/images/image1.jpg";
 
 const ImageItem = () => {
     const author = "Lukas Budimaier";

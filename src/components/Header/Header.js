@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import Button from "../../Components/Button/Button";
+import FetchImageButton from "../FetchImageButton/FetchImageButton";
 
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
       <h1 className="title">Photo Fetcher</h1>
       <section className="first-container">
           <ToggleSwitch/>
-           <Button/>
+          <FetchImageButton/>
       </section>
       </>
   );
