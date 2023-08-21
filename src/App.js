@@ -1,11 +1,11 @@
 import React from "react";
-import ImagePicker from "./components/ImagePicker";
+import ImageGalleryPage from "./Components/ImageGalleryPage/ImageGalleryPage";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <ImagePicker/>
+      <ImageGalleryPage/>
     </div>
   );
 }
