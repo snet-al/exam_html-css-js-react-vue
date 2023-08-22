@@ -6,7 +6,6 @@ import ImageItem from "./ImageItem";
 const ImageGalleryPage = () => {
     return (
         <>
-            <Header />
             <section className="second-container">
                 <ImageItem/>
                 <ImageItem/>
