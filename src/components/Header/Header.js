@@ -1,16 +1,17 @@
 import React from "react";
 import "../../App.css";
 import ToggleSwitch from "../UI/ToggleSwitch/ToggleSwitch";
-import FetchImageButton from "../UI/FetchImageButton/FetchImageButton";
+import ImageButton from "../UI/ImageButton/ImageButton";
+import HeaderTitle from "../HeaderTitle/HeaderTitle";
 
 
 const Header = () => {
   return (
       <>
-      <h1 className="title">Photo Fetcher</h1>
+      <HeaderTitle/>
       <section className="first-container">
           <ToggleSwitch/>
-          <FetchImageButton/>
+          <ImageButton/>
       </section>
       </>
   );

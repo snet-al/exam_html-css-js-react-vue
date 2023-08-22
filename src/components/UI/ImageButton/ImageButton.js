@@ -1,6 +1,6 @@
 import React from "react";
 
-const FetchImageButton = () => {
+const ImageButton = () => {
   return (
     <button className="layout-btn">
       Fetch New Photos
@@ -8,4 +8,4 @@ const FetchImageButton = () => {
   );
 };
 
-export default FetchImageButton;
+export default ImageButton;
