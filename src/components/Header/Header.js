@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
-import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import FetchImageButton from "../FetchImageButton/FetchImageButton";
+import ToggleSwitch from "../UI/ToggleSwitch/ToggleSwitch";
+import FetchImageButton from "../UI/FetchImageButton/FetchImageButton";
 
 
 const Header = () => {

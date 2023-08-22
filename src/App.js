@@ -1,12 +1,17 @@
 import React from "react";
-import './App.css';
-import Homepage from "./pages/Homepage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import ImageGalleryPage from "./pages/ImageGalleryPage/ImageGalleryPage";
 
 function App() {
     return (
-        <div className="App">
-            <Homepage/>
-        </div>
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<ImageGalleryPage />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
 

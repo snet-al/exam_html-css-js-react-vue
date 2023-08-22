@@ -1,11 +1,12 @@
 import React from "react";
-import Header from "../Header/Header";
 import "../../App.css";
-import ImageItem from "./ImageItem";
+import ImageItem from "../../components/ImageItem/ImageItem";
+import Header from "../../components/Header/Header";
 
 const ImageGalleryPage = () => {
     return (
         <>
+            <Header/>
             <section className="second-container">
                 <ImageItem/>
                 <ImageItem/>
