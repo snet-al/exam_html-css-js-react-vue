@@ -1,19 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/Layout/Layout";
+import Header from "./components/Header/Header";
+import ImageGalleryPage from "./pages/ImageGalleryPage/ImageGalleryPage";
 
 function App() {
     return (
-        <Router>
-            <div className="App">
-                <Routes>
-                    <Route path="/" element={<Layout />} />
-                </Routes>
-            </div>
-        </Router>
+        <Layout
+            header = {<Header/>}
+            imageGallery = {<ImageGalleryPage/>}
+        />
     );
 }
 
 export default App;
+
 

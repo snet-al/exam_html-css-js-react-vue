@@ -6,7 +6,7 @@ import Header from "../../components/Header/Header";
 const ImageGalleryPage = () => {
     return (
         <>
-            <Header/>
+            {/*<Header/>*/}
             <section className="second-container">
                 <ImageItem/>
                 <ImageItem/>

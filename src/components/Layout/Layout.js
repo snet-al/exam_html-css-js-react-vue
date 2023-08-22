@@ -1,13 +1,12 @@
-// Layout.js
 import React from "react";
 import "../../App.css";
-import ImageGalleryPage from "../../pages/ImageGalleryPage/ImageGalleryPage";
 
-function Layout() {
+function Layout(props) {
   return (
-    <div>
-      <ImageGalleryPage />
-    </div>
+      <>
+          {props.header}
+          {props.imageGallery}
+      </>
   );
 }
 
