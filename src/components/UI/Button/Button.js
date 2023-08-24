@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoadNewImagesButton = (props) => {
+const Button = (props) => {
   return (
     <button className="layout-btn">
       {props.btnText}
@@ -8,4 +8,4 @@ const LoadNewImagesButton = (props) => {
   );
 };
 
-export default LoadNewImagesButton;
+export default Button;
