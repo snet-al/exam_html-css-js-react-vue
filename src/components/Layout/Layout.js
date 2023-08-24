@@ -1,13 +1,15 @@
 import React from "react";
 import "../../App.css";
+import Header from "../Header/Header";
+import Title from "../UI/Title/Title";
 
 function Layout(props) {
   return (
-      <>
-          {props.title}
-          {props.header}
-          {props.imageGallery}
-      </>
+    <>
+      <Title />
+      <Header />
+      {props.children}
+    </>
   );
 }
 
