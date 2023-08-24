@@ -1,10 +1,10 @@
 import React from "react";
-import "../../App.css";
+import "../../../App.css";
 
-const HeaderTitle = () => {
+const Title = () => {
     return (
         <h1 className="title">Photo Fetcher</h1>
     );
 };
 
-export default HeaderTitle;
+export default Title;
