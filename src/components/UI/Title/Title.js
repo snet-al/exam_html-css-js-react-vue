@@ -1,9 +1,11 @@
 import React from "react";
 import "../../../App.css";
 
-const Title = () => {
+const Title = (props) => {
     return (
-        <h1 className="title">Photo Fetcher</h1>
+      <header className="title">
+          {props.title}
+      </header>
     );
 };
 
