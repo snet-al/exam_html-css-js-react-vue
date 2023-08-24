@@ -4,6 +4,7 @@ import "../../App.css";
 function Layout(props) {
   return (
       <>
+          {props.title}
           {props.header}
           {props.imageGallery}
       </>

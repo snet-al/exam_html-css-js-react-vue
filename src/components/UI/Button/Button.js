@@ -1,11 +1,11 @@
 import React from "react";
 
-const ImageButton = () => {
+const Button = (props) => {
   return (
     <button className="layout-btn">
-      Fetch New Photos
+      {props.btnText}
     </button>
   );
 };
 
-export default ImageButton;
+export default Button;
