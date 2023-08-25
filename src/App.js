@@ -1,14 +1,11 @@
 import React from "react";
 import "./App.css";
-import Layout from "./components/Layout/Layout";
 import ImageGalleryPage from "./pages/ImageGalleryPage/ImageGalleryPage";
 
 function App() {
   return (
-    <section className="App">
-      <Layout>
+    <section className="app">
         <ImageGalleryPage />
-      </Layout>
     </section>
   );
 }
