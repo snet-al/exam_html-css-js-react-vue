@@ -5,7 +5,9 @@ function MainLayout(props) {
   return (
     <>
       <Header />
-      {props.children}
+      <main>
+          {props.children}
+      </main>
     </>
   );
 }

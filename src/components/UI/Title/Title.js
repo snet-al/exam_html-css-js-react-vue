@@ -3,9 +3,9 @@ import "../../../App.css";
 
 const Title = (props) => {
     return (
-      <section className="title">
+      <span className="title">
           {props.title}
-      </section>
+      </span>
     );
 };
 
