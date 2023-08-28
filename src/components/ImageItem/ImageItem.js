@@ -3,7 +3,7 @@ import dataDummy from "../../store/DummyData/Data";
 
 const ImageItem = () => {
     return (
-        <div className="container">
+        <section className="container">
             {dataDummy.map((data, index) => (
                 <figure className="section-item" key={data.id}>
                     <img src={data.image} alt={`Image by ${data.name}`} />
@@ -13,7 +13,7 @@ const ImageItem = () => {
                     </a>
                 </figure>
             ))}
-        </div>
+        </section>
     );
 };
 
