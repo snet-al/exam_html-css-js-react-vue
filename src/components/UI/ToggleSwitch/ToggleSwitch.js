@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "../../../App.css";
 
-const Toggle = ({ onChange }) => {
+const ToggleSwitch = ({ onChange }) => {
   const [isToggled, setIsToggled] = useState(false);
 
   const handleToggle = () => {
@@ -11,13 +12,14 @@ const Toggle = ({ onChange }) => {
   };
 
   return (
-    <div>
+    <section>
       <label className="switch">
         <input type="checkbox" checked={isToggled} onChange={handleToggle} />
         <span className="slider round"></span>
       </label>
-    </div>
+      <span className="toggle-text">Make photos grayscale</span>
+    </section>
   );
 };
 
-export default Toggle;
+export default ToggleSwitch;

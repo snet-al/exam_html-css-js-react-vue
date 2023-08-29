@@ -1,4 +1,5 @@
-export const fetchRandomImages = async (count) => {
+ export const fetchRandomImages = async (count) => {
+
   try {
     const response = await fetch(`https://picsum.photos/v2/list`);
     const data = await response.json();
@@ -24,3 +25,4 @@ function shuffle(array) {
   }
   return array;
 }
+
