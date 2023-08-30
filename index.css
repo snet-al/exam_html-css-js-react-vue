@@ -7,19 +7,33 @@ body {
   align-items: center;
 }
 header, main {
+  margin-top: 16px;
   width: 100%;
   max-width: 750px;
+}
+title {
+  display: flex;
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 30px;
 }
 .main-header {
     display: flex;
     align-items: center;
     max-width: 750px;
 }
+.main-header title {
+  display: flex;
+  align-items: center;
+  max-width: 750px;
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-left: 12px;
+} 
 
 .switch-button {
   display: inline-block;
   position: relative;
-  margin-bottom: 12px;
 }
 
 .switch {
@@ -50,19 +64,15 @@ header, main {
 .switch input:checked + .switch-slider {
   transform: translateX(20px); 
 }
-.switch-text {
-  margin-left: 10px;
-  margin-bottom: 16px;
-}
 
 .fetch-button {
+    font-size: 15px;
     background-color: #6B4AD5;
     color: #fff;
     border: none;
     border-radius: 3px;
     padding: 10px;
     margin-left: auto;
-    margin-bottom: 16px;
 }
 .photo-container {
   display: grid;
