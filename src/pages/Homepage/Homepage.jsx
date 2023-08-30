@@ -61,13 +61,6 @@ const HomePage = () => {
                 </div>
               ))}
             </section>
-            <div className="layout">
-              <Button
-                text={"More Photos"}
-                handleFetchClick={handleMorePhotosClick}
-                className={"more-photos-button"}
-              />
-            </div>
           </>
         )}
       </div>
