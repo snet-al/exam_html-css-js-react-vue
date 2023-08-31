@@ -2,36 +2,62 @@ import React, { useState, useEffect } from "react";
 import "../../App.css";
 import ImageItem from "../../components/ImageItem/ImageItem";
 import MainLayout from "../../layout/MainLayout/MainLayout";
-import { fetchRandomImages } from "../../service/api/apiService";
+import { fetchRandomImages } from "../../service/imageService";
+import LoadingIndicator from "../../components/LoadingIndicator/LoadingIndicator";
 
 const ImageGalleryPage = () => {
-  const [imagesData, setImageData] = useState([]);
+  const [images, setImages] = useState([]);
   const [isGrayscale, setIsGrayscale] = useState(false);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [initial, setInitial] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchRandomImages(4)
-      .then((data) => setImageData(data))
-      .catch((error) => console.error("Error fetching images:", error));
-  }, []);
+    (async function () {
+      setIsLoading(true);
+      try {
+        const image = await fetchRandomImages(pageNumber);
+        if (initial) {
+          setImages(image);
+        } else {
+          setImages([...images, ...image]);
+        }
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    })();
+  }, [pageNumber, initial]);
 
-  const fetchNewImages = () => {
-    fetchRandomImages(4)
-      .then((data) => setImageData(data))
-      .catch((error) => console.error("Error fetching images:", error));
+
+  const handleMorePhotosClick = async () => {
+    setInitial(false);
+    setPageNumber(pageNumber + 1);
   };
-
-  const handleToggle = (toggled) => {
+  const fetchNewImages = () => {
+    setInitial(true);
+    setPageNumber(pageNumber + 1);
+  };
+  const handleToggleGrayscale = (toggled) => {
     setIsGrayscale(toggled);
   };
+
   return (
-    <MainLayout onChange={handleToggle} fetchNewImages={fetchNewImages}>
-      <section className="container">
-        {imagesData.map((data) => (
-          <ImageItem key={data.id} data={data} isGrayscale={isGrayscale} />
-        ))}
-      </section>
-    </MainLayout>
+    <>
+      {isLoading ? (
+        <LoadingIndicator/>
+      ) : (
+        <MainLayout onChangeToggle={handleToggleGrayscale} fetchNewImages={fetchNewImages} handleMorePhotosClick={handleMorePhotosClick} >
+          <section className="container">
+            {images.map((image) => (
+              <ImageItem key={image.id} image={image} isGrayscale={isGrayscale} />
+            ))}
+          </section>
+        </MainLayout>
+      )}
+    </>
   );
 };
 
 export default ImageGalleryPage;
+

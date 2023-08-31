@@ -1,19 +1,19 @@
 import React from "react";
 
-const ImageItem = ({ data, isGrayscale }) => {
+const ImageItem = ({ image, isGrayscale }) => {
   const imageUrl = isGrayscale
-    ? `${data.download_url}?grayscale`
-    : data.download_url;
+    ? `${image.download_url}?grayscale`
+    : image.download_url;
 
   return (
     <figure className="section-item">
       <img
-        src={isGrayscale ? `${data.download_url}?grayscale` : data.download_url}
-        alt={`Image by ${data.author}`}
+        src={imageUrl}
+        alt={`Image by ${image.author}`}
       />
-      <figcaption className="image-information">{data.author}</figcaption>
-      <a className="image-url" href={data.url}>
-        {data.url}
+      <figcaption className="image-information">{image.author}</figcaption>
+      <a className="image-url" href={image.url}>
+        {image.url}
       </a>
     </figure>
   );

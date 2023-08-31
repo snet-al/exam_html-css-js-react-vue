@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "../../../App.css";
 
-const ToggleSwitch = ({ onChange }) => {
+const ToggleSwitch = ({ onChangeToggle }) => {
   const [isToggled, setIsToggled] = useState(false);
 
   const handleToggle = () => {
     setIsToggled(!isToggled);
-    if (onChange) {
-      onChange(!isToggled);
+    if (onChangeToggle) {
+      onChangeToggle(!isToggled);
     }
   };
 
