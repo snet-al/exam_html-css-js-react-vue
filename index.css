@@ -95,3 +95,9 @@ footer {
   color: white;
   padding: 20px 0;
 }
+
+main-title {
+    font-size: 50px; 
+    color: #000000; 
+    margin: 20px 0;
+  }
