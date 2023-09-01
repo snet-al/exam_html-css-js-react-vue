@@ -17,26 +17,24 @@ title {
   font-size: 24px;
   margin-bottom: 30px;
 }
-.main-header {
+.header-container {
     display: flex;
     align-items: center;
     max-width: 750px;
 }
-.main-header title {
-  display: flex;
-  align-items: center;
+.header-container title {
   max-width: 750px;
   font-size: 16px;
   margin-bottom: 0;
   margin-left: 12px;
 } 
 
-.switch-button {
+.toggle-section {
   display: inline-block;
   position: relative;
 }
 
-.switch {
+.toggle-switch {
   display: inline-block;
   width: 40px; 
   height: 20px; 
@@ -45,11 +43,11 @@ title {
   position: relative;
 }
 
-.switch input {
+.toggle-switch input {
   display: none; 
 }
 
-.switch-slider {
+.slider-toggle {
   position: absolute;
   top: 2px;
   left: 2px;
@@ -61,7 +59,7 @@ title {
   border-radius: 20px;
 
 }
-.switch input:checked + .switch-slider {
+.toggle-switch input:checked + .slider-toggle {
   transform: translateX(20px); 
 }
 
@@ -74,7 +72,7 @@ title {
     padding: 10px;
     margin-left: auto;
 }
-.photo-container {
+.photo-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 16px;
