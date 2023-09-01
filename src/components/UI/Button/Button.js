@@ -4,7 +4,7 @@ const Button = (props) => {
   return (
     <button className="layout-btn" onClick={props.onClick}>
       {props.btnText}
-      {props.morePhotosBtn}
+      {props.title}
     </button>
   );
 };

@@ -4,6 +4,7 @@ import ImageItem from "../../components/ImageItem/ImageItem";
 import MainLayout from "../../layout/MainLayout/MainLayout";
 import { fetchRandomImages } from "../../service/imageService";
 import LoadingIndicator from "../../components/LoadingIndicator/LoadingIndicator";
+
 const ImageGalleryPage = () => {
   const [images, setImages] = useState([]);
   const [isGrayscale, setIsGrayscale] = useState(false);
@@ -12,29 +13,30 @@ const ImageGalleryPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    (async function () {
-      setIsLoading(true);
-      try {
-        const newImages = await fetchRandomImages(pageNumber);
-        if (initial) {
-          setImages(newImages);
-        } else {
-          setImages((prevState) => [...prevState, ...newImages]);
-        }
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Error fetching images:", error);
-      }
-    })();
+    fetchMoreImages();
   }, [pageNumber, initial]);
-  const handleMorePhotosClick = async () => {
+
+  const fetchMoreImages = async () => {
+    setIsLoading(true);
+    try {
+      const newImages = await fetchRandomImages(pageNumber);
+      setImages((prevState) => (initial ? newImages : [...prevState, ...newImages]));
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching images:", error);
+    }
+  };
+
+  const morePhotosHandler = async () => {
     setInitial(false);
     setPageNumber(pageNumber + 1);
   };
+
   const fetchNewImages = () => {
     setInitial(true);
     setPageNumber(pageNumber + 1);
   };
+
   const handleToggleGrayscale = (toggled) => {
     setIsGrayscale(toggled);
   };
@@ -44,7 +46,7 @@ const ImageGalleryPage = () => {
       {isLoading ? (
         <LoadingIndicator/>
       ) : (
-        <MainLayout onToggleHandler={handleToggleGrayscale} fetchNewImages={fetchNewImages} handleMorePhotosClick={handleMorePhotosClick} >
+        <MainLayout onToggleHandler={handleToggleGrayscale} fetchNewImages={fetchNewImages} morePhotosHandler={morePhotosHandler} >
           <section className="container">
             {images.map((image) => (
               <ImageItem key={image.id} image={image} isGrayscale={isGrayscale} />
