@@ -1,46 +1,62 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add new photos</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <input type="checkbox" id="check">
-        <label for="check" class="button2"></label>
-        <button class="button">Fetch New Photos</button>
-    </div>
-
-    <div class="images">
-        <div class="image-container">
-            <img class="image" src="images/photo1.jfif" alt="">
-            <div class="image-overlay">
-                <p class="image-text">Ledina Shahi</p>
-                <hr>
-                <p class="image-text">https://picsum.photos/</p>
-            </div>
-        </div>
-        <div class="image-container">
-            <img class="image" src="images/photo2.jfif" alt="">
-            <div class="image-overlay">
-                <p class="image-text">Ledina Shahi</p>
-                <p class="image-text">https://picsum.photos/</p>
-            </div>
-        </div>
-        <div class="image-container">    
-            <img class="image" src="images/photo3.jfif" alt="">
-            <div class="image-overlay">
-                <p class="image-text">Ledina Shahi</p>
-                <p class="image-text">https://picsum.photos/</p>
-            </div>
-        </div>
-        <div class="image-container">    
-            <img class="image" src="images/photo4.jfif" alt="">
-            <div class="image-overlay">
-                <p class="image-text">Ledina Shahi</p>
-                <p class="image-text">https://picsum.photos/</p>
-            </div>
-        </div>
-    </div>
-</body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Photo Fetcher</h1>
+      <nav class="button-container">
+        <input type="checkbox" id="check" />
+        <label for="check" class="toggle"></label>
+        <button class="fetch-button">Fetch New Photos</button>
+      </nav>
+    </header>
+    <main>
+      <section class="image-grid">
+        <figure class="image-item">
+          <img src="images/foto2.jpg" alt="" />
+          <figcaption>
+            Lukas Budimaier
+            <a href="https://unsplash.com/photos/pwaaqfoMibl"
+              >https://unsplash.com/photos/pwaaqfoMibl</a
+            >
+          </figcaption>
+        </figure>
+        <figure class="image-item">
+          <img src="images/foto2.jpg" alt="" />
+          <figcaption>
+            Lukas Budimaier
+            <a href="https://unsplash.com/photos/pwaaqfoMibl"
+              >https://unsplash.com/photos/pwaaqfoMibl</a
+            >
+          </figcaption>
+        </figure>
+        <figure class="image-item">
+          <img src="images/foto2.jpg" alt="" />
+          <figcaption>
+            Lukas Budimaier
+            <a href="https://unsplash.com/photos/pwaaqfoMibl"
+              >https://unsplash.com/photos/pwaaqfoMibl</a
+            >
+          </figcaption>
+        </figure>
+        <figure class="image-item">
+          <img src="images/foto2.jpg" alt="" />
+          <figcaption>
+            Lukas Budimaier
+            <a href="https://unsplash.com/photos/pwaaqfoMibl"
+              >https://unsplash.com/photos/pwaaqfoMibl</a
+            >
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Ledina Shahi</p>
+    </footer>
+  </body>
 </html>
