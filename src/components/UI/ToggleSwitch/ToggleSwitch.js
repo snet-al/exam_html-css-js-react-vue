@@ -1,25 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../App.css";
-
-const ToggleSwitch = ({ onChangeToggle }) => {
-  const [isToggled, setIsToggled] = useState(false);
-
-  const handleToggle = () => {
-    setIsToggled(!isToggled);
-    if (onChangeToggle) {
-      onChangeToggle(!isToggled);
-    }
+const ToggleSwitch = ({ onToggleHandler }) => {
+  const handleToggle = (event) => {
+    onToggleHandler(event.target.checked);
   };
 
   return (
     <section>
       <label className="switch">
-        <input type="checkbox" checked={isToggled} onChange={handleToggle} />
+        <input type="checkbox"  onChange={handleToggle} />
         <span className="slider round"></span>
       </label>
       <span className="toggle-text">Make photos grayscale</span>
     </section>
   );
 };
-
 export default ToggleSwitch;

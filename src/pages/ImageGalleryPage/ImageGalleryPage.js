@@ -4,7 +4,6 @@ import ImageItem from "../../components/ImageItem/ImageItem";
 import MainLayout from "../../layout/MainLayout/MainLayout";
 import { fetchRandomImages } from "../../service/imageService";
 import LoadingIndicator from "../../components/LoadingIndicator/LoadingIndicator";
-
 const ImageGalleryPage = () => {
   const [images, setImages] = useState([]);
   const [isGrayscale, setIsGrayscale] = useState(false);
@@ -16,11 +15,11 @@ const ImageGalleryPage = () => {
     (async function () {
       setIsLoading(true);
       try {
-        const image = await fetchRandomImages(pageNumber);
+        const newImages = await fetchRandomImages(pageNumber);
         if (initial) {
-          setImages(image);
+          setImages(newImages);
         } else {
-          setImages([...images, ...image]);
+          setImages((prevState) => [...prevState, ...newImages]);
         }
         setIsLoading(false);
       } catch (error) {
@@ -28,8 +27,6 @@ const ImageGalleryPage = () => {
       }
     })();
   }, [pageNumber, initial]);
-
-
   const handleMorePhotosClick = async () => {
     setInitial(false);
     setPageNumber(pageNumber + 1);
@@ -47,7 +44,7 @@ const ImageGalleryPage = () => {
       {isLoading ? (
         <LoadingIndicator/>
       ) : (
-        <MainLayout onChangeToggle={handleToggleGrayscale} fetchNewImages={fetchNewImages} handleMorePhotosClick={handleMorePhotosClick} >
+        <MainLayout onToggleHandler={handleToggleGrayscale} fetchNewImages={fetchNewImages} handleMorePhotosClick={handleMorePhotosClick} >
           <section className="container">
             {images.map((image) => (
               <ImageItem key={image.id} image={image} isGrayscale={isGrayscale} />
@@ -58,6 +55,5 @@ const ImageGalleryPage = () => {
     </>
   );
 };
-
 export default ImageGalleryPage;
 
