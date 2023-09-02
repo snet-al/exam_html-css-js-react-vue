@@ -26,7 +26,6 @@ const ImageGalleryPage = () => {
       console.error("Error fetching images:", error);
     }
   };
-
   const morePhotosHandler = async () => {
     setInitial(false);
     setPageNumber(pageNumber + 1);

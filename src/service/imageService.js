@@ -1,6 +1,6 @@
 export const fetchRandomImages = (pageNumber) => {
-  const limit=4;
-  return fetch(`https://picsum.photos/v2/list?page=${pageNumber}&limit=${limit}`)
+  const LIMIT=4;
+  return fetch(`https://picsum.photos/v2/list?page=${pageNumber}&limit=${LIMIT}`)
     .then((response) => {
       console.log(response);
       return response.json();

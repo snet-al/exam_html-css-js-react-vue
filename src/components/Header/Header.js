@@ -10,7 +10,7 @@ const Header = ({ fetchNewImages, onToggleHandler }) => {
       <Title title="Photo Fetcher" />
       <section className="first-container">
         <ToggleSwitch onToggleHandler={onToggleHandler} />
-        <Button btnText="Fetch New Photos" onClick={fetchNewImages} />
+        <Button title="Fetch New Photos" onClick={fetchNewImages} />
       </section>
     </>
   );
