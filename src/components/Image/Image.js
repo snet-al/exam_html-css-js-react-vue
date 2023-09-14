@@ -1,9 +1,6 @@
-const Image = () => {
-  return (
-    <img
-      src={"https://images.unsplash.com/photo-1614349214089-e969a07e033b?ixlib=rb-4.0.3"}
-      alt="Paris"
-    />
-  );
+import styles from "./Image.module.css";
+
+const Image = (props) => {
+  return <img src={props.src} alt={props.alt} className={styles.image} />;
 };
 export default Image;

@@ -1,11 +1,12 @@
 import Button from "../UI/Button/Button";
+import styles from "./TogleSwitch.module.css";
 
 const ToggleSwitch = () => {
   return (
-    <section className="switch-button">
-      <label className="switch">
+    <section className={styles["toggle-section"]}>
+      <label className={styles["toggle-switch"]}>
         <input type="checkbox" />
-        <Button className="switch-slider" />
+        <Button className={styles["slider-toggle"]} />
       </label>
     </section>
   );

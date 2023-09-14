@@ -1,12 +1,20 @@
 import PhotoItem from "../PhotoItem/PhotoItem";
+import styles from "./PhotoContainer.module.css";
 
-const PhotoContainer = () => {
+const PhotoContainer = (props) => {
   return (
-    <section>
-      <PhotoItem />
-      <PhotoItem />
-      <PhotoItem />
-      <PhotoItem />
+    <section className={styles["photo-gallery"]}>
+      {props.photos.map((photo) => (
+        <PhotoItem
+          key={photo.id}
+          id={photo.id}
+          src={photo.src}
+          alt={photo.alt}
+          text={photo.text}
+          caption={photo.caption}
+          href={photo.href}
+        />
+      ))}
     </section>
   );
 };

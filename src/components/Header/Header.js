@@ -1,11 +1,12 @@
-import Navigation from "../Navigation/Navigation";
+import ToggleHeader from "../ToggleHeader/ToggleHeader";
 import Title from "../UI/Title/Title";
+import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header>
-      <Title>{"Photo Fetcher"}</Title>
-      <Navigation className={"main-header"} />
+    <header className={styles.header}>
+      <Title text="Photo Fetcher" />
+      <ToggleHeader />
     </header>
   );
 };

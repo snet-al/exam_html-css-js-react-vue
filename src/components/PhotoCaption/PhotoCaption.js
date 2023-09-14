@@ -1,10 +1,11 @@
-import Link from "../Link/Link";
+import PhotoLink from "../PhotoLink/PhotoLink";
+import styles from "./PhotoCaption.module.css";
 
-const PhotoCaption = () => {
+const PhotoCaption = (props) => {
   return (
-    <figcaption>
-      {"Lukas Budimaier"}
-      <Link />
+    <figcaption className={styles.figcaption}>
+      {props.caption}
+      <PhotoLink href={props.href} text={props.text} />
     </figcaption>
   );
 };

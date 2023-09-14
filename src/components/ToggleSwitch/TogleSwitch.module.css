@@ -1,0 +1,35 @@
+.toggle-section {
+    display: inline-block;
+    position: relative;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #797575;
+    border-radius: 10px;
+}
+
+input {
+    display: none
+}
+.slider-toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+
+.toggle-switch input:checked + .slider-toggle {
+    transform: translateX(20px);
+}
+

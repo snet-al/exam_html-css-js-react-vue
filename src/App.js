@@ -1,13 +1,19 @@
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
-import "./App.css";
+import PhotoGallery from "./components/PhotoGallery/PhotoGallery";
 
 function App() {
+  const styles = {
+    fontFamily: "Arial",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  };
   return (
-    <>
+    <div style={styles}>
       <Header />
-      <Main />
-    </>
+      <PhotoGallery />
+    </div>
   );
 }
 

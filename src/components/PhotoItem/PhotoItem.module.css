@@ -1,0 +1,7 @@
+.photo-item {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    padding-bottom: 80%;
+    overflow: hidden;
+}
