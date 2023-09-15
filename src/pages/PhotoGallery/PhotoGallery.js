@@ -1,4 +1,5 @@
-import PhotoContainer from "../PhotoContainer/PhotoContainer";
+import Header from "../../components/Header/Header";
+import Main from "../../components/Main/Main";
 import styles from "./PhotoGallery.module.css";
 
 const PhotoGallery = () => {
@@ -37,9 +38,10 @@ const PhotoGallery = () => {
     },
   ];
   return (
-    <main className={styles.main}>
-      <PhotoContainer photos={photoData} />
-    </main>
+    <div className={styles["home-page"]}>
+      <Header />
+      <Main photos={photoData} />
+    </div>
   );
 };
 

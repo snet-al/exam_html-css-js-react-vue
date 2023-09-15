@@ -1,20 +1,7 @@
-import Header from "./components/Header/Header";
-import PhotoGallery from "./components/PhotoGallery/PhotoGallery";
+import PhotoGallery from "./pages/PhotoGallery/PhotoGallery";
 
 function App() {
-  const styles = {
-    fontFamily: "Arial",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-  };
-  return (
-    <div style={styles}>
-      <Header />
-      <PhotoGallery />
-    </div>
-  );
+  return <PhotoGallery />;
 }
 
 export default App;
