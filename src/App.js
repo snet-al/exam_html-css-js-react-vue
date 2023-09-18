@@ -1,7 +1,7 @@
-import PhotoGallery from "./pages/PhotoGallery/PhotoGallery";
+import PhotoGalleryPage from "./pages/PhotoGalleryPage/PhotoGalleryPage";
 
 function App() {
-  return <PhotoGallery />;
+  return <PhotoGalleryPage />;
 }
 
 export default App;

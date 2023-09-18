@@ -10,14 +10,16 @@
     height: 20px;
     background-color: #797575;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 input {
     display: none
 }
+
 .slider-toggle {
     position: absolute;
-    cursor: pointer;
+    cursor: auto;
     top: 2px;
     left: 2px;
     width: 16px;
@@ -29,7 +31,6 @@ input {
 }
 
 
-.toggle-switch input:checked + .slider-toggle {
+.toggle-switch input:checked+.slider-toggle {
     transform: translateX(20px);
 }
-
