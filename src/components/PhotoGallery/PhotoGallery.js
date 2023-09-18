@@ -1,4 +1,4 @@
-import PhotoContainer from "../PhotoContainer/PhotoContainer";
+import PhotoItem from "../PhotoItem/PhotoItem";
 import styles from "./PhotoGallery.module.css";
 
 const PhotoGallery = () => {
@@ -38,7 +38,19 @@ const PhotoGallery = () => {
   ];
   return (
     <main className={styles.main}>
-      <PhotoContainer photos={photoData} />
+      <section className={styles["photo-gallery"]}>
+        {photoData.map((photo) => (
+          <PhotoItem
+            key={photo.id}
+            id={photo.id}
+            src={photo.src}
+            alt={photo.alt}
+            text={photo.text}
+            caption={photo.caption}
+            href={photo.href}
+          />
+        ))}
+      </section>
     </main>
   );
 };

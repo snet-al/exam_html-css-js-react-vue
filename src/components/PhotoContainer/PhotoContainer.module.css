@@ -1,6 +1,0 @@
-.photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 16px;
-    max-width: 750px;
-}

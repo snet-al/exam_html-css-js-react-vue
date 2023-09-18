@@ -15,6 +15,7 @@
 input {
     display: none
 }
+
 .slider-toggle {
     position: absolute;
     cursor: pointer;
@@ -29,7 +30,6 @@ input {
 }
 
 
-.toggle-switch input:checked + .slider-toggle {
+.toggle-switch input:checked+.slider-toggle {
     transform: translateX(20px);
 }
-

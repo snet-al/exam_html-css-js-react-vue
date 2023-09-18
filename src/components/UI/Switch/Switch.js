@@ -1,7 +1,7 @@
-import Button from "../UI/Button/Button";
-import styles from "./TogleSwitch.module.css";
+import Button from "../Button/Button";
+import styles from "./Switch.module.css";
 
-const ToggleSwitch = () => {
+const Switch = () => {
   return (
     <section className={styles["toggle-section"]}>
       <label className={styles["toggle-switch"]}>
@@ -11,5 +11,4 @@ const ToggleSwitch = () => {
     </section>
   );
 };
-
-export default ToggleSwitch;
+export default Switch;
