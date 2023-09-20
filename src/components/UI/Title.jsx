@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Title = () => {
+const Title = (props) => {
     return (
-        <div>
-            Fetch Photos
-        </div>
+        <header className="title">
+            {props.title}
+        </header>
     );
-}
-export default Title;
+};
+export default Title

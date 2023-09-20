@@ -5,11 +5,11 @@ import Toggle from './UI/Toggle'
 
 const Header = () => {
   return (
-    <div>
-   <Title/>
-   <Button/>
-   <Toggle/>
-   </div>
-  )
-}
+    <section>
+    <Title title="Photo Fetcher"/>
+          <Toggle/>
+          <Button Text="Fetch New Photos" />
+    </section>
+  );
+};
 export default Header;

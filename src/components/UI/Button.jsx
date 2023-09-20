@@ -1,9 +1,9 @@
 import React from "react";
 
-const Button = () => {
+const Button = (props) => {
   return (
     <button className="fetch-button">
-      Fetch New Photos
+      {props.Text}
     </button>
   );
 };
