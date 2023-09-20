@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./Header"; //po vendos 2 komponent qe me duhen ne cdo faqe
-import Footer from "./Footer";
+import Header from "../components/Header"; //po vendos 2 komponent qe me duhen ne cdo faqe
+import Footer from "../components/Footer";
 
 function MainLayout(props) {
     return (

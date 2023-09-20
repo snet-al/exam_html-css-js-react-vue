@@ -1,15 +1,12 @@
 import React from "react";
 
-const ImageItem = () => {
-const author = "Lukas Budimaier";
-const url = "https://unsplash.com/photos/pwaaqfoMibl";
+const ImageItem = ({data}) => {
 
     return (
-        <figure className="section-item">
-            <img src="./image/task2.jpg" alt="" />
-            <figcaption>
-                <p>{author}</p>
-                <p><a href={url} >{url}</a></p>
+        <figure className="section-item" key={data.id}>
+            <img src={data.image} alt=""/>
+            <figcaption className="fig-caption">{data.text}
+                <a className= "fig-url" href={data.url} >{data.url}</a>
             </figcaption>
         </figure>
     );
