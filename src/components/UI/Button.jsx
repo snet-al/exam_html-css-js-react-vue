@@ -1,6 +1,6 @@
 import React from "react";
 
-const FetchButton = () => {
+const Button = () => {
   return (
     <button className="fetch-button">
       Fetch New Photos
@@ -8,4 +8,4 @@ const FetchButton = () => {
   );
 };
 
-export default FetchButton;
+export default Button;
