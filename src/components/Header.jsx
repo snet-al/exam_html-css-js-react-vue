@@ -8,7 +8,7 @@ const Header = () => {
     <section>
     <Title title="Photo Fetcher"/>
           <Toggle/>
-          <Button Text="Fetch New Photos" />
+          <Button text="Fetch New Photos" />
     </section>
   );
 };
