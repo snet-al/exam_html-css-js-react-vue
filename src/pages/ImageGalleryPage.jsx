@@ -4,14 +4,19 @@ import MainLayout from "../layout/MainLayout";
 import { dummyData } from "../store/data";
 
 const ImageGalleryPage = () => {
-    return (
-        <MainLayout>
-        <section className="image-container">
-            {dummyData.map((data) => (
-                <ImageItem key={data.id} data={data}/>
-            ))}
-        </section>
-        </MainLayout>
-    );
-}
+  const renderImageItems = () => {
+    return dummyData.map((data) => (
+      <ImageItem key={data.id} data={data} />
+    ));
+  };
+
+  return (
+    <MainLayout>
+      <section className="image-container">
+        {renderImageItems()}
+      </section>
+    </MainLayout>
+  );
+};
+
 export default ImageGalleryPage;
