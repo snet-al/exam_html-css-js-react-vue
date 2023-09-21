@@ -1,8 +1,17 @@
+.home-page {
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
 .main {
     margin-top: 16px;
     width: 100%;
     max-width: 750px;
 }
+
 .photo-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
