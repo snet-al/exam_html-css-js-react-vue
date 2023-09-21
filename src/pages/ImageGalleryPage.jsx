@@ -3,7 +3,7 @@ import ImageItem from "../components/ImageItem";
 import MainLayout from "../layout/MainLayout";
 import { dummyData } from "../store/data";
 
-const ImageContainer = () => {
+const ImageGalleryPage = () => {
     return (
         <MainLayout>
         <section className="image-container">
@@ -14,4 +14,4 @@ const ImageContainer = () => {
         </MainLayout>
     );
 }
-export default ImageContainer;
+export default ImageGalleryPage;

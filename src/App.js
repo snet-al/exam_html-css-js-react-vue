@@ -1,17 +1,13 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
-import ImageContainer from './pages/ImageContainer';
-import Footer from './components/Footer';
+import ImageGalleryPage from './pages/ImageGalleryPage';
 
 function App() {
   return (
     <div className="app">
-     <Header/>
-     <ImageContainer/>
-     <Footer/>
+     <ImageGalleryPage/>
     </div>
   );
 }
 
-export default App;
+export default App;
