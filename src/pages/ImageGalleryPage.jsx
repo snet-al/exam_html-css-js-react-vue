@@ -1,7 +1,7 @@
 import React from "react";
 import ImageItem from "../components/ImageItem";
 
-const ImageContainer = () => {
+const ImageGalleryPage = () => {
     return (
         <section className="image-container">
             <ImageItem/>
@@ -11,4 +11,4 @@ const ImageContainer = () => {
         </section>
     );
 }
-export default ImageContainer;
+export default ImageGalleryPage;
