@@ -7,14 +7,14 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Title text="Photo Fetcher" />
-      <nav className={styles["header-container"]}>
+      <section className={styles["header-container"]}>
         <Switch />
         <Title
           className={styles["header-title"]}
           text="Make Photos Grayscale"
         />
         <Button className={styles["fetch-btn"]} text="Fetch New Photos" />
-      </nav>
+      </section>
     </header>
   );
 };

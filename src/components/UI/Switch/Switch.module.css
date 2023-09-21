@@ -12,13 +12,12 @@
     border-radius: 10px;
 }
 
-input {
-    display: none
+input[type="checkbox"] {
+    display: none;
 }
 
 .slider-toggle {
     position: absolute;
-    cursor: pointer;
     top: 2px;
     left: 2px;
     width: 16px;
