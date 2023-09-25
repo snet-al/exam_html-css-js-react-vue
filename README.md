@@ -1,44 +1,70 @@
-# Exam_html-css-js-react-vue
-First Exam after Learning the basics of HTML CSS JS
+# Getting Started with Create React App
 
-After learning html, css, js, and react/vue there is this simple example to implement.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### 1. Create a new branch with the name {username}_main_html-css
+## Available Scripts
 
-  In this branch you should implement a version of the page given.
-  The important thing here is to use html5 with its standards (eg: tags are needed according to the context, for the footer of the page do not use <div> but the dedicated tag <footer>).
-  After you are done with the changes according to the pdf, you will make a Pull Request to the repo from this branch.
-  
-### 2. Create another branch with the name {username}_main_react_components
-  The purpose of this is to make everything you have as html in simply React Components.
-  The base of react is an extension of html, so a mechanism for creating new html components.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch.
-  
-#### 2.1 To the same branch with the name {username}_main_react_components
-  We will start separating the components of UI. Inside the components folder create a new folder UI and place there the UI components.
-  
-### 3. Create another branch with the name {username}_main_react-pages
-  
-  The purpose of this is to add a PAGES folder to your react app.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch.
-  
-### 4. Create another branch with the name {username}_main_react-layout  
-  
-  The purpose of this is to implement LAYOUT concept to your react app.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch.
-  
- ### 5. Create another branch with the name {username}_main_react-store
- 
-  The fifth stage is the creation of the dynamic page, so the data must be separated from the view
-  You will save the data in a folder called STORE.
-  You will have a static file that exports a dummyData array with photos.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch. 
-  
- ### 6. Create another branch with the name {username}_main_react-services.
-  Now its time to get the data with api given in the exam pdf.
-  Create a foldes called service and implement there your first api for your react app.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch. 
-  
-  
-  ## Good Luck!
-  
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
