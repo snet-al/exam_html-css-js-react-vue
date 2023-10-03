@@ -1,6 +1,5 @@
-import Header from "../../components/Header/Header";
+import MainLayout from "../../layouts/MainLayout/MainLayout";
 import PhotoItem from "../../components/PhotoItem/PhotoItem";
-import styles from "./PhotoGalleryPage.module.css";
 
 const photoData = [
   {
@@ -39,24 +38,19 @@ const photoData = [
 
 const PhotoGalleryPage = () => {
   return (
-    <div className={styles["home-page"]}>
-      <Header />
-      <main className={styles.main}>
-        <section className={styles["photo-gallery"]}>
-          {photoData.map((photo) => (
-            <PhotoItem
-              key={photo.id}
-              id={photo.id}
-              src={photo.src}
-              alt={photo.alt}
-              text={photo.text}
-              caption={photo.caption}
-              href={photo.href}
-            />
-          ))}
-        </section>
-      </main>
-    </div>
+    <MainLayout>
+      {photoData.map((photo) => (
+        <PhotoItem
+          key={photo.id}
+          id={photo.id}
+          src={photo.src}
+          alt={photo.alt}
+          text={photo.text}
+          caption={photo.caption}
+          href={photo.href}
+        />
+      ))}
+    </MainLayout>
   );
 };
 
