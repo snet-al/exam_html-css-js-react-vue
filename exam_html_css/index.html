@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Photo Gallery</h1>
+      <navbar class="navbar">
+        <div class="switchContainer">
+          <label class="switch">
+            <input type="checkbox" id="toggleSwitch" />
+            <span class="slider round"></span>
+          </label>
+          <aside>Make Photos Grayscale</aside>
+        </div>
+        <button id="fetchPhotos">Fetch New Photos</button>
+      </navbar>
+      <figure class="photo-grid">
+        <div class="photo">
+          <img
+            src="https://i.pinimg.com/originals/9f/97/3e/9f973e009130703da32c1527c3696b65.jpg"
+            alt="Photo 1"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="https://c.wallhere.com/photos/a2/c6/stritervill_chicago_illinois_usa_city_night_skyscraper_tower-620766.jpg!d"
+            alt="Photo 2"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="http://zenandtheartoftravel.com/wp-content/uploads/2012/06/DSC_0258.jpg"
+            alt="Photo 3"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="https://avante.biz/wp-content/uploads/Urban-Sunset-wallpaper/Urban-Sunset-wallpaper29.jpg"
+            alt="Photo 4"
+          />
+        </div>
+      </figure>
+      <button id="loadMorePhotos">Load More Photos</button>
+    </div>
+  </body>
+</html>
