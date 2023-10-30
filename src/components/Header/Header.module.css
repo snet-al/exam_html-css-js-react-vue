@@ -1,0 +1,24 @@
+.header {
+    margin-top: 16px;
+    width: 100%;
+    max-width: 750px;
+}
+.header-title {
+    max-width: 750px;
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-left: 50px;
+    white-space: nowrap; 
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    max-width: 750px;
+}
+
+.fetch-btn {
+    background-color: #6B4AD5;
+    border-radius: 3px;
+    padding: 10px;
+}
