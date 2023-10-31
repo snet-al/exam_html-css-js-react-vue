@@ -1,6 +1,6 @@
 import React from "react";
-import FetchPhotos from "./FetchPhotos";
-import SwitchContainer from "./SwitchContainer";
+import FetchPhotos from "./ui/FetchPhotos";
+import SwitchContainer from "./ui/SwitchContainer";
 import LoadMorePhotos from "./LoadMorePhotos";
 
 function Header() {
