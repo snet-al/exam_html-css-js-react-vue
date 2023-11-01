@@ -13,7 +13,7 @@ function SwitchContainer() {
         />
         <span className="slider round"></span>
       </label>
-      <aside>Make Photos Grayscale</aside>
+      <span>Make Photos Grayscale</span>
     </section>
   );
 }

@@ -1,16 +1,16 @@
 import React from "react";
-import FetchPhotos from "./ui/FetchPhotos";
+import FetchPhotos from "./ui/FetchPhotosButton";
 import SwitchContainer from "./ui/SwitchContainer";
-import LoadMorePhotos from "./LoadMorePhotos";
+import LoadMorePhotos from "./LoadMorePhotosButton";
 
 function Header() {
   return (
     <header>
       Photo Gallery
-      <nav className="navbar">
+      <section className="navbar">
         <SwitchContainer />
         <FetchPhotos />
-      </nav>
+      </section>
       <LoadMorePhotos />
     </header>
   );
