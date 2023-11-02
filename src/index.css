@@ -125,14 +125,12 @@ header {
   color: #0b5088;
 }
 
-.load-more-button-container {
 
+.load-more-button-container {
   position: absolute;
-  bottom: -511px;
+  bottom: -550px;
   left: 50%;
   margin-left: -104.5px;
-
-
 }
 
 button#loadMorePhotos {
@@ -141,4 +139,8 @@ button#loadMorePhotos {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+figcaption {
+  padding: 20px;
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./components/Header";
-import LoadMorePhotos from "./components/LoadMorePhotosButton";
+import Header from "./components/header";
+
 import DisplayImage from "./components/displayImage";
-import FetchPhotos from "./components/ui/FetchPhotosButton";
+import FetchPhotos from "./components/ui/ButtonAction";
 
 const images = [
   {
@@ -27,22 +27,12 @@ function App() {
   const handleLoadMorePhotos = () => {
     console.log("Loading more photos...");
   };
-  const handleFetchNewPhotos = () => {
-    console.log("Fetching new photos...");
-  };
 
   return (
     <main>
       <Header />
-      <FetchPhotos
-        className="Fetch New Images"
-        onClick={handleFetchNewPhotos}
-      />
       <DisplayImage images={images} />
-      <LoadMorePhotos
-        className="Load More Images"
-        onClick={handleLoadMorePhotos}
-      />
+      <FetchPhotos onClick={handleLoadMorePhotos} buttonText="LoadMorePhotos" />
     </main>
   );
 }
