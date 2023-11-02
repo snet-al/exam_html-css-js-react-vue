@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <header>Photo Gallery</header>
+
+        <section class="navbar">
+          <section class="switchContainer">
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" />
+              <span class="slider round"></span>
+            </label>
+            <span>Make Photos Grayscale</span>
+          </section>
+          <button id="fetchPhotos">Fetch New Photos</button>
+        </section>
+
+        <section class="photo-grid">
+          <figure class="photo">
+            <img
+              src="https://i.pinimg.com/originals/9f/97/3e/9f973e009130703da32c1527c3696b65.jpg"
+              alt="Photo 1"
+            />
+            <figcaption>Fig.1, city</figcaption>
+          </figure>
+          <figure class="photo">
+            <img
+              src="https://c.wallhere.com/photos/a2/c6/stritervill_chicago_illinois_usa_city_night_skyscraper_tower-620766.jpg!d"
+              alt="Photo 2"
+            />
+            <figcaption>Fig.2, city</figcaption>
+          </figure>
+          <figure class="photo">
+            <img
+              src="http://zenandtheartoftravel.com/wp-content/uploads/2012/06/DSC_0258.jpg"
+              alt="Photo 3"
+            />
+            <figcaption>Fig.3, city</figcaption>
+          </figure>
+          <figure class="photo">
+            <img
+              src="https://avante.biz/wp-content/uploads/Urban-Sunset-wallpaper/Urban-Sunset-wallpaper29.jpg"
+              alt="Photo 4"
+            />
+            <figcaption>Fig.4 , city</figcaption>
+          </figure>
+        </section>
+        <button id="loadMorePhotos">Load More Photos</button>
+      </section>
+    </main>
+  </body>
+</html>
