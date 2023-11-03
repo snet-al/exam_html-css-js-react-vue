@@ -1,5 +1,9 @@
 import React from "react";
 
+const handleLoadMorePhotos = () => {
+  console.log("Loading more photos...");
+};
+
 function FetchPhotos(props) {
   const { buttonText, onClick } = props;
 
