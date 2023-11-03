@@ -11,7 +11,7 @@ function SwitchContainer() {
           id="toggleSwitch"
           onChange={handleToggleSwitch}
         />
-        <span className="slider round"></span>
+        <span className="slider-round"></span>
       </label>
       <span>Make Photos Grayscale</span>
     </section>

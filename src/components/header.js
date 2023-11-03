@@ -1,6 +1,6 @@
 import React from "react";
 import FetchPhotos from "./ui/ButtonAction";
-import SwitchContainer from "./ui/SwitchContainer";
+import SwitchContainer from "./ui/ToggleSwitch";
 
 function Header() {
   const handleFetchNewPhotos = () => {
