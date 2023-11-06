@@ -20,7 +20,6 @@ function ImageItem(props) {
       caption: "Fig.4, city",
     },
   ];
-  // const { images } = props;
   console.log(images);
 
   return (
