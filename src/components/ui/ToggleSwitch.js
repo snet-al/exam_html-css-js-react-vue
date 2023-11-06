@@ -1,6 +1,6 @@
 import React from "react";
 
-function SwitchContainer() {
+function ToggleSwitch() {
   const handleToggleSwitch = () => {};
 
   return (
@@ -18,4 +18,4 @@ function SwitchContainer() {
   );
 }
 
-export default SwitchContainer;
+export default ToggleSwitch;

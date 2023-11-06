@@ -4,14 +4,18 @@ const handleLoadMorePhotos = () => {
   console.log("Loading more photos...");
 };
 
-function FetchPhotos(props) {
+function ButtonAction(props) {
   const { buttonText, onClick } = props;
 
   return (
-    <button className="fetchPhotos" onClick={onClick}>
+    <button
+      className="fetchPhotos"
+      onClick={handleLoadMorePhotos}
+      buttonText="LoadMorePhotos"
+    >
       {buttonText}
     </button>
   );
 }
 
-export default FetchPhotos;
+export default ButtonAction;

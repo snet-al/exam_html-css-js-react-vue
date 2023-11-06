@@ -1,6 +1,6 @@
 import React from "react";
-import FetchPhotos from "./ui/ButtonAction";
-import SwitchContainer from "./ui/ToggleSwitch";
+import ButtonAction from "./ui/ButtonAction";
+import ToggleSwitch from "./ui/ToggleSwitch";
 
 function Header() {
   const handleFetchNewPhotos = () => {
@@ -10,8 +10,8 @@ function Header() {
     <header>
       Photo Gallery
       <section className="navbar">
-        <SwitchContainer />
-        <FetchPhotos
+        <ToggleSwitch />
+        <ButtonAction
           onClick={handleFetchNewPhotos}
           buttonText="Fetch New Image"
         />
