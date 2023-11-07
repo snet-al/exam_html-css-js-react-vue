@@ -1,18 +1,10 @@
 import React from "react";
 
-const handleLoadMorePhotos = () => {
-  console.log("Loading more photos...");
-};
-
 function ButtonAction(props) {
   const { buttonText, onClick } = props;
 
   return (
-    <button
-      className="fetchPhotos"
-      onClick={handleLoadMorePhotos}
-      buttonText="LoadMorePhotos"
-    >
+    <button className="fetchPhotos" onClick={onClick}>
       {buttonText}
     </button>
   );

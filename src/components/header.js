@@ -6,6 +6,7 @@ function Header() {
   const handleFetchNewPhotos = () => {
     console.log("Fetching new photos...");
   };
+
   return (
     <header>
       Photo Gallery
