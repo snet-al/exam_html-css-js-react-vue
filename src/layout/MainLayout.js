@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 
-function layout({ children }) {
+function MainLayout({ children }) {
   return (
     <>
       <Header />
@@ -10,4 +10,4 @@ function layout({ children }) {
   );
 }
 
-export default layout;
+export default MainLayout;
