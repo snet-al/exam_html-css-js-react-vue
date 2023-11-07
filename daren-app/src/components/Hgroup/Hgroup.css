@@ -1,0 +1,6 @@
+hgroup{
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    padding-left: 7px;
+  }
