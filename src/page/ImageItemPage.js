@@ -1,15 +1,13 @@
 import React from "react";
-import ImageItem from "./ImageItem";
-import ButtonAction from "..ButtonAction";
+import ImageItemPage from "./ImageItemPage";
 import "../index.css";
 
-function MainPage() {
+function ImageItemPage() {
   return (
     <main>
-      <ImageItem />
-      <ButtonAction />
+      <ImageItemPage />
     </main>
   );
 }
 
-export default MainPage;
+export default ImageItemPage;
