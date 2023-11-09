@@ -1,13 +1,13 @@
 import React from "react";
 
-function ButtonAction(props) {
+function Button(props) {
   const { buttonText, onClick } = props;
 
   return (
-    <button className="fetchPhotos" onClick={onClick}>
+    <button className="bttn" onClick={onClick}>
       {buttonText}
     </button>
   );
 }
 
-export default ButtonAction;
+export default Button;

@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonAction from "./ui/ButtonAction";
+import Button from "./ui/Button";
 import ToggleSwitch from "./ui/ToggleSwitch";
 
 function Header() {
@@ -12,10 +12,7 @@ function Header() {
       Photo Gallery
       <section className="navbar">
         <ToggleSwitch />
-        <ButtonAction
-          onClick={handleFetchNewPhotos}
-          buttonText="Fetch New Image"
-        />
+        <Button onClick={handleFetchNewPhotos} buttonText="Fetch New Image" />
       </section>
     </header>
   );
