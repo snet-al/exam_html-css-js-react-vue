@@ -1,9 +1,13 @@
 import React from "react";
-import GalleryPages from "./page/GalleryPages";
+import GalleryPage from "./pages/GalleryPage";
+import MainLayout from "./layouts/MainLayout";
+
 function App() {
   return (
     <main>
-      <GalleryPages />
+      <MainLayout>
+        <GalleryPage />
+      </MainLayout>
     </main>
   );
 }

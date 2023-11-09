@@ -126,14 +126,14 @@ header {
 }
 
 
-.load-more-button-container {
+.btnn {
   position: absolute;
   bottom: -550px;
   left: 50%;
   margin-left: -104.5px;
 }
 
-button#loadMorePhotos {
+button#btnn {
   padding: 10px 20px;
   background-color: #2196F3;
   color: white;

@@ -3,7 +3,7 @@ import Button from "./ui/Button";
 import ToggleSwitch from "./ui/ToggleSwitch";
 
 function Header() {
-  const handleFetchNewPhotos = () => {
+  const FetchNewPhotos = () => {
     console.log("Fetching new photos...");
   };
 
@@ -12,7 +12,7 @@ function Header() {
       Photo Gallery
       <section className="navbar">
         <ToggleSwitch />
-        <Button onClick={handleFetchNewPhotos} buttonText="Fetch New Image" />
+        <Button onClick={FetchNewPhotos} buttonText="Fetch New Image" />
       </section>
     </header>
   );
