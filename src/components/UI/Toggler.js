@@ -2,7 +2,9 @@ import React from 'react'
 
 const Toggler = () => {
 
-    const handleSwitch = () => {} //to be completed
+    const handleSwitch = () => {
+      console.log("Toggler clicked")
+    } //to be completed
 
   return (
     <div className="left-side">

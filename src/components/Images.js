@@ -1,11 +1,7 @@
 import React from 'react'
-import LoadButton from './UI/LoadButton';
+import FigureContainer from './FigureContainer';
 
 const Images = () => {
-
-    const loadmorePhotos = () => {
-        console.log("More photos loading..") //to be completed
-      }
     
         const photos = [
             {
@@ -28,23 +24,7 @@ const Images = () => {
         // console.log(photos);
     
   return (
-    <section className="container">
-    <div className="img-container" id="imageContainer">
-        {photos.map((photo, index) =>(
-        <figure key={index}>
-            <img src={photo.url} alt={`IMG ${index+1}`}/>
-            <figcaption>
-                <p>{photo.caption}</p>
-                <p>{photo.url}</p>
-            </figcaption>
-        </figure>
-        ))}
-    </div>
-    <div className='loadbutton'>
-        <LoadButton onClick={loadmorePhotos} buttontext="More photos" />
-    </div>
-    
-</section>
+    <FigureContainer imageList={photos}/>
   )
 }
 
