@@ -1,0 +1,44 @@
+.form-switch {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin-bottom: 10px;
+    
+  }
+  
+  .form-switch-input {
+    display: none;
+  }
+  
+  .form-switch-span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+  }
+  
+  .form-switch-span:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+  
+  .form-switch-input:checked + .form-switch-span {
+    background-color: #5cb85c; 
+  }
+  
+  .form-switch-input:checked + .form-switch-span:before {
+    transform: translateX(20px); 
+  }
