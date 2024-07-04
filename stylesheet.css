@@ -1,0 +1,115 @@
+body {
+    max-width: 750px;
+    margin: auto;
+}
+
+figure img {
+    display: block;
+}
+
+header > p {
+    font-size: 28px;
+}
+
+section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button{
+    background-color: rgb(93, 46, 211);
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    width: 150px;
+}
+
+.extraPadding {
+    padding-bottom: 40px;
+}
+
+.imageRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.imageRow figure {
+    aspect-ratio: 1/1;
+    display: block;
+    background-color: gray;
+    flex: 1 1 40%;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.switch input {
+    display: none;
+}
+
+.sliderWrapper p {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+input:checked + .slider {
+    background-color: rgb(23, 204, 44);
+}
+
+input:checked + .slider::after {
+    transform: translateX(30px);
+}
+
+.slider {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ababab;
+    transition: .3s;
+    transition-property: transform;
+}
+
+.slider::after {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    top: 2px;
+    left: 2px;
+    background-color: white;
+    transition: .3s;
+}
+
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round::after {
+    border-radius: 50%;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
