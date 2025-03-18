@@ -1,65 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
 </head>
 
 <body>
-    <main class="container">
-        <header>
-            <h1 class="title">Photo Fetcher</h1>
-        </header>
-
-        <section class="controls">
-            <article class="switch-container">
-                <label class="switch">
-                    <input type="checkbox" class="input">
-                    <span class="slider round"></span>
-                </label>
-                <span class="switch-label">Make Photos Grayscale</span>
-            </article>
-            <button class="newPhotos" id="fetchNewPhotos">Fetch New Photos</button>
-        </section>
-
-        <section id="image-gallery" class="image-grid">
-            <figure class="image-container">
-                <img src="https://picsum.photos/200" alt="Photo 1">
-                <figcaption class="overlay">
-                    <p>Lukas Budimaier</p>
-                    <a href="https://picsum.photos" target="_blank">https://picsum.photos</a>
-                </figcaption>
-            </figure>
-            <figure class="image-container">
-                <img src="https://picsum.photos/201" alt="Photo 2">
-                <figcaption class="overlay">
-                    <p>Lukas Budimaier</p>
-                    <a href="https://picsum.photos" target="_blank">https://picsum.photos</a>
-                </figcaption>
-            </figure>
-            <figure class="image-container">
-                <img src="https://picsum.photos/202" alt="Photo 3">
-                <figcaption class="overlay">
-                    <p>Lukas Budimaier</p>
-                    <a href="https://picsum.photos" target="_blank">https://picsum.photos</a>
-                </figcaption>
-            </figure>
-            <figure class="image-container">
-                <img src="https://picsum.photos/203" alt="Photo 4">
-                <figcaption class="overlay">
-                    <p>Lukas Budimaier</p>
-                    <a href="https://picsum.photos" target="_blank">https://picsum.photos</a>
-                </figcaption>
-            </figure>
-        </section>
-
-        <footer>
-            <button class="loadMore" id="loadMore">More Photos</button>
-        </footer>
-    </main>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
