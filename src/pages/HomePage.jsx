@@ -4,6 +4,7 @@ import ImageContainer from "../components/ImageContainer/ImageContainer";
 import ToggleSwitch from "../components/UI/Toggle/Toggle";
 import FetchNewPhotosButton from "../components/UI/NewButton/NewPhotosButton";
 import LoadMoreButton from "../components/UI/MoreButton/LoadMoreButton";
+import MainLayout from "../layout/MainLayout";
 
 function HomePage() {
     const images = [
@@ -14,25 +15,20 @@ function HomePage() {
     ];
 
     return (
-        <main className="container">
-            <header>
-                <h1 className="title">Photo Fetcher</h1>
-            </header>
+        <MainLayout>
             <section className="controls">
                 <ToggleSwitch />
                 <FetchNewPhotosButton />
             </section>
             <section className="image-grid">
                 {images.map((image) => (
-                    <figure key={image.id}>
+                    <figure key={image.id} className="image-item">
                         <ImageContainer src={image.src} alt={image.alt} />
                     </figure>
                 ))}
             </section>
-            <footer>
-                <LoadMoreButton />
-            </footer>
-        </main>
+            <LoadMoreButton />
+        </MainLayout>
     );
 }
 
