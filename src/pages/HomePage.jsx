@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 import ImageContainer from "../components/ImageContainer/ImageContainer";
-import dummyData from "../store/dummyData";
+import { fetchPhotos } from "../services/api";
 
-function HomePage() {
+const HomePage = () => {
+    const [photos, setPhotos] = useState([]);
+
+    useEffect(() => {
+        const getPhotos = async () => {
+            const fetchedPhotos = await fetchPhotos();
+            setPhotos(fetchedPhotos);
+        };
+
+        getPhotos();
+    }, []);
+
     return (
         <section className="image-grid">
-            {dummyData.map((image) => (
-                <figure key={image.id}>
-                    <ImageContainer src={image.src} alt={image.alt} />
-                </figure>
+            {photos.map((image) => (
+                <ImageContainer key={image.id} src={image.src} alt={image.alt} />
             ))}
         </section>
     );
