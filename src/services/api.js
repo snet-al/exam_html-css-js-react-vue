@@ -4,7 +4,8 @@ export const fetchPhotos = async() => {
         const width = Math.floor(Math.random() * 500) + 300;
         const height = Math.floor(Math.random() * 500) + 300;
         const src = `https://picsum.photos/${width}/${height}`;
-        photos.push({ id: i + 1, src, alt: `Photo ${i + 1}` });
+        const id = Math.random();
+        photos.push({ id, src, alt: `Photo ${i + 1}` });
     }
     return photos;
 };

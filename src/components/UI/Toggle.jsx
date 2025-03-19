@@ -1,10 +1,14 @@
 import React from "react";
 
-const ToggleSwitch = () => {
+const Toggle = (props) => {
     return (
         <div className="switch-container">
             <label className="switch">
-                <input type="checkbox" className="input" />
+                <input
+                    type="checkbox"
+                    className="input"
+                    name="grayscale-toggle"
+                    onChange={props.onChange} />
                 <span className="slider round"></span>
             </label>
             <span className="switch-label">Make Photos Grayscale</span>
@@ -12,4 +16,4 @@ const ToggleSwitch = () => {
     );
 };
 
-export default ToggleSwitch;
+export default Toggle;
