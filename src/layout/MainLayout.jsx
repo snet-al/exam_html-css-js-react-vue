@@ -1,15 +1,17 @@
-import React from "react";
+import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import './MainLayout.css';
 
 const MainLayout = ({ children }) => {
     return (
-        <main className="container">
-            <header className="header">
-                <h1 className="title">Photo Fetcher</h1>
-            </header>
-            <section className="content">
+        <div className="main-layout">
+            <Header />
+            <main className="content">
                 {children}
-            </section>
-        </main>
+            </main>
+            <Footer />
+        </div>
     );
 };
 
