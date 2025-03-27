@@ -23,20 +23,20 @@ header {
   position: left;
 }
 
-.switch-container {
+nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.switch1 {
+.switch-container {
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
 }
 
-.switch1 p {
+.switch-container p {
   margin: 0;
   color: #656565;
 }
