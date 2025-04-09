@@ -28,14 +28,14 @@ const Home = ({ photosArray, setPhotosArray }) => {
 
   if (photosArray.length === 0) {
     return (
-      <section>
+      <section style={{ width: "750px" }}>
         <div
           style={{
             display: "flex",
             width: "100%",
             justifyContent: "center",
             flexFlow: "wrap",
-            gap: "5px",
+            gap: "10px",
             paddingTop: 30,
             paddingBottom: 30,
           }}
@@ -72,16 +72,16 @@ const Home = ({ photosArray, setPhotosArray }) => {
   }
 
   return (
-    <section>
+    <section style={{ width: "750px" }}>
       <div
         style={{
           display: "flex",
           width: "100%",
           justifyContent: "center",
           flexFlow: "wrap",
-          gap: "5px",
-          paddingTop: 30,
-          paddingBottom: 30,
+          gap: "10px",
+          paddingTop: 20,
+          paddingBottom: 20,
         }}
         className="container"
       >
