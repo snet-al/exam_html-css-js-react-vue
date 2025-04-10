@@ -1,8 +1,20 @@
+import { useState } from "react";
+import Switch from "../Switch/Switch";
 import Button from "../UI/Button/Button";
 
-const Header = ({ photosArray, setPhotosArray }) => {
+const Header = ({ photosArray, setPhotosArray, setGrayscale }) => {
+  const [isChecked, setIsChecked] = useState(false);
+
   const handleClick = () => {
     setPhotosArray(photosArray.slice(0, 4));
+  };
+
+  const switchChangeHandler = () => {
+    setIsChecked((prevState) => {
+      const newState = !prevState;
+      setGrayscale(newState); 
+      return newState;
+    });
   };
 
   return (
@@ -17,13 +29,17 @@ const Header = ({ photosArray, setPhotosArray }) => {
       <h1 style={{ fontFamily: "sans-serif", fontWeight: 400 }}>
         Photo Fetcher
       </h1>
-      <nav>
+      <nav style={{ display: "flex", justifyContent: "space-between" }}>
+        <Switch
+          label="Make photos grayscale"
+          onChange={switchChangeHandler}
+          checked={isChecked}
+        />
         <Button
           onClick={handleClick}
           style={{
             display: "flex",
             position: "relative",
-            right: "-73%",
             width: "200px",
             alignItems: "center",
             justifyContent: "center",
