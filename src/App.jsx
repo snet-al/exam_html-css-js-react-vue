@@ -5,17 +5,11 @@ import Home from "./components/Home/Home";
 
 const App = () => {
   const [photosArray, setPhotosArray] = useState([]);
-  const [isGrayscale, setIsGrayscale] = useState(false);
+
   return (
     <>
-      <Header
-        photosArray={photosArray}
-        setPhotosArray={setPhotosArray}
-        setGrayscale={setIsGrayscale}
-      />
-      <div style={{ filter: isGrayscale ? "grayscale(100%)" : "none" }}>
-        <Home photosArray={photosArray} setPhotosArray={setPhotosArray} />
-      </div>
+      <Header photosArray={photosArray} setPhotosArray={setPhotosArray} />
+      <Home photosArray={photosArray} setPhotosArray={setPhotosArray} />
     </>
   );
 };

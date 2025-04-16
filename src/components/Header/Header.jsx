@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Switch from "../Switch/Switch";
 import Button from "../UI/Button/Button";
+import useGrayscale from "../context/hooks/useGrayscale";
 
-const Header = ({ photosArray, setPhotosArray, setGrayscale }) => {
+const Header = ({ photosArray, setPhotosArray }) => {
   const [isChecked, setIsChecked] = useState(false);
+  const { setGrayscale } = useGrayscale();
 
   const handleClick = () => {
     setPhotosArray(photosArray.slice(0, 4));
@@ -12,7 +14,7 @@ const Header = ({ photosArray, setPhotosArray, setGrayscale }) => {
   const switchChangeHandler = () => {
     setIsChecked((prevState) => {
       const newState = !prevState;
-      setGrayscale(newState); 
+      setGrayscale(newState);
       return newState;
     });
   };

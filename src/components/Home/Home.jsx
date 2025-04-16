@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import getImages from "../helpers/getImage";
 import Button from "../UI/Button/Button";
 import Card from "../UI/Card/Card";
+import useGrayscale from "../context/hooks/useGrayscale";
 
 const Home = ({ photosArray, setPhotosArray }) => {
+  const { grayscale } = useGrayscale();
   const getRandomElements = (array, num) => {
     const shuffled = array.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
@@ -93,6 +95,7 @@ const Home = ({ photosArray, setPhotosArray }) => {
               width: "49%",
               height: "300px",
               overflow: "hidden",
+              filter: grayscale ? "grayscale(100%)" : "none",
             }}
             key={photo.id}
           />
