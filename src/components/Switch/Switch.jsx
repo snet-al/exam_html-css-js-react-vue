@@ -1,4 +1,7 @@
-const Switch = ({ label, checked, onChange }) => {
+import useGrayscale from "../context/hooks/useGrayscale";
+
+const Switch = ({ label, onChange }) => {
+  const { isChecked } = useGrayscale();
   return (
     <label
       style={{
@@ -11,17 +14,12 @@ const Switch = ({ label, checked, onChange }) => {
         fontWeight: 400,
       }}
     >
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={onChange}
-        style={{ display: "none" }}
-      />
+      <input type="checkbox" onChange={onChange} style={{ display: "none" }} />
       <span
         style={{
           width: "60px",
           height: "30px",
-          backgroundColor: checked ? "#5c2bdb" : "#ccc",
+          backgroundColor: isChecked ? "#5c2bdb" : "#ccc",
           borderRadius: "15px",
           position: "relative",
           transition: "background-color 0.3s ease",
@@ -36,7 +34,7 @@ const Switch = ({ label, checked, onChange }) => {
             borderRadius: "50%",
             position: "absolute",
             top: "2px",
-            left: checked ? "32px" : "2px",
+            left: isChecked ? "32px" : "2px",
             transition: "left 0.3s ease",
           }}
         ></span>

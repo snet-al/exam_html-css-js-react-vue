@@ -1,11 +1,9 @@
-import { useState } from "react";
 import Switch from "../Switch/Switch";
 import Button from "../UI/Button/Button";
 import useGrayscale from "../context/hooks/useGrayscale";
 
 const Header = ({ photosArray, setPhotosArray }) => {
-  const [isChecked, setIsChecked] = useState(false);
-  const { setGrayscale } = useGrayscale();
+  const { setGrayscale, setIsChecked } = useGrayscale();
 
   const handleClick = () => {
     setPhotosArray(photosArray.slice(0, 4));
@@ -32,11 +30,7 @@ const Header = ({ photosArray, setPhotosArray }) => {
         Photo Fetcher
       </h1>
       <nav style={{ display: "flex", justifyContent: "space-between" }}>
-        <Switch
-          label="Make photos grayscale"
-          onChange={switchChangeHandler}
-          checked={isChecked}
-        />
+        <Switch label="Make photos grayscale" onChange={switchChangeHandler} />
         <Button
           onClick={handleClick}
           style={{
