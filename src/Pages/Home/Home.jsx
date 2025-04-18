@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import getImages from "../helpers/getImage";
-import Button from "../UI/Button/Button";
-import Card from "../UI/Card/Card";
-import useGrayscale from "../context/hooks/useGrayscale";
+import Button from "../../components/UI/Button/Button";
+import Card from "../../components/UI/Card/Card";
+import useGrayscale from "../../components/context/hooks/useGrayscale";
+import getImages from "../../components/helpers/getImage";
 
 const Home = ({ photosArray, setPhotosArray }) => {
   const { grayscale } = useGrayscale();
