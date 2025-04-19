@@ -28,51 +28,6 @@ const Home = ({ photosArray, setPhotosArray }) => {
     fetchData();
   }, [setPhotosArray]);
 
-  if (photosArray.length === 0) {
-    return (
-      <section style={{ width: "750px" }}>
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            justifyContent: "center",
-            flexFlow: "wrap",
-            gap: "10px",
-            paddingTop: 30,
-            paddingBottom: 30,
-          }}
-          className="container"
-        >
-          {photosArray.map((photo) => (
-            <Card
-              style={{
-                width: "49%",
-                height: "300px",
-                overflow: "hidden",
-                backgroundColor: "gray",
-              }}
-              key={photo.id}
-            />
-          ))}
-        </div>
-        <Button
-          onClick={handleOnClick}
-          style={{
-            width: "100%",
-            background: "#5c2bdb",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            padding: "10px",
-            fontSize: "16px",
-            cursor: "pointer",
-          }}
-          label={"More Photos"}
-        />
-      </section>
-    );
-  }
-
   return (
     <section style={{ width: "750px" }}>
       <div

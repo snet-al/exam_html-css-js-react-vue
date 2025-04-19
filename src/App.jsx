@@ -5,7 +5,7 @@ import "./App.css";
 const App = () => {
   const [photosArray, setPhotosArray] = useState([]);
 
-  return <Layout />;
+  return <Layout photosArray={photosArray} setPhotosArray={setPhotosArray} />;
 };
 
 export default App;

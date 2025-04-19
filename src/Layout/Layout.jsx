@@ -1,11 +1,11 @@
 import Header from "../components/Header/Header";
 import Home from "../Pages/Home/Home";
 
-const Layout = () => {
+const Layout = ({ photosArray, setPhotosArray }) => {
   return (
     <>
-      <Header />
-      <Home />
+      <Header photosArray={photosArray} setPhotosArray={setPhotosArray} />
+      <Home photosArray={photosArray} setPhotosArray={setPhotosArray} />
     </>
   );
 };
