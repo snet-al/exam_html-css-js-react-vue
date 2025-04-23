@@ -30,7 +30,7 @@ const Header = ({ photosArray, setPhotosArray }) => {
         Photo Fetcher
       </h1>
       <nav style={{ display: "flex", justifyContent: "space-between" }}>
-        <Switch label="Make photos grayscale" onChange={switchChangeHandler} />
+        <Switch label="Make photos grayscale" onClick={switchChangeHandler} />
         <Button
           onClick={handleClick}
           style={{
