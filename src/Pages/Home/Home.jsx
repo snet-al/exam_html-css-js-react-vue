@@ -12,20 +12,22 @@ const Home = ({ photosArray, setPhotosArray }) => {
   };
 
   const handleOnClick = () => {
-    const fetchData = async () => {
-      const newPhotos = await dummyData();
-      const randomPhotos = getRandomElements(newPhotos, 4);
-      setPhotosArray((prevPhotos) => [...prevPhotos, ...randomPhotos]);
-    };
-    fetchData();
+    const newPhotos = dummyData.map((photo) => ({
+      id: photo.id,
+      download_url: photo.download_url,
+      author: photo.author,
+    }));
+    const randomPhotos = getRandomElements(newPhotos, 4);
+    setPhotosArray((prevPhotos) => [...prevPhotos, ...randomPhotos]);
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const photosArray = await dummyData();
-      setPhotosArray(getRandomElements(photosArray, 4));
-    };
-    fetchData();
+    const photosArray = dummyData.map((photo) => ({
+      id: photo.id,
+      download_url: photo.download_url,
+      author: photo.author,
+    }));
+    setPhotosArray(getRandomElements(photosArray, 4));
   }, [setPhotosArray]);
 
   return (
