@@ -1,0 +1,162 @@
+body {
+  margin: auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header {
+  max-width: 750px;
+  width:100%;
+  text-align: left;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 750px;
+  width: 100%
+}
+
+.switch {
+  display: inline-flex;       
+  align-items: center;        
+  gap: 8px;                   
+  font-size: 16px;
+  cursor: pointer;           
+  user-select: none;         
+  position: relative;
+  width: auto;                
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 50px;    
+  height: 25px;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 25px;
+  background-color: #707070;
+  border-radius: 25px;
+  transition: background-color 0.4s;
+  pointer-events: none;      
+  z-index: 1;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #6B4AD5;
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+
+.fetch-button {
+  background-color: #6B4AD5;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 3px;
+  text-align: center;  
+  cursor: pointer;   
+}
+
+.photo-gallery {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 10px auto 0 auto; 
+  max-width: 750px;
+  width:100%;
+}
+
+article {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3; 
+  object-fit: cover;
+}
+
+img.placeholder {
+  background-color: #ccc;
+  width: 100%;
+  aspect-ratio: 4 / 3; 
+  object-fit: cover;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+figcaption h3 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+figcaption a {
+  color: #cfcece;
+  font-size: 14px;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+footer {
+  max-width: 750px;
+  margin: 10px auto 0 auto; 
+  width: 100%;
+}
+  
+.stretch {
+  width: 100%;
+}
