@@ -1,5 +1,6 @@
 const createImageItem = (photo) => {
     const photoItem = document.createElement("article");
+    photoItem.classList.add("photo-item");
 
     photoItem.innerHTML = `
         <img src="${photo.download_url}" alt="${photo.author}" class="placeholder" loading="lazy" />
