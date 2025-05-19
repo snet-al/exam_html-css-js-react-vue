@@ -2,7 +2,7 @@ import React from "react";
 import '../../css/app.css';
 
 function PhotoCard({ photo, loading, grayscale }) {
-    if (loading && photo.placeholder)
+    if (loading && photo.img_loading)
         return (
             <article className="photo-item">
                 <span className="placeholder" />

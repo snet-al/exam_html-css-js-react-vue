@@ -4,14 +4,14 @@ import Button from "./UI/Button.jsx"
 import '../css/app.css';
 
 function NavBar({ setImages, setLoading, loading, grayscale, setGrayscale }) {
-    const FetchNewPhotos = async () => {
+    const FetchNewPhotos = async (numberOfImages) => {
         setLoading(true);
 
-        setImages(Array.from({ length: 4 }, () => ({ placeholder: true })));
+        setImages(Array.from({ length: numberOfImages }, () => ({ img_loading: true })));
 
         try {
             const response = await fetch(
-                `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=4`
+                `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=${numberOfImages}`
             );
             if (!response.ok) throw new Error(`Error Status: ${response.status}`);
 
@@ -30,7 +30,7 @@ function NavBar({ setImages, setLoading, loading, grayscale, setGrayscale }) {
     return (
         <nav>
             <Toggle toggleLabel="Make photos grayscale" grayscale={grayscale} setGrayscale={setGrayscale}/>
-            <Button label="Fetch New Photos" onClick={FetchNewPhotos} disabled={loading}/>
+            <Button label="Fetch New Photos" onClick={FetchNewPhotos(4)} disabled={loading}/>
         </nav>
     );
 }

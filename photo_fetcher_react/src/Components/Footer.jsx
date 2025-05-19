@@ -4,18 +4,18 @@ import Button from "./UI/Button.jsx"
 
 function Footer({ setImages, setLoading, loading }) {
 
-    const FetchMorePhotos = async () => {
+    const FetchMorePhotos = async (numberOfImages) => {
         setLoading(true);
-        setImages(prevImages => [...prevImages, ...Array.from({ length: 4 }, () => ({ placeholder: true }))]);
+        setImages(prevImages => [...prevImages, ...Array.from({ length: numberOfImages }, () => ({ img_loading: true }))]);
         try {
             const response = await fetch(
-                `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=4`
+                `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=${numberOfImages}`
             );
             if (!response.ok) throw new Error(`Error Status: ${response.status}`);
 
             const photos = await response.json();
 
-            setImages(prevImages => [...prevImages.slice(0,-4), ...photos]);
+            setImages(prevImages => [...prevImages.slice(0, (-1 * numberOfImages)), ...photos]);
 
         } catch (error) {
             console.error("Error fetching photos:", error);
@@ -27,7 +27,7 @@ function Footer({ setImages, setLoading, loading }) {
 
     return (
         <footer>
-            <Button label="More Photos" onClick={FetchMorePhotos} className="btn stretch" disabled={loading}/>
+            <Button label="More Photos" onClick={FetchMorePhotos(4)} className="btn stretch" disabled={loading} />
         </footer>
     );
 
