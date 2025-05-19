@@ -3,7 +3,7 @@ const createImageItem = (photo) => {
     photoItem.classList.add("photo-item");
 
     photoItem.innerHTML = `
-        <img src="${photo.download_url}" alt="${photo.author}" class="placeholder" loading="lazy" />
+        <img src="${photo.download_url}" alt="${photo.author}" class="initial-styling" loading="lazy" />
         <figcaption style="display: none">
             <h3>${photo.author}</h3>
             <a href="${photo.url}" target="_blank">${photo.url}</a>
@@ -14,7 +14,7 @@ const createImageItem = (photo) => {
     const figcaption = photoItem.querySelector("figcaption");
 
     img.addEventListener("load", () => {
-        img.classList.remove("placeholder");
+        img.classList.remove("initial-styling");
         figcaption.style.display = "block";
     });
 
@@ -30,10 +30,10 @@ const displayImages = (photos, gallery) => {
     toggleGrayscale(document.getElementById("toggle-switch"));
 }
 
-const fetchPhotos = async () => {
+const fetchPhotos = async (numberOfImages) => {
     try {
         const response = await fetch(
-            `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=4`
+            `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=${numberOfImages}`
         );
         if (!response.ok) throw new Error(`Error Status: ${response.status}`);
 
@@ -58,19 +58,13 @@ const toggleGrayscale = function (toggleSwitch) {
 }
 
 const showNewPhotos = async () => {
-    const photos = await fetchPhotos();
+    const photos = await fetchPhotos(4);
 
     const section = document.getElementById("photo-gallery");
     section.innerHTML = '';
 
     displayImages(photos, section);
 }
-
-const fetchMorePhotos = async () => {
-    const photos = await fetchPhotos();
-
-    displayImages(photos, document.getElementById("photo-gallery"));
-};
 
 showNewPhotos();
 
@@ -81,5 +75,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchButton.addEventListener("click", showNewPhotos);
     toggleSwitch.addEventListener("change", () => toggleGrayscale(toggleSwitch));
-    fetchMoreButton.addEventListener("click", fetchMorePhotos);
+    fetchMoreButton.addEventListener("click", async ()=> displayImages(await fetchPhotos(4), document.getElementById("photo-gallery")));
 });

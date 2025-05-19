@@ -116,7 +116,7 @@ img {
   object-fit: cover;
 }
 
-img.placeholder {
+img.initial-styling {
   background-color: #ccc;
   width: 100%;
   aspect-ratio: 4 / 3; 
