@@ -1,10 +1,9 @@
 import React from "react";
 import Toggle from "./UI/Toggle.jsx"
-import Button from "./UI/Button.jsx"
 import '../css/app.css';
 
 function NavBar({ setImages, setLoading, loading, grayscale, setGrayscale }) {
-    const FetchNewPhotos = async (numberOfImages) => {
+    const fetchNewPhotos = async (numberOfImages) => {
         setLoading(true);
 
         setImages(Array.from({ length: numberOfImages }, () => ({ img_loading: true })));
@@ -24,13 +23,12 @@ function NavBar({ setImages, setLoading, loading, grayscale, setGrayscale }) {
         } finally {
             setLoading(false);
         }
-
     };
 
     return (
         <nav>
             <Toggle toggleLabel="Make photos grayscale" grayscale={grayscale} setGrayscale={setGrayscale}/>
-            <Button label="Fetch New Photos" onClick={FetchNewPhotos(4)} disabled={loading}/>
+            <button onClick={()=>fetchNewPhotos(4)} disabled={loading} className='btn'> Fetch New Photos </button>
         </nav>
     );
 }

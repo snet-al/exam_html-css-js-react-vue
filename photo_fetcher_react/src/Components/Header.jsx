@@ -1,11 +1,10 @@
 import React from "react";
-import NavBar from "./NavBar.jsx"
 import '../css/app.css';
 
-function Header() {
+function Header({ children }) {
     return (
         <header>
-            <h1>Photo Fetcher</h1>
+            <h1>{ children }</h1>
         </header>
     );
 }
