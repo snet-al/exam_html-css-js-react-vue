@@ -1,0 +1,10 @@
+#root {
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
