@@ -41,10 +41,8 @@ function App() {
   return (
     <>
       <Header />
-      <main>
-        <NavBar setImages={setImages} setLoading={setLoading} loading={loading} grayscale={grayscale} setGrayscale={setGrayscale}/>
-        <PhotoGallery images={images} loading={loading} grayscale={grayscale}/>
-      </main>
+      <NavBar setImages={setImages} setLoading={setLoading} loading={loading} grayscale={grayscale} setGrayscale={setGrayscale} />
+      <PhotoGallery images={images} loading={loading} grayscale={grayscale} />
       <Footer setImages={setImages} setLoading={setLoading} loading={loading} />
     </>
   )
