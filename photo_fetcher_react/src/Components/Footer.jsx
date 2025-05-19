@@ -15,7 +15,7 @@ function Footer({ setImages, setLoading, loading }) {
 
             const photos = await response.json();
 
-            setImages(prevImages => [...prevImages.slice(0,-4), ...photos]);
+            setImages(prevImages => [...prevImages.slice(0, -4), ...photos]);
 
         } catch (error) {
             console.error("Error fetching photos:", error);
@@ -27,7 +27,7 @@ function Footer({ setImages, setLoading, loading }) {
 
     return (
         <footer>
-            <Button label="More Photos" onClick={FetchMorePhotos} className="btn stretch" disabled={loading}/>
+            <Button label="More Photos" onClick={FetchMorePhotos} className="btn stretch" disabled={loading} />
         </footer>
     );
 

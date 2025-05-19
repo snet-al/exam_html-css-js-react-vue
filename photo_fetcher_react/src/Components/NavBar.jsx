@@ -29,8 +29,8 @@ function NavBar({ setImages, setLoading, loading, grayscale, setGrayscale }) {
 
     return (
         <nav>
-            <Toggle toggleLabel="Make photos grayscale" grayscale={grayscale} setGrayscale={setGrayscale}/>
-            <Button label="Fetch New Photos" onClick={FetchNewPhotos} disabled={loading}/>
+            <Toggle toggleLabel="Make photos grayscale" grayscale={grayscale} setGrayscale={setGrayscale} />
+            <Button label="Fetch New Photos" onClick={FetchNewPhotos} disabled={loading} />
         </nav>
     );
 }

@@ -6,7 +6,7 @@ function PhotoGallery({ images, loading, grayscale }) {
     return (
         <section className="photo-gallery ">
             {images.map((img, index) => (
-                <PhotoCard loading={loading} photo={img} key={img.id || index} grayscale={grayscale}/>
+                <PhotoCard loading={loading} photo={img} key={img.id || index} grayscale={grayscale} />
             ))}
         </section>
     );
