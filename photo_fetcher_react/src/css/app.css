@@ -110,7 +110,7 @@ img {
   object-fit: cover;
 }
 
-.placeholder {
+.img-loading {
   display: block;
   background-color: #ccc;
   width: 367px;
