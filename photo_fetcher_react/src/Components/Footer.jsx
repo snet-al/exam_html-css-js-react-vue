@@ -1,10 +1,9 @@
 import React from "react";
 import '../css/app.css';
-import Button from "./UI/Button.jsx"
 
 function Footer({ setImages, setLoading, loading }) {
 
-    const FetchMorePhotos = async (numberOfImages) => {
+    const fetchMorePhotos = async (numberOfImages) => {
         setLoading(true);
         setImages(prevImages => [...prevImages, ...Array.from({ length: numberOfImages }, () => ({ img_loading: true }))]);
         try {
@@ -22,12 +21,11 @@ function Footer({ setImages, setLoading, loading }) {
         } finally {
             setLoading(false);
         }
-
     };
 
     return (
         <footer>
-            <Button label="More Photos" onClick={FetchMorePhotos(4)} className="btn stretch" disabled={loading}/>
+            <button onClick={()=>fetchMorePhotos(4)} disabled={loading} className='btn stretch'> More Photos </button>
         </footer>
     );
 

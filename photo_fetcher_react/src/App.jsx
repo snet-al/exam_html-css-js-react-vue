@@ -12,7 +12,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [grayscale, setGrayscale] = useState(false);
 
-  const FetchPhotos = async (numberOfImages) => {
+  const fetchPhotos = async (numberOfImages) => {
     setLoading(true);
 
     setImages(Array.from({ length: numberOfImages }, () => ({ img_loading: true })));
@@ -35,12 +35,12 @@ function App() {
   };
 
   useEffect(() => {
-    FetchPhotos(4);
+    fetchPhotos(4);
   }, []);
 
   return (
     <>
-      <Header />
+      <Header children="Photo Fetcher" />
       <NavBar setImages={setImages} setLoading={setLoading} loading={loading} grayscale={grayscale} setGrayscale={setGrayscale} />
       <PhotoGallery images={images} loading={loading} grayscale={grayscale} />
       <Footer setImages={setImages} setLoading={setLoading} loading={loading} />
