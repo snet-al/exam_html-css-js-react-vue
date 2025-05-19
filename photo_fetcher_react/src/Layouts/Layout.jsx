@@ -6,7 +6,7 @@ import Header from '../Components/Header.jsx';
 function Layout({ children }) {
     return (
         <>
-            <Header />
+            <Header children = 'Photo Fetcher'/>
             {children}
         </>
     );

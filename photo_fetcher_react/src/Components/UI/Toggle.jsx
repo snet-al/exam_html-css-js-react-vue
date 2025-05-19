@@ -1,7 +1,7 @@
 import React from "react";
 import '../../css/app.css';
 
-function Toogle({ switchClass = 'switch', sliderClass = 'slider', toggleLabel = 'Toggle', grayscale, setGrayscale }) {
+function Toggle({ switchClass = 'switch', sliderClass = 'slider', toggleLabel = 'Toggle', grayscale, setGrayscale}) {
   return (
     <label className={switchClass}>
       <input
@@ -14,4 +14,4 @@ function Toogle({ switchClass = 'switch', sliderClass = 'slider', toggleLabel = 
   );
 }
 
-export default Toogle;
+export default Toggle;

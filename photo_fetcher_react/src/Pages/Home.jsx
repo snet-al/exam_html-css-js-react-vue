@@ -9,45 +9,45 @@ import Footer from '../Components/Footer.jsx';
 import Layout from "../Layouts/Layout.jsx";
 
 function Home() {
-    const [images, setImages] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [grayscale, setGrayscale] = useState(false);
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [grayscale, setGrayscale] = useState(false);
 
-    const FetchPhotos = async (numberOfImages) => {
-        setLoading(true);
+  const fetchPhotos = async (numberOfImages) => {
+    setLoading(true);
 
-        setImages(Array.from({ length: numberOfImages }, () => ({ img_loading: true })));
+    setImages(Array.from({ length: numberOfImages }, () => ({ img_loading: true })));
 
-        try {
-            const response = await fetch(
-                `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=${numberOfImages}`
-            );
-            if (!response.ok) throw new Error(`Error Status: ${response.status}`);
+    try {
+      const response = await fetch(
+        `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=${numberOfImages}`
+      );
+      if (!response.ok) throw new Error(`Error Status: ${response.status}`);
 
-            const photos = await response.json();
+      const photos = await response.json();
 
-            setImages(photos);
+      setImages(photos);
 
-        } catch (error) {
-            console.error("Error fetching photos:", error);
-        } finally {
-            setLoading(false);
-        }
-    };
+    } catch (error) {
+      console.error("Error fetching photos:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    useEffect(() => {
-        FetchPhotos(4);
-    }, []);
+  useEffect(() => {
+    fetchPhotos(4);
+  }, []);
 
-    return (
-        <>
-            <Layout>
-                <NavBar setImages={setImages} setLoading={setLoading} loading={loading} grayscale={grayscale} setGrayscale={setGrayscale} />
-                <PhotoGallery images={images} loading={loading} grayscale={grayscale} />
-                <Footer setImages={setImages} setLoading={setLoading} loading={loading} />
-            </Layout>
-        </>
-    )
+  return (
+    <>
+      <Layout>
+        <NavBar setImages={setImages} setLoading={setLoading} loading={loading} grayscale={grayscale} setGrayscale={setGrayscale} />
+        <PhotoGallery images={images} loading={loading} grayscale={grayscale} />
+        <Footer setImages={setImages} setLoading={setLoading} loading={loading} />
+      </Layout>
+    </>
+  )
 }
 
 //Home.layout = page => <Layout children={page} />
