@@ -12,14 +12,14 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [grayscale, setGrayscale] = useState(false);
 
-  const FetchPhotos = async () => {
+  const FetchPhotos = async (numberOfImages) => {
     setLoading(true);
 
-    setImages(Array.from({ length: 4 }, () => ({ placeholder: true })));
+    setImages(Array.from({ length: numberOfImages }, () => ({ img_loading: true })));
 
     try {
       const response = await fetch(
-        `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=4`
+        `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=${numberOfImages}`
       );
       if (!response.ok) throw new Error(`Error Status: ${response.status}`);
 
@@ -35,7 +35,7 @@ function App() {
   };
 
   useEffect(() => {
-    FetchPhotos();
+    FetchPhotos(4);
   }, []);
 
   return (
