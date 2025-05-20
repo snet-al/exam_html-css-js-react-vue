@@ -1,42 +1,20 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import '../css/app.css';
-
+import { fetchPhotos } from "../Services/Api.js";
 import NavBar from '../Components/NavBar.jsx';
 import PhotoGallery from '../Components/PhotoGallery.jsx';
 import Footer from '../Components/Footer.jsx';
 import Layout from "../Layouts/Layout.jsx";
+import '../css/app.css';
 
 function Home() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [grayscale, setGrayscale] = useState(false);
 
-  const fetchPhotos = async (numberOfImages) => {
-    setLoading(true);
-
-    setImages(Array.from({ length: numberOfImages }, () => ({ img_loading: true })));
-
-    try {
-      const response = await fetch(
-        `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=${numberOfImages}`
-      );
-      if (!response.ok) throw new Error(`Error Status: ${response.status}`);
-
-      const photos = await response.json();
-
-      setImages(photos);
-
-    } catch (error) {
-      console.error("Error fetching photos:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    fetchPhotos(4);
+    fetchPhotos(4, setImages, setLoading);
   }, []);
 
   return (
@@ -49,7 +27,5 @@ function Home() {
     </>
   )
 }
-
-//Home.layout = page => <Layout children={page} />
 
 export default Home;
