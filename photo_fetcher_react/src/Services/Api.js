@@ -37,6 +37,7 @@ export const fetchMorePhotos = async (numberOfImages, setImages, setLoading) => 
 
     } catch (error) {
         console.error("Error fetching photos:", error);
+        setImages(prevImages => [...prevImages.slice(0, (-1 * numberOfImages))]);
     } finally {
         setLoading(false);
     }

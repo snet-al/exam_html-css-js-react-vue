@@ -21,7 +21,7 @@ function Home() {
     <>
       <Layout>
         <NavBar setImages={setImages} setLoading={setLoading} loading={loading} grayscale={grayscale} setGrayscale={setGrayscale} />
-        <PhotoGallery images={images} loading={loading} grayscale={grayscale} />
+        <PhotoGallery images={images} grayscale={grayscale} />
         <Footer setImages={setImages} setLoading={setLoading} loading={loading} />
       </Layout>
     </>
