@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Photo Fetcher</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    
+<body>
+    
+    <main class="container">
+
+        <header><h2>Photo Fetcher</h2></header>
+
+        <section class="controls">
+
+            <label class="switch">
+                <input type="checkbox" class="js-grayscaleToggle">
+                <span class="slider">✕</span>
+            </label>
+
+            <span>Make photos grayscale</span>
+            <button id="fetchBtn">Fetch New Photos</button>
+
+        </section>
+
+        
+        <section class="photo-grid">
+
+            <figure class="photo-card">
+                <img src="https://picsum.photos/id/10/2500/1667" alt="Photo 1">
+                <figcaption>
+                    <p>Lukas Budimaier</p>
+                    <a href="https://unsplash.com/photos/pwaaqfoMibl">https://unsplash.com/photos/pwaaqfoMibl</a>
+                </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+                <img src="https://picsum.photos/id/26/4209/2769" alt="Photo 2">
+                <figcaption>
+                    <p>Lukas Budimaier</p>
+                    <a href="https://unsplash.com/photos/pwaaqfoMibl">https://unsplash.com/photos/pwaaqfoMibl</a>
+                </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+                <img src="https://picsum.photos/id/6/5000/3333" alt="Photo 3">
+                <figcaption>
+                    <p>Lukas Budimaier</p>
+                    <a href="https://unsplash.com/photos/pwaaqfoMibl">https://unsplash.com/photos/pwaaqfoMibl</a>
+                </figcaption>
+            </figure>
+
+            <figure class="photo-card">
+                <img src="https://picsum.photos/id/13/2500/1667" alt="Photo 4">
+                <figcaption>
+                    <p>Lukas Budimaier</p>
+                    <a href="https://unsplash.com/photos/pwaaqfoMibl">https://unsplash.com/photos/pwaaqfoMibl</a>
+                </figcaption>
+            </figure>
+
+        </section>
+
+    </main>
+
+    <script>
+        document.querySelector("js-grayscaleToggle").addEventListener("change", function() {
+            document.querySelectorAll(".photo-card img").forEach(img => {
+                img.style.filter = this.checked ? "grayscale(100%)" : "none";
+            });
+        });
+    </script>
+</body>
+</html>
