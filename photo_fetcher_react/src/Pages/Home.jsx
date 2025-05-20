@@ -1,55 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import { useEffect } from "react";
 import '../css/app.css';
 
 import NavBar from '../Components/NavBar.jsx';
 import PhotoGallery from '../Components/PhotoGallery.jsx';
 import Footer from '../Components/Footer.jsx';
 import Layout from "../Layouts/Layout.jsx";
+import dummyData from "../Store/DummyData.jsx";
 
 function Home() {
   const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [grayscale, setGrayscale] = useState(false);
 
-  const fetchPhotos = async (numberOfImages) => {
-    setLoading(true);
-
-    setImages(Array.from({ length: numberOfImages }, () => ({ img_loading: true })));
-
-    try {
-      const response = await fetch(
-        `https://picsum.photos/v2/list?page=${Math.floor(Math.random() * 100) + 1}&limit=${numberOfImages}`
-      );
-      if (!response.ok) throw new Error(`Error Status: ${response.status}`);
-
-      const photos = await response.json();
-
-      setImages(photos);
-
-    } catch (error) {
-      console.error("Error fetching photos:", error);
-    } finally {
-      setLoading(false);
+  function fetchRandomImages(numberOfImages, dummyData) {
+    const randomImages = []
+    let i = 0;
+    while (i < numberOfImages) {
+      randomImages[i] = dummyData[Math.floor(Math.random() * 12)];
+      i += 1;
     }
-  };
+    return randomImages;
+  }
 
   useEffect(() => {
-    fetchPhotos(4);
+    setImages(fetchRandomImages(4, dummyData));
   }, []);
 
   return (
     <>
       <Layout>
-        <NavBar setImages={setImages} setLoading={setLoading} loading={loading} grayscale={grayscale} setGrayscale={setGrayscale} />
-        <PhotoGallery images={images} loading={loading} grayscale={grayscale} />
-        <Footer setImages={setImages} setLoading={setLoading} loading={loading} />
+        <NavBar setImages={setImages} grayscale={grayscale} setGrayscale={setGrayscale} />
+        <PhotoGallery images={images} grayscale={grayscale} />
+        <Footer setImages={setImages} />
       </Layout>
     </>
   )
 }
-
-//Home.layout = page => <Layout children={page} />
 
 export default Home;

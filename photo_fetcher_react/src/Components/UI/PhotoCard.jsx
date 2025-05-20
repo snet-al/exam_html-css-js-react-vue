@@ -1,14 +1,7 @@
 import React from "react";
 import '../../css/app.css';
 
-function PhotoCard({ photo, loading, grayscale }) {
-    if (loading && photo.img_loading)
-        return (
-            <article className="photo-item">
-                <span className="img-loading" />
-            </article>
-        );
-
+function PhotoCard({ photo, grayscale }) {
     return (
         <article className="photo-item">
             <img className={grayscale ? 'grayscale' : ''} src={photo.download_url} alt={photo.author} loading="lazy" id={photo.id} />
