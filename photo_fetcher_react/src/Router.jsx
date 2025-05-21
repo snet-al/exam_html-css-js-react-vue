@@ -8,11 +8,7 @@ const Router = () =>
     useRoutes([
         {
             path: "/",
-            element: <Layout />,
-            children: [
-                { index: true, element: <Home /> },
-                { path: "goodbye", element: <About /> },
-            ],
+            element: <Layout><Home /></Layout>,
         },
         {
             path: "/new_page",
@@ -21,6 +17,10 @@ const Router = () =>
                     <h1>Navigated to new page</h1>
                 </NewPage>
             ),
+        },
+        {
+            path: "/about",
+            element: <Layout><About /></Layout>,
         },
     ]);
 
