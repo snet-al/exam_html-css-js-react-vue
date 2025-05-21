@@ -1,7 +1,7 @@
 import React from "react";
 import '../../css/app.css';
 
-function Toggle({ switchClass = 'switch', sliderClass = 'slider', toggleLabel = 'Toggle', grayscale, setGrayscale}) {
+function Toggle({ switchClass = 'switch', sliderClass = 'slider', grayscale, setGrayscale, children}) {
   return (
     <label className={switchClass}>
       <input
@@ -9,7 +9,7 @@ function Toggle({ switchClass = 'switch', sliderClass = 'slider', toggleLabel = 
         checked={grayscale}
         onChange={(e) => setGrayscale(e.target.checked)} />
       <span className={sliderClass}> </span>
-      {toggleLabel}
+      {children}
     </label>
   );
 }
