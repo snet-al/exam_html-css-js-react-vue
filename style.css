@@ -6,7 +6,6 @@ body {
 
 }
 
-
 main {
     display: grid;
     gap: 16px;
@@ -140,11 +139,64 @@ figcaption {
   padding: 10px;
   font-size: 0.9rem;
   line-height: 0.4;
-
 }
 
 figcaption a {
   color: #ccc;
   text-decoration: none;
   font-size: 12px;
+}
+
+.load-more-container {
+  display: grid;
+  text-align: center;
+  
+}
+
+.js-load-more {
+    
+    padding: 10px 20px;
+    background-color: #7b47e7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.js-load-more:hover {
+    background-color: #6937cc;
+}
+
+.skeleton {
+    opacity: 0.7;
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.skeleton-img {
+    width: 100%;
+    height: 200px;
+    background-color: #c4c4c4;
+    margin-bottom: 10px;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 12px;
+    margin-bottom: 5px;
+    background-color: #c4c4c4;
+}
+
+.skeleton-url {
+    width: 80%;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0.3;
+    }
 }
