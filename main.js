@@ -34,66 +34,49 @@ function hideSkeletonLoader() {
 }
 
 let html = ``
-async function fetchNewPhotos(){
 
+async function getRandomPhotos(count = 4) {
     const photos = await getAPI();
 
     const randomItemList = [];
-    while (randomItemList.length < 4) {
-    const rand = Math.floor(Math.random() * photos.length);
-    if (!randomItemList.includes(rand)) randomItemList.push(rand);
+    while (randomItemList.length < count) {
+        const rand = Math.floor(Math.random() * photos.length);
+        if (!randomItemList.includes(rand)) randomItemList.push(rand);
     }
 
-    const selectedPhotos = photos.filter(photo => randomItemList.includes(Number(photo.id)));
-
-    html = ``
-    selectedPhotos.forEach((img) => {
-        document.querySelector('.js-photo').innerHTML =
-        html += 
-        `
-        <figure class="photo-card">
-            <img src="${img.download_url}" alt="Random photo">
-            <figcaption>
-                <p>${img.author}</p>
-                <a href="${img.url}">${img.url}</a>
-            </figcaption>
-        </figure>        
-        `
-    })
-}   
-fetchNewPhotos()  
-
-
-async function MorePhotos(){
-
-    showSkeletonLoader();
-
-    const photos = await getAPI();
-
-    const randomItemList = [];
-    while (randomItemList.length < 4) {
-    const rand = Math.floor(Math.random() * photos.length);
-    if (!randomItemList.includes(rand)) randomItemList.push(rand);
-    }
-
-    const selectedPhotos = photos.filter(photo => randomItemList.includes(Number(photo.id)));
-
-    hideSkeletonLoader();
-
-    selectedPhotos.forEach((img) => {
-        document.querySelector('.js-photo').innerHTML =
-        html += 
-        `
-        <figure class="photo-card">
-            <img src="${img.download_url}" alt="Random photo">
-            <figcaption>
-                <p>${img.author}</p>
-                <a href="${img.url}">${img.url}</a>
-            </figcaption>
-        </figure>        
-        `
-    })
+    return photos.filter((photo) => randomItemList.includes(Number(photo.id)));
 }
+
+function createPhotoHTML(photos) {
+    return photos
+        .map(
+            (img) => `
+        <figure class="photo-card">
+            <img src="${img.download_url}" alt="Random photo">
+            <figcaption>
+                <p>${img.author}</p>
+                <a href="${img.url}">${img.url}</a>
+            </figcaption>
+        </figure>`
+        )
+        .join('');
+}
+
+async function fetchNewPhotos() {
+    const selectedPhotos = await getRandomPhotos();
+    html = createPhotoHTML(selectedPhotos);
+    document.querySelector('.js-photo').innerHTML = html;
+}
+
+async function MorePhotos() {
+    showSkeletonLoader();
+    const selectedPhotos = await getRandomPhotos();
+    hideSkeletonLoader();
+    html += createPhotoHTML(selectedPhotos);
+    document.querySelector('.js-photo').innerHTML = html;
+}
+
+fetchNewPhotos()
 
 document.querySelector('.js-load-more').addEventListener('click', async () => {
     await MorePhotos()
