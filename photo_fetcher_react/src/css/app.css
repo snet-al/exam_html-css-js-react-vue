@@ -110,13 +110,6 @@ img {
   object-fit: cover;
 }
 
-.img-loading {
-  display: block;
-  background-color: #ccc;
-  width: 367px;
-  aspect-ratio: 4 / 3; 
-}
-
 .grayscale {
   filter: grayscale(100%);
 }
