@@ -81,7 +81,7 @@ button#fetchBtn:hover {
   top: 3px;
   background-color: white;
   border-radius: 50%;
-  transition: .4s;
+  transition: .4s ease;
 }
 
 input:checked + .slider {
@@ -124,7 +124,8 @@ figure {
 
 .photo-card:hover img {
     cursor: pointer;
-    filter: none;          
+    filter: none; 
+    transition: 0.3s ease;         
     transform: scale(1);    
 }
 
