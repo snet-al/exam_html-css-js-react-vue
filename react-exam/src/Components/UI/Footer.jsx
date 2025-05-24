@@ -1,10 +1,10 @@
-function LoadMore({onClick}){
+function Footer({onClick}){
   return(
-    <label className="load-more-container">
+    <footer className="load-more-container">
         <button className="js-load-more" onClick={onClick}>
         Load More Photos
         </button>
-    </label>
+    </footer>
   );
 }
-export default LoadMore
+export default Footer

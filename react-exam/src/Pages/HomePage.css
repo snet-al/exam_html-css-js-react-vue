@@ -6,7 +6,7 @@ body {
 
 }
 
-main {
+.main-layout{
     display: grid;
     gap: 16px;
     max-width: 750px;
@@ -23,7 +23,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: -5px;
+  margin-bottom: 10px;
 }
 
 button#fetchBtn {

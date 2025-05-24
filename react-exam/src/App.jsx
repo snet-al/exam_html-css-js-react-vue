@@ -1,8 +1,11 @@
 import HomePage from "./Pages/HomePage";
+import MainLayout from "./Layout/MainLayout";
 
 function App() {
   return (
-    <HomePage/>
+    <MainLayout>
+      <HomePage/>
+    </MainLayout>
   );
 };
 
