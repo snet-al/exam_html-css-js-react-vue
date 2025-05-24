@@ -2,16 +2,16 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import '../css/app.css';
-import { CatFacts } from "../Services/CatFacts.js";
+import { CatFacts } from "../services/CatFacts.js";
 
-export default function Cat() {
+export default function CatPage() {
     const [fact, setFact] = useState();
     const navigate = useNavigate();
 
     const generateFact = async () => {
         try {
-            const fact = await CatFacts.getFact();
-            setFact(fact);
+            const catFact = await CatFacts.getFact();
+            setFact(catFact);
         } catch (error) {
             console.error(error);
         }

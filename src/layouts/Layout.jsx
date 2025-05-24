@@ -1,5 +1,5 @@
 import React from "react";
-import Header from '../Components/Header.jsx';
+import Header from '../components/Header.jsx';
 
 function Layout({ children }) {
     return (

@@ -1,6 +1,6 @@
 import React from "react";
 import '../css/app.css';
-import PhotoCard from './UI/PhotoCard.jsx'
+import PhotoCard from './PhotoCard.jsx'
 
 function PhotoGallery({ images, grayscale }) {
     if(images.length === 0){
