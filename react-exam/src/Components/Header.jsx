@@ -1,7 +1,7 @@
-function Header() {
+function Header(props) {
     return(
     <header>
-        <h2>Photo Fetcher</h2>
+        <h2>{props.value}</h2>
     </header>
     )
 }

@@ -1,16 +1,14 @@
 import Header from '../Components/Header.jsx'
-import Footer from '../Components/UI/Footer.jsx';
+import Footer from '../Components/Footer.jsx'
 
-function MainLayout({ children }){
+function MainLayout({ children, onLoadMore }){
     return(
         <div className ="main-layout">
-            <Header/>
-
+            <Header value="Photo Fetcher"/>
             <main>
                 {children}
             </main>
-
-            <Footer/>
+            <Footer onLoadMore={onLoadMore}/>
         </div>
     )
 }
