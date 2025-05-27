@@ -1,0 +1,153 @@
+/* Reseting */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 750px;
+}  
+/* Header and user interraction that are on the header */
+
+header{
+   margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.user-input-header{
+    display: flex;
+    justify-content: space-between;
+}
+.grayscale-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.fetch-buttons{
+    padding: 10px;
+    color: white;
+    background-color: #6B4AD5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#fetch-new-photos{
+    width: 150px;
+}
+/* Main */
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+/* Image container */
+.img-container{
+    position: relative;
+    border: 1px solid;
+    height: 250px;
+    width: 367px;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.img-overlay{
+    position: absolute;
+    bottom: 0px;
+    padding: 15px;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    }
+.img-overlay h2, .img-overlay p{
+    font-weight:100 ;
+}
+.img-overlay p{
+    font-size:0.9rem ;
+    color: rgb(180, 178, 178);
+}
+
+/* Fetch more in the bottom */
+#fetch-more-photos{
+    width: 100%;
+}
+
+/* Toggle for grayscale */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  content: "X";
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #696969;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:after{
+    color: white;
+    position: absolute;
+    right: 4px;
+    bottom: 2px;
+    font-size: 1.3rem;
+    font-weight: 100;
+    content: "x";
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
