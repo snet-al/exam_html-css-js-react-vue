@@ -34,10 +34,11 @@ function HomePage() {
   async function handleFetchClick() {
     setSelectedPhotos([]);
     setLoading(true);
-    const fetchedPhotos = getRandomPhotos(allPhotos,4);
-    setSelectedPhotos(fetchedPhotos);
-    setLoading(false);
-
+    setTimeout(() => {
+      const fetchedPhotos = getRandomPhotos(allPhotos,4);
+      setSelectedPhotos(fetchedPhotos);
+      setLoading(false);
+    }, 0); 
   }
 
   async function handleLoadMoreClick() {
@@ -48,9 +49,11 @@ function HomePage() {
       alert("There is no more photos to load!")
       return;
     }
+    setTimeout(() => {
     const fetchedPhotos = getRandomPhotos(allPhotos,4,selectedPhotos);
     setSelectedPhotos(prevFetch => [...prevFetch, ...fetchedPhotos]);
     setLoading(false);
+    }, 30);
   }
 
   return (
