@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import MainLayout from "../Layout/MainLayout";
 import "./HomePage.css";
-import getAPI from "../Services/DataApi.jsx";
+import { PicsumAPI } from "../Services/PicsumAPI.jsx";
 import getRandomPhotos from "../Services/RandomPhotos.jsx";
 import ToolBar from "../Components/ToolBar.jsx";
-import PhotoGallery from "../Components/PhotoGallery/PhotoGallery.jsx";
+import PhotoGallery from "../Components/PhotoGallery/PhotoGallery.jsx"
 
 function HomePage() {
 
@@ -20,10 +20,11 @@ function HomePage() {
   useEffect(() => {
     async function fetchPhotos() {
       setLoading(true)
-      const photos = await getAPI();
+      const pagePhotos = new PicsumAPI();
+      const photos = await pagePhotos.fetchPagePhotos();
       setAllPhotos(photos);
 
-      const randomPhotos = await getRandomPhotos(photos,4);
+      const randomPhotos = getRandomPhotos(photos,4);
       setSelectedPhotos(randomPhotos);
       setLoading(false)
     };
@@ -33,21 +34,23 @@ function HomePage() {
   async function handleFetchClick() {
     setSelectedPhotos([]);
     setLoading(true);
+    const fetchedPhotos = getRandomPhotos(allPhotos,4);
+    setSelectedPhotos(fetchedPhotos);
+    setLoading(false);
 
-    setTimeout(async () => {
-      const fetchedPhotos = await getRandomPhotos(allPhotos,4);
-      setSelectedPhotos(fetchedPhotos);
-      setLoading(false);
-    }, 50); 
   }
 
   async function handleLoadMoreClick() {
-    setLoading(true);
-    setTimeout(async () => {
-      const fetchedPhotos = await getRandomPhotos(allPhotos,4);
-      setSelectedPhotos(prevFetch => [...prevFetch, ...fetchedPhotos]);
+    if ((allPhotos.length - selectedPhotos.length) >= 4) {
+      setLoading(true);
+    } else {
       setLoading(false);
-    }, 130);
+      alert("There is no more photos to load!")
+      return;
+    }
+    const fetchedPhotos = getRandomPhotos(allPhotos,4,selectedPhotos);
+    setSelectedPhotos(prevFetch => [...prevFetch, ...fetchedPhotos]);
+    setLoading(false);
   }
 
   return (

@@ -5,7 +5,7 @@ function PhotoGallery({ grayscale, photos, loading, count }) {
   return (
     <section className="photo-grid">
       <PhotoGrid grayscale={grayscale} photos={photos} />
-      {loading && <SkeletonLoader loading={loading} count={count} />}
+      {loading && (<SkeletonLoader loading={loading} count={count} />)}
     </section>
   );
 }

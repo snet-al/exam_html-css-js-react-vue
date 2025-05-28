@@ -4,7 +4,7 @@ function PhotoGrid({ grayscale, photos }) {
       {photos.map((photo) => (
         <figure className="photo-card" key={photo.id}>
           <img
-            src={photo.download_url}
+            src= {photo.download_url}
             alt="Random photo"
             style={{ filter: grayscale ? "grayscale(100%)" : "none" }}
           />
