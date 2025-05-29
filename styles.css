@@ -7,12 +7,14 @@
 
 
 .container{
+  font-family: sans-serif;
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin: 0 auto;
     width: 100%;
     max-width: 750px;
+    padding-bottom: 10px;
 }  
 /* Header and user interraction that are on the header */
 
@@ -25,6 +27,8 @@ header{
 
 .user-input-header{
     display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
     justify-content: space-between;
 }
 .grayscale-group{
@@ -44,21 +48,27 @@ header{
     width: 150px;
 }
 /* Main */
-main{
+.images-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-content: center;
     gap: 16px;
 }
 /* Image container */
 .img-container{
     position: relative;
-    border: 1px solid;
     height: 250px;
     width: 367px;
 }
 img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+.skeleton-div{
+    width: 100%;
+    height: 100%;
+    background-color: #ECECEC;
     object-fit: cover;
 }
 .img-overlay{
@@ -71,6 +81,11 @@ img{
     }
 .img-overlay h2, .img-overlay p{
     font-weight:100 ;
+    width: 100%;
+    word-wrap: break-word; 
+}
+.img-overlay h2{
+    font-size: 1.5rem; 
 }
 .img-overlay p{
     font-size:0.9rem ;
@@ -80,6 +95,7 @@ img{
 /* Fetch more in the bottom */
 #fetch-more-photos{
     width: 100%;
+    margin-bottom:10px ;
 }
 
 /* Toggle for grayscale */
@@ -150,4 +166,29 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media (max-width:766px) {
+  .container{
+    padding: 0.5rem;
+  }
+  .images-container{
+    grid-template-columns: 1fr ;
+    justify-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width:390px) {
+
+  .images-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 100vw;
+  }
+  .img-container{
+    width: 300px ;
+  }
+ 
 }
