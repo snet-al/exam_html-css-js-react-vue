@@ -1,8 +1,10 @@
-export default function Footer(){
+import FetchMoreButton from "./UI/FetchMoreButton"
+function Footer(){
     
     return(
         <footer>
-            <button className="fetch-buttons" id="fetch-more-photos">More Photos</button>
+            <FetchMoreButton/>        
         </footer>
     )
 }
+export default Footer
