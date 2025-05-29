@@ -1,4 +1,5 @@
-function PhotoGrid({ grayscale, photos }) {
+import React from "react";
+const PhotoGrid = React.memo(function PhotoGrid({ grayscale, photos }) {
   return (
     <>
       {photos.map((photo) => (
@@ -16,6 +17,6 @@ function PhotoGrid({ grayscale, photos }) {
       ))}
     </>
   );
-}
+});
 
 export default PhotoGrid;

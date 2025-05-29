@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import MainLayout from "../Layout/MainLayout";
 import "./HomePage.css";
 import { PicsumAPI } from "../Services/PicsumAPI.jsx";
-import getRandomPhotos from "../Services/RandomPhotos.jsx";
+import { getRandomPhotos, preloadImages } from "../Services/HelperFunctions.jsx";
 import ToolBar from "../Components/ToolBar.jsx";
 import PhotoGallery from "../Components/PhotoGallery/PhotoGallery.jsx"
 
@@ -13,47 +13,54 @@ function HomePage() {
   const [selectedPhotos, setSelectedPhotos ] = useState([])
   const [loading, setLoading] = useState(false);
 
+  const preloadedPhotosRef = useRef([]);
+
   function handleToggle(){
     setIsToggled((prevtoggle) => !prevtoggle)
   }
-  
+
   useEffect(() => {
-    async function fetchPhotos() {
-      setLoading(true)
+    async function fetchAndPreloadPhotos() {
+      setLoading(true);
+
       const pagePhotos = new PicsumAPI();
-      const photos = await pagePhotos.fetchPagePhotos();
+      const photos = await pagePhotos.fetchAllPhotos();
       setAllPhotos(photos);
 
-      const randomPhotos = getRandomPhotos(photos,4);
-      setSelectedPhotos(randomPhotos);
-      setLoading(false)
-    };
-    fetchPhotos()
+      setSelectedPhotos(getRandomPhotos(photos, 4))
+      setLoading(false);
+    }
+
+    fetchAndPreloadPhotos();
   }, []);
-    
-  async function handleFetchClick() {
+
+  useEffect(() => {
+      if (selectedPhotos.length !== 0) {
+        preloadedPhotosRef.current = preloadImages(getRandomPhotos(allPhotos, 4, selectedPhotos));
+      }
+  }, [selectedPhotos]);
+
+  function handleFetchClick() {
     setSelectedPhotos([]);
     setLoading(true);
+    
     setTimeout(() => {
-      const fetchedPhotos = getRandomPhotos(allPhotos,4);
-      setSelectedPhotos(fetchedPhotos);
+      setSelectedPhotos(preloadedPhotosRef.current);
       setLoading(false);
-    }, 0); 
+    }, 100);
   }
 
-  async function handleLoadMoreClick() {
-    if ((allPhotos.length - selectedPhotos.length) >= 4) {
-      setLoading(true);
-    } else {
-      setLoading(false);
-      alert("There is no more photos to load!")
+  function handleLoadMoreClick() {
+    if (allPhotos.length - selectedPhotos.length < 4) {
+      alert("There are no more photos to load!");
       return;
     }
-    setTimeout(() => {
-    const fetchedPhotos = getRandomPhotos(allPhotos,4,selectedPhotos);
-    setSelectedPhotos(prevFetch => [...prevFetch, ...fetchedPhotos]);
-    setLoading(false);
-    }, 30);
+    setLoading(true);
+
+    setTimeout(()=>{
+      setSelectedPhotos(prevSelected => [...prevSelected, ...preloadedPhotosRef.current]);
+      setLoading(false); 
+    },130)
   }
 
   return (
