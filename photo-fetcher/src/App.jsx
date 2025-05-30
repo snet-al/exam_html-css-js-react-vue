@@ -1,10 +1,11 @@
-import MainPage from './PAGES/MainPage'
+import Layout from './LAYOUT/Layout.jsx'
+import MainPage from './PAGES/MainPage.jsx'
 
-function App() {
+export default function App(){
 
-  return (
-    <MainPage/>
-  )
+    return(
+        <Layout>
+            <MainPage/>
+        </Layout>
+    )
 }
-
-export default App

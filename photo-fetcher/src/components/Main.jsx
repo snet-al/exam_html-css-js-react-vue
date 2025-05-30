@@ -1,6 +1,7 @@
 function Main(){
     return(
-        <main className="images-container"></main>
+        <main className="images-container">
+        </main>
     )
 }
 export default Main
