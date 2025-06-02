@@ -1,14 +1,15 @@
 import Header from "../components/Header.jsx"
 import Footer from "../components/Footer.jsx"
+import {Outlet} from "react-router-dom"
 
-export default function Layout({children}){
+export default function Layout(){
 
     
     return(
-    <div className='container'>
+    <main className='page-container'>
         <Header/>
-        {children} 
+        <Outlet/>
         <Footer/>       
-    </div>
+    </main>
     )
 }

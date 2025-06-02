@@ -3,7 +3,7 @@ function Footer(){
     
     return(
         <footer>
-            <FetchMoreButton/>        
+            <FetchMoreButton>More Photos</FetchMoreButton>        
         </footer>
     )
 }
