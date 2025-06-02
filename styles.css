@@ -6,7 +6,7 @@
 }
 
 
-.container{
+.page-container{
   font-family: sans-serif;
     display: flex;
     flex-direction: column;
@@ -31,12 +31,12 @@ header{
     gap: 5px;
     justify-content: space-between;
 }
-.grayscale-group{
+.grayscale-toggle-group{
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.fetch-buttons{
+.fetch-button{
     padding: 10px;
     color: white;
     background-color: #6B4AD5;
@@ -99,7 +99,7 @@ img{
 }
 
 /* Toggle for grayscale */
-.switch {
+.toggle-container {
   position: relative;
   display: inline-block;
   width: 50px;
@@ -107,7 +107,7 @@ img{
   content: "X";
 }
 
-.switch input {
+.toggle-container input {
   opacity: 0;
   width: 0;
   height: 0;

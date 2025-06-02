@@ -38,51 +38,45 @@ const displayImage=(image)=>{
     }
 }
 
+const giveRandomPageIndex=()=>{
+    return Math.floor(Math.random() * 4) + 1;
+}
 
-function fetchImages(){
-    let randomPageIndex = Math.floor(Math.random() * 8) + 1;
 
-    fetch(`https://picsum.photos/v2/list?page=${randomPageIndex}&limit=50`)
-    .then((res)=> {
+async function fetchImages(randomPageIndex){
+    try{
+        loading=true;
+        const res= await fetch(`https://picsum.photos/v2/list?page=${randomPageIndex}&limit=100`)
         if(!res.ok) throw new Error("Network response was not ok");
-        return res.json()
-    })
-    .then((data)=>{
-        console.log(data)
-        for(let iteration=1;iteration<=4;iteration++){
+        const data= await res.json()
+        
+        for(let i=1;i<=4;i++){
             let randomPhotoIndex = Math.floor(Math.random() * data.length);
             displayImage(data[randomPhotoIndex])
         }
-    })
-    .catch((error)=>console.error("Error:",error))
-    .finally(()=> loading=false)
+    }
+    catch(error){
+        console.error("Error:",error)
+    }
+    finally{loading=false}
 
 }
 
-function fetchNewImages(){
+fetchNewImagesButton.addEventListener("click",()=> {
     if(loading) return
-    loading=true
     imagesContainer.innerHTML=""
-    fetchImages()
-}
- function fetchMoreImages(){
+    fetchImages(giveRandomPageIndex())
+})
+    
+fetchMoreImagesButton.addEventListener("click",()=> {
     if(loading) return
-    loading=true
-    fetchImages()
-}
-
-
-//Giving the event listners and starting the site
-(function(){
-
-    fetchNewImagesButton.addEventListener("click",()=> fetchNewImages())
+    fetchImages(giveRandomPageIndex())
+})
     
-    fetchMoreImagesButton.addEventListener("click",()=> fetchMoreImages())
-    
-    grayscaleCheckbox.addEventListener("change",()=>{
+grayscaleCheckbox.addEventListener("change",()=>{
         if(grayscaleCheckbox.checked) imagesContainer.style.filter="grayscale(100%)"
         else imagesContainer.style.filter="grayscale(0%)"
     })
-    fetchNewImages()
-})()
 
+
+fetchImages(giveRandomPageIndex())
