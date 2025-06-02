@@ -1,5 +1,5 @@
 import {useState} from "react"
-export default function ImageCreator({img}){
+export default function ImageShowcase({img}){
     const [imgLoading,setImgLoading]=useState(true)
     return(
         <div className="img-container"  >

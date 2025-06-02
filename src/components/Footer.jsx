@@ -1,9 +1,9 @@
 import FetchMoreButton from "./UI/FetchMoreButton"
-function Footer(){
+function Footer({context}){
     
     return(
         <footer>
-            <FetchMoreButton/>        
+            <FetchMoreButton context={context}>More Photos</FetchMoreButton>        
         </footer>
     )
 }
