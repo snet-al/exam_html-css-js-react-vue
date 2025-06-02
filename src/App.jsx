@@ -5,11 +5,11 @@ import Main from './components/Main.jsx'
 function App() {
 
   return (
-    <div className='container'>
+    <main className='page-container'>
       <Header/>
-      <Main/>
+      <Main></Main>
       <Footer/>
-    </div>
+    </main>
   )
 }
 
