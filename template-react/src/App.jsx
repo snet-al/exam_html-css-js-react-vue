@@ -1,17 +1,22 @@
 import './index.css'
-import image from './download.jpg'
 import Header from './components/UI/Header'
 import Body from './components/UI/Body'
 import Footer from './components/UI/Footer'
-import Layout from './LAYOUT/Layout'
+import Layout from './LAYOUT/Layout.jsx'
+import { ApiProvider } from './services/apiContext'
 function App() {
 
   return (
+    <ApiProvider>
       <Layout>
-       <Header/>
-       <Body/>
-       <Footer/>
+
+          <Header/>
+          <Body/>
+          <Footer/>
+
+        
       </Layout>
+    </ApiProvider>
   )
 }
 
