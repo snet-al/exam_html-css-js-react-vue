@@ -1,13 +1,9 @@
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 
 const About = () => {
   return (
-    <>
-      <Header />
-      <main>Content</main>
-      <Footer />
-    </>
+   <div>
+      <h1>About us</h1>
+    </div>
   );
 };
 
