@@ -7,8 +7,8 @@ function Header(){
 
         <nav className="navBar">
             <section className="grayscaleSection">
-                <input type="checkbox" id="check" class="toggle-checkbox"/>
-                <label for="check" class="toggle-label">
+                <input type="checkbox" id="check" className="toggle-checkbox"/>
+                <label  className="toggle-label">
                 </label>
                 <span style={{fontSize: "20px"}}>Make photos grayscale</span>
             </section>
