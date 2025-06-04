@@ -1,0 +1,72 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    width: 750px;
+}
+.header{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.grayscaleSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 280px;
+}
+.FetchNewButton{
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 13px;
+    width: 160px;
+}
+.mainContent{
+    display: grid;
+    grid-template-columns: 367px 367px;
+    grid-template-rows: 244px 244px;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.imageContainer{
+    width: 367px;
+    background-color: rgb(219, 250, 215);
+    display: flex;
+    align-items: end;
+    
+}
+
+.randomImage{
+    width: 367px;
+}
+
+.imageInfo{
+    background-color: rgba(0, 0, 0, 0.79);
+    color: white;
+    position: absolute;
+    width: 367px;
+}
+.morePhotosBttn{
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 17px;
+    width: 750px;
+}

@@ -1,0 +1,141 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    width: 750px;
+}
+.header{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.grayscaleSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 260px;
+}
+.FetchNewButton{
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 13px;
+    width: 160px;
+}
+.mainContent{
+    display: grid;
+    grid-template-columns: 367px 367px;
+    grid-template-rows: 244px 244px;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.imageContainer{
+    width: 367px;
+    background-color: rgb(219, 250, 215);
+    display: flex;
+    align-items: end;
+    
+}
+
+.randomImage{
+    width: 367px;
+}
+
+.imageInfo{
+    background-color: rgba(0, 0, 0, 0.79);
+    color: white;
+    position: absolute;
+    width: 367px;
+}
+.morePhotosBttn{
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 17px;
+    width: 750px;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 24px;
+    background-color: #696969;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-inner {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    color: rgb(159, 159, 159);
+    font-size: 14px;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #4ad93d;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-inner {
+    opacity: 0;
+}
+
+.toggle-label::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-checkbox:checked + .toggle-label::after {
+    transform: translateX(26px);
+}
+
+
+span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
