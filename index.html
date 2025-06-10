@@ -1,37 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Photo Fetcher</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h2>Welcome</h2>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">About</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section>
-        <h1>First Exam</h1>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam iure
-          necessitatibus officiis dicta temporibus pariatur excepturi incidunt
-          quasi delectus debitis!Lorem, ipsum dolor sit amet consectetur
-          adipisicing elit. Quo ad quam repellendus illo necessitatibus.
-          Aspernatur ut quis nulla est minima.
-        </p>
-      </section>
-    </main>
-    <footer>© 2025 Your Company Name. All rights reserved.</footer>
+    <div class="container">
+      <div class="header">
+        <h1>Fetch Photos</h1>
+        <div class="nav">
+        <div class="togglegray">
+          <label class="switch">
+            <input type="checkbox" id="grayscaleToggle" />
+            <span class="slider"></span>
+          </label>
+          <span>Make photos grayscale</span>
+        </div>
+        <button class="fetch-btn" id="fetch-btn">Fetch new photos</button>
+        </div>
+      </div>
+      <div class="gallery" id="gallery"></div>
+      <button class="load-more" id="load-more-btn">Load more</button>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
