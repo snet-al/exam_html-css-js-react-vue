@@ -7,23 +7,27 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="header">
+    <main class="mainContainer">
+      <header class="headerSection">
         <h1>Fetch Photos</h1>
-        <div class="nav">
-        <div class="togglegray">
-          <label class="switch">
-            <input type="checkbox" id="grayscaleToggle" />
-            <span class="slider"></span>
-          </label>
-          <span>Make photos grayscale</span>
-        </div>
-        <button class="fetch-btn" id="fetch-btn">Fetch new photos</button>
-        </div>
-      </div>
-      <div class="gallery" id="gallery"></div>
-      <button class="load-more" id="load-more-btn">Load more</button>
-    </div>
+        <nav class="navBar">
+          <section class="grayscaleToggle" aria-label="Grayscale Toggle">
+            <label class="toggleSwitch">
+              <input type="checkbox" id="grayscaleToggle" />
+              <span class="sliderToggle"></span>
+            </label>
+            <span>Make photos grayscale</span>
+          </section>
+          <button class="actionButton" id="fetchBtn">Fetch new photos</button>
+        </nav>
+      </header>
+
+      <section id="gallerySection" class="gallerySection" aria-label="Photo Gallery"></section>
+
+      <footer class="pageFooter">
+        <button class="actionButton" id="loadMoreBtn">Load more</button>
+      </footer>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
