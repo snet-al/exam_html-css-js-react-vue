@@ -84,6 +84,9 @@ input:checked + .toggle::before {
 .photos img{
     width: 100%;
 }
+.grayscale{
+    filter: grayscale();
+}
 .photos-section button{
     background-color: #7700ff;
     color: #ffffff;
