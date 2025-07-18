@@ -1,11 +1,12 @@
+import { dummyData } from "../store/DummyData";
+
 function PhotoSection() {
   return (
     <section className="photos-section">
       <div className="photos">
-        <img src="src/assets/dummy-img1.jpg" alt="Dummy Image 1" />
-        <img src="src/assets/dummy-img2.jpg" alt="Dummy Image 2" />
-        <img src="src/assets/dummy-img3.jpg" alt="Dummy Image 3" />
-        <img src="src/assets/dummy-img4.jpg" alt="Dummy Image 4" />
+        {dummyData.map((photo) => (
+          <img key={photo.id} src={photo.image} alt={photo.title} />
+        ))}
       </div>
       <button>More Photos</button>
     </section>
