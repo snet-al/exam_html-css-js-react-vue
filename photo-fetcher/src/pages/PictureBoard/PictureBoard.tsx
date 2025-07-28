@@ -35,7 +35,7 @@ function PictureBoard() {
                 <button onClick={() => setReload(c => !c)} id="reload">Fetch New Photos</button>
             </div>
             <div className="container" key="board">
-                {pictures.map(p => <Picture trigger={p.trigger} grayscale={p.grayscale}/>)}
+                {pictures.map((p, i) => <Picture trigger={p.trigger} grayscale={p.grayscale} index={i}/>)}
             </div>
             <button onClick={addFour} id="add-pics">More Photos</button>
         </>
