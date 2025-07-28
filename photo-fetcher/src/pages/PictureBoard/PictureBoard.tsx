@@ -1,12 +1,19 @@
 import {useState} from "react"
-import Picture from "../Picture/Picture.tsx"
-import Switch from "../Switch/Switch.tsx"
+import Picture from "../../components/Picture/Picture.tsx"
+import Switch from "../../components/Switch/Switch.tsx"
 import "./PictureBoard.css"
 
 function PictureBoard() {
     const [reload, setReload] = useState<boolean>(false)
     const [grayscale, setGrayscale] = useState<boolean>(false)
-    const [pictures, setPictures] = useState<{trigger : boolean, grayscale : boolean}[]>([])
+    const [pictures, setPictures] = useState<{trigger : boolean, grayscale : boolean}[]>(
+        [
+            {trigger: reload, grayscale: grayscale},
+            {trigger: reload, grayscale: grayscale},
+            {trigger: reload, grayscale: grayscale},
+            {trigger: reload, grayscale: grayscale}
+        ]
+    )
 
     function addFour() {
         const newA = [

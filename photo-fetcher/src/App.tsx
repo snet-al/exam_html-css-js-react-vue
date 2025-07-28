@@ -1,4 +1,4 @@
-import PictureBoard from "./components/PictureBoard/PictureBoard.tsx"
+import PictureBoard from "./pages/PictureBoard/PictureBoard.tsx"
 
 function App() {
 
