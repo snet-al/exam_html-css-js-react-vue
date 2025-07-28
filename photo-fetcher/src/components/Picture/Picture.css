@@ -1,0 +1,36 @@
+.container {
+    /* position: relative; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 8px;
+    row-gap: 0%;
+}
+.picture-frame {
+    position: relative;
+    padding: 8px;
+    row-gap: 0;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 12px;
+    left:8px;
+    width:351px;
+    height:25%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.overlay h3 {
+    color: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    font-weight:400;
+}
+
+.overlay a {
+    color: rgb(168, 168, 168);
+    font-size: 13px;
+    margin-left: 10px;
+}
