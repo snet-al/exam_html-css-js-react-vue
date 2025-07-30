@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react"
+import {memo, useEffect, useState} from "react"
 import Switch from "../../components/Switch/Switch.tsx"
 import "./PictureBoard.css"
 import Picture, {type PictureProps} from "../../components/Picture/Picture.tsx"
@@ -57,4 +57,4 @@ function PictureBoard() {
     )
 }
 
-export default PictureBoard
+export default memo(PictureBoard)
