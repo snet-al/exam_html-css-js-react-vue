@@ -1,10 +1,10 @@
 .container {
-    /* position: relative; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 8px;
     row-gap: 0%;
 }
+
 .picture-frame {
     position: relative;
     padding: 8px;
