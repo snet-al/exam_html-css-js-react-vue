@@ -1,5 +1,4 @@
 import "./Picture.css"
-
 interface PictureProps {
     author: string
     id: number
@@ -7,7 +6,6 @@ interface PictureProps {
     blob: string
     key: string
 }
-
 function Picture({author, id, url, blob} : PictureProps) {
     return (
         <div className="picture-frame" >
@@ -19,6 +17,5 @@ function Picture({author, id, url, blob} : PictureProps) {
         </div>
     )
 }
-
 export default Picture
 export type {PictureProps}

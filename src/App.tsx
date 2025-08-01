@@ -1,5 +1,4 @@
 import PictureBoard from "./pages/PictureBoard/PictureBoard"
-
 function App() {
     return (
         <>
@@ -7,5 +6,4 @@ function App() {
         </>
     )
 }
-
 export default App

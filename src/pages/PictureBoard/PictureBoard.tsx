@@ -3,12 +3,10 @@ import Switch from "../../components/Switch/Switch"
 import "./PictureBoard.css"
 import Picture, {type PictureProps} from "../../components/Picture/Picture"
 import FetchingService from "../../services/FetchingService"
-
 function PictureBoard() {
     const [grayscale, setGrayscale] = useState<boolean>(false)
     const [pictures, setPictures] = useState<PictureProps[]>([])
     const [loading, setLoading] = useState<boolean>(false)
-
     async function addFour() {
         setLoading(true)
         try {
@@ -25,11 +23,9 @@ function PictureBoard() {
             setLoading(false)
         }
     }
-
     useEffect(() => {
         addFour()
     }, [])
-
     async function toggleGray() {
         setLoading(true)
         try {
@@ -47,7 +43,6 @@ function PictureBoard() {
             setLoading(false)
         }
     }
-
     async function reloadPics() {
         setLoading(true)
         try {
@@ -64,7 +59,6 @@ function PictureBoard() {
             setLoading(false)
         }
     }
-
     return (
         <>
             <div id="top-section">
@@ -91,5 +85,5 @@ function PictureBoard() {
         </>
     )
 }
-
 export default memo(PictureBoard)
+

@@ -1,13 +1,10 @@
 
-
 import "./Switch.css"
-
 interface SwitchProps {
     onSwitch : () => void
     checked? : boolean;
     text? : string
 }
-
 function Switch({onSwitch, checked, text} : SwitchProps) {
     return (
         <>
@@ -21,5 +18,4 @@ function Switch({onSwitch, checked, text} : SwitchProps) {
         </>
     )
 }
-
 export default Switch
