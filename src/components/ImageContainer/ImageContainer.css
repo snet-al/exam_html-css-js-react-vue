@@ -4,6 +4,11 @@
     height: 250px;
     border-radius: 4px;
     overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.02);
 }
 
 .image-container img {
@@ -43,4 +48,8 @@ figure {
     font-size: 13px;
     margin-top: 4px;
     padding-left: 12px;
+}
+
+.image-overlay a:hover {
+    color: rgba(255, 255, 255, 0.8);
 }

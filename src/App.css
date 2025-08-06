@@ -23,6 +23,11 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
     margin-bottom: 24px;
+    transition: filter 0.3s ease;
+}
+
+.image-grid.grayscale {
+    filter: grayscale(100%);
 }
 
 .title {
@@ -43,8 +48,13 @@ button {
     transition: background-color 0.2s;
 }
 
-button:hover {
+button:hover:not(:disabled) {
     background-color: #7a1fca;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .load-more-btn {
