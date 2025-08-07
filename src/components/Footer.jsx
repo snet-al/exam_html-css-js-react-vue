@@ -1,15 +1,16 @@
+// Footer.jsx
 import React from "react";
-import Button from "./UI/Button";
 
-const Footer = ({ onLoadMore, loading }) => {
+const Footer = ({ handleLoadMore, loading }) => {
     return (
         <footer className="app-footer">
-            <Button 
-                text={loading ? "Loading..." : "Load More Images"} 
+            <button 
                 className="load-more-btn" 
-                onClick={onLoadMore}
+                onClick={handleLoadMore}
                 disabled={loading}
-            />
+            >
+                {loading ? "Loading..." : "Load More Images"}
+            </button>
         </footer>
     );
 }

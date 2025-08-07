@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react"; 
 import "./HomePage.css";
 import ImageContainer from "../components/ImageContainer/ImageContainer";
 import Header from "../components/Header";
@@ -12,13 +12,12 @@ const galleryImages = [
 ];
 
 function HomePage() {
-    const [photos] = useState(galleryImages);
-
+    
     return (
         <section className="container">
             <Header />
             <div className="image-grid">
-                {photos.map((image) => (
+                {galleryImages.map((image) => ( // Use galleryImages directly
                     <article key={image.id}>
                         <ImageContainer src={image.src} alt={image.alt} photographer="Featured Artist" />
                     </article>

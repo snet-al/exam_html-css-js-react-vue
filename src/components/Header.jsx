@@ -1,23 +1,22 @@
 import React from 'react';
-import Button from './UI/Button';
-import Toggle from './UI/Toggle';
-import Title from './UI/Tittle';
+import ToggleSwitch from './UI/ToggleSwitch';
 
-const Header = ({ onFetchPhotos, onToggleGrayscale, isGrayscale, loading }) => {
+const Header = ({ handleFetchPhotos, handleToggleGrayscale, isGrayscale, loading }) => {
     return (
         <header className="app-header">
-            <Title title="Picaroo" />
+            <h1>Picaroo</h1>
             <nav className="header-controls">
-                <Toggle 
-                    onChange={onToggleGrayscale}
+                <ToggleSwitch 
+                    onChange={handleToggleGrayscale}
                     checked={isGrayscale}
                 />
-                <Button 
-                    text={loading ? "Loading..." : "Get Fresh Photos"} 
+                <button 
                     className="fetch-btn" 
-                    onClick={onFetchPhotos}
+                    onClick={handleFetchPhotos}
                     disabled={loading}
-                />
+                >
+                    {loading ? "Loading..." : "Get Fresh Photos"}
+                </button>
             </nav>
         </header>
     );
