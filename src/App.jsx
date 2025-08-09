@@ -4,8 +4,8 @@ import ImageContainer from "./components/ImageContainer/ImageContainer";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const DEFAULT_PHOTO_IDS = [10, 20, 30, 40];
-const IMAGE_DIMENSIONS = {
+const defaultPhotoIds = [10, 20, 30, 40];
+const imageDimensions = {
   width: 400,
   height: 300
 };
@@ -24,7 +24,7 @@ function App() {
     const photos = [];
     for (let i = 0; i < count; i++) {
       const randomId = Math.floor(Math.random() * 1000) + 1;
-      const { width, height } = IMAGE_DIMENSIONS;
+      const { width, height } = imageDimensions;
       
       try {
         const photoInfo = await fetchPhotoInfo(randomId);
@@ -37,7 +37,7 @@ function App() {
           photographer: photoInfo.author,
           link: photoInfo.url 
         });
-      } catch (error) {
+      } catch {
         const src = `https://picsum.photos/id/${randomId}/${width}/${height}`;
         photos.push({ 
           id: Date.now() + Math.random() + i, 
@@ -54,9 +54,9 @@ function App() {
   const getInitialPhotos = async () => {
     const photos = [];
     
-    for (let i = 0; i < DEFAULT_PHOTO_IDS.length; i++) {
-      const id = DEFAULT_PHOTO_IDS[i];
-      const { width, height } = IMAGE_DIMENSIONS;
+    for (let i = 0; i < defaultPhotoIds.length; i++) {
+      const id = defaultPhotoIds[i];
+      const { width, height } = imageDimensions;
       
       try {
         const photoInfo = await fetchPhotoInfo(id);
@@ -68,7 +68,7 @@ function App() {
           photographer: photoInfo.author,
           link: photoInfo.url
         });
-      } catch (error) {
+      } catch  {
         photos.push({
           id: id,
           src: `https://picsum.photos/id/${id}/${width}/${height}`,
@@ -129,7 +129,7 @@ function App() {
         isGrayscale={isGrayscale}
         loading={loading}
       />
-      <section className={`image-grid ${isGrayscale ? 'grayscale' : ''}`}>
+      <section className={`imageGrid ${isGrayscale ? 'grayscale' : ''}`}>
         {images.map((photo) => (
           <ImageContainer 
             key={photo.id}

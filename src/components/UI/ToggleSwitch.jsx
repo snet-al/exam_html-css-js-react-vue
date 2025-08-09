@@ -2,17 +2,17 @@ import React from "react";
 
 const ToggleSwitch = ({ onChange, checked = false }) => {
     return (
-        <div className="toggle-wrapper">
-            <label className="toggle-switch">
+        <div className="toggleWrapper">
+            <label className="toggleSwitch">
                 <input 
                     type="checkbox" 
-                    className="toggle-input" 
+                    className="toggleInput" 
                     onChange={onChange}
                     checked={checked}
                 />
                 <span className="slider round"></span>
             </label>
-            <span className="toggle-text">Grayscale Mode</span>
+            <span className="toggleText">Grayscale Mode</span>
         </div>
     );
 };

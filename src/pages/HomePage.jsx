@@ -12,12 +12,11 @@ const galleryImages = [
 ];
 
 function HomePage() {
-    
     return (
         <section className="container">
             <Header />
-            <div className="image-grid">
-                {galleryImages.map((image) => ( // Use galleryImages directly
+            <div className="imageGrid">
+                {galleryImages.map((image) => ( 
                     <article key={image.id}>
                         <ImageContainer src={image.src} alt={image.alt} photographer="Featured Artist" />
                     </article>

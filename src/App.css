@@ -11,14 +11,14 @@ body {
     padding: 20px;
 }
 
-.header-controls {
+.headerControls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.image-grid {
+.imageGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
@@ -26,7 +26,7 @@ body {
     transition: filter 0.3s ease;
 }
 
-.image-grid.grayscale {
+.imageGrid.grayscale {
     filter: grayscale(100%);
 }
 
@@ -57,31 +57,31 @@ button:disabled {
     cursor: not-allowed;
 }
 
-.load-more-btn {
+.loadMoreBtn {
     width: 100%;
     margin: 24px 0;
     text-align: center;
 }
 
-.toggle-wrapper {
+.toggleWrapper {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.toggle-text {
+.toggleText {
     font-size: 14px;
     color: #666;
 }
 
-.toggle-switch {
+.toggleSwitch {
     position: relative;
     display: inline-block;
     width: 54px;
     height: 26px;
 }
 
-.toggle-switch input {
+.toggleSwitch input {
     opacity: 0;
     width: 0;
     height: 0;
@@ -122,14 +122,14 @@ button:disabled {
     transition: 0.3s;
 }
 
-.toggle-input:checked+.slider {
+.toggleInput:checked+.slider {
     background-color: #8a2be2;
 }
 
-.toggle-input:checked+.slider:before {
+.toggleInput:checked+.slider:before {
     transform: translateX(28px);
 }
 
-.toggle-input:checked+.slider::after {
+.toggleInput:checked+.slider::after {
     opacity: 0;
 }

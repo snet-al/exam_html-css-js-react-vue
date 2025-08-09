@@ -3,15 +3,15 @@ import ToggleSwitch from './UI/ToggleSwitch';
 
 const Header = ({ handleFetchPhotos, handleToggleGrayscale, isGrayscale, loading }) => {
     return (
-        <header className="app-header">
+        <header className="appHeader">
             <h1>Picaroo</h1>
-            <nav className="header-controls">
+            <nav className="headerControls">
                 <ToggleSwitch 
                     onChange={handleToggleGrayscale}
                     checked={isGrayscale}
                 />
                 <button 
-                    className="fetch-btn" 
+                    className="fetchBtn" 
                     onClick={handleFetchPhotos}
                     disabled={loading}
                 >

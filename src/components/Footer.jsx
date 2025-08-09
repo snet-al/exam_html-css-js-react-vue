@@ -1,11 +1,10 @@
-// Footer.jsx
 import React from "react";
 
 const Footer = ({ handleLoadMore, loading }) => {
     return (
-        <footer className="app-footer">
+        <footer className="appFooter">
             <button 
-                className="load-more-btn" 
+                className="loadMoreBtn" 
                 onClick={handleLoadMore}
                 disabled={loading}
             >
