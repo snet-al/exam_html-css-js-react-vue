@@ -1,45 +1,21 @@
 # Exam_html-css-js-react-vue
-First Exam after Learning the basics of HTML CSS JS
 
-After learning html, css, js, and react/vue there is this simple example to implement.
+### Store folder
+Ne folderin store ndodhet nje file js qe permban dummyArray. Array eshte krijuar me ane te nje loopi ne menyre qe gjatesia e tij te jete e ndryshueshme per te lehtesuar testimet.
+Ne fund e kam vendosur gjatesine 100
 
-### 1. Create a new branch with the name {username}_main_html-css
+### Utils
+Ne folderin utils ndodhet vetem nje file imageSelector.js qe eshte i perkohshem. DummyArray ka gjatesine 100 elemente me id nga 1 ne 100. 
+Funksioni selectRandomImage i ben shuffle imazheve ne menyre qe te merren 4 random.
+Funksioni remainingImages ben kontrollin e imazheve ne menyre qe te mos kemi perseritje.
+(Per implementimin me ane te api nuk besoj se eshte i nevojshem pasi numri i imazheve eshte shume i madh dhe shancet per te pasur nje imazhet te perserit jane shume te vogla)
 
-  In this branch you should implement a version of the page given.
-  The important thing here is to use html5 with its standards (eg: tags are needed according to the context, for the footer of the page do not use <div> but the dedicated tag <footer>).
-  After you are done with the changes according to the pdf, you will make a Pull Request to the repo from this branch.
-  
-### 2. Create another branch with the name {username}_main_react_components
-  The purpose of this is to make everything you have as html in simply React Components.
-  The base of react is an extension of html, so a mechanism for creating new html components.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch.
-  
-#### 2.1 To the same branch with the name {username}_main_react_components
-  We will start separating the components of UI. Inside the components folder create a new folder UI and place there the UI components.
-  
-### 3. Create another branch with the name {username}_main_react-pages
-  
-  The purpose of this is to add a PAGES folder to your react app.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch.
-  
-### 4. Create another branch with the name {username}_main_react-layout  
-  
-  The purpose of this is to implement LAYOUT concept to your react app.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch.
-  
- ### 5. Create another branch with the name {username}_main_react-store
- 
-  The fifth stage is the creation of the dynamic page, so the data must be separated from the view
-  You will save the data in a folder called STORE.
-  You will have a static file that exports a dummyData array with photos.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch. 
-  
- ### 6. Create another branch with the name {username}_main_react-services.
-  Now its time to get the data with api given in the exam pdf.
-  Create a foldes called service and implement there your first api for your react app.
-  After you are done with the changes, you will make a Pull Request to the repo from this branch. 
-  
-  
-  ## Good Luck!
-  
-# react-project
+### FetchButton dhe MorePhotosButton
+Jane dy butona qe kane funksion shume te ngjashem. Fetch shfaq 4 imazhe te reja(i fshin te gjitha imazhet e meparshme), ndersa MorePhotos shton 4 imazhe te reja.
+Imazhet jane ruajtur ne useState ne Content.jsx dhe i ka kaluar buttonave si props. Gjithashtu imazhet jane ruajtur ne sessionMemory, ne menyre qe imazhet  te mos fshihen sa here
+qe shtyp nje link qe te ben ridirect.
+
+### ToggleButton
+ToggleButton eshte butoni qe i kthen imazhet greycsale. Gjendja e tij eshte ruajtur ne useState ne Content, sepse do te perdoret nga ImageContainer. Kur butoni eshte aktiv 
+img brenda klases image-container merr nje klase te dyte image-greyscale qe e kthen greyscale. Kjo zgjidhje nuk eshte 100% e sakte pasi download link nuk te con te imazhi 
+bardhe e zi por te imazhi origjinal. Do rregullohet kur te behet implemetimi me api.
