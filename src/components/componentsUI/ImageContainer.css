@@ -1,0 +1,46 @@
+.image-container {
+  aspect-ratio: 4/3;
+  background-color: #e4e2e2;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-link {
+  position: absolute;
+  top: 200px;
+  bottom: 0px;
+  left:0px;
+  right: 0px;
+  background-color: rgb(0,0,0,0.55);
+  transition: opacity 0.15s;
+  text-decoration: none;
+}
+.image-link:hover {
+  background-color: rgb(0,0,0,0.63);
+}
+.image-link:active {
+    background-color: rgb(0,0,0,0.7);
+}
+.image-link h1 {
+  color: #dad7d7;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.image-link p {
+  color: #b0aeae;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-left: 15px;
+}
+
+.image-greyscale {
+  filter: grayscale(100%);
+}
