@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <title>Photo Fetcher</title>
+
+        <!-- importing material design library from Google -->
+        <script type="importmap">
+            {
+              "imports": {
+                "@material/web/": "https://esm.run/@material/web/"
+              }
+            }
+        </script>
+        <script type="module">
+            import '@material/web/all.js';
+            import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+
+            document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+        </script>
+
+        <!-- my code -->
+        <script type="module" src="index.js"></script>
+    </head>
+    <body>
+        <h1 class="top-bottom-layer">Photo Fetcher</h1>
+        <div class="top-bottom-layer">
+            <md-switch icons id="switch"></md-switch>
+            <label id="switch-text" for="switch">Make photos grayscale</label>
+                <button id="new-pics">Fetch New Photos</button>
+        </div>
+        <div class="container" id="container"></div>
+        <button id="add-pics">More Photos</button>
+        
+    </body>
+</html>
