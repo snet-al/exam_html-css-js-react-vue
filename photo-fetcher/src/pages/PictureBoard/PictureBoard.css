@@ -1,0 +1,26 @@
+#reload {
+    float:right;
+    margin-right: 16px;
+}
+
+#top-section {
+    margin-left: 16px;
+}
+
+button {
+    background-color: #6b4ad5;
+    color: white;
+    border-width: 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+#add-pics {
+    margin: 0 0 16px 16px;
+    width: 718px;
+}
