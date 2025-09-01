@@ -1,0 +1,10 @@
+.content {
+  width: 100%;
+  display: grid;
+  align-items: center;
+}
+@media (min-width: 800px){
+  .content {
+    width: 750px;
+  }
+}
