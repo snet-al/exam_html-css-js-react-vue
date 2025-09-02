@@ -1,0 +1,18 @@
+.fetch-button {
+  background-color: rgb(107, 74, 213);
+  font-size: 16px;
+  color: rgb(233, 230, 243);
+  padding: 6px 8px;
+  margin: 0 10px; 
+  border-style: none;
+  border-radius: 3px;
+  transition: opacity 0.15s;
+}
+
+.fetch-button:hover {
+  opacity: 0.95;
+}
+
+.fetch-button:active {
+  opacity: 0.9  ;
+}
