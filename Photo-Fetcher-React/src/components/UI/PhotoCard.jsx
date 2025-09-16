@@ -1,4 +1,3 @@
-// components/UI/PhotoCard.jsx
 import React from 'react';
 
 const PhotoCard = ({ photo, isGrayscale }) => {
@@ -24,5 +23,6 @@ const PhotoCard = ({ photo, isGrayscale }) => {
     </div>
   );
 };
+
 
 export default PhotoCard;
