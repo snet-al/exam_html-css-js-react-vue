@@ -1,4 +1,3 @@
-// components/UI/GrayscaleToggle.jsx
 import React from 'react';
 
 const GrayscaleToggle = ({ isGrayscale, onToggle }) => (
@@ -13,5 +12,6 @@ const GrayscaleToggle = ({ isGrayscale, onToggle }) => (
     <span className="text-gray-700 font-medium">Make photos grayscale</span>
   </label>
 );
+
 
 export default GrayscaleToggle;
