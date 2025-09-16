@@ -1,0 +1,165 @@
+let photos = [];
+let isGrayscale = false;
+let isLoading = false;
+
+const photoGrid = document.getElementById('photo-gallery');
+const grayscaleToggle = document.getElementById('toggle-switch');
+const fetchNewBtn = document.getElementById('fetch-photos');
+const loadMoreBtn = document.getElementById('fetch-more-photos');
+
+function setLoading(loading) {
+    isLoading = loading;
+    if (fetchNewBtn) fetchNewBtn.disabled = loading;
+    if (loadMoreBtn) loadMoreBtn.disabled = loading;
+    
+    if (loading && fetchNewBtn) {
+        fetchNewBtn.innerHTML = '<span class="spinner"></span>Loading...';
+    } else if (fetchNewBtn) {
+        fetchNewBtn.innerHTML = 'Fetch New Photos';
+    }
+    
+    if (loading && loadMoreBtn) {
+        loadMoreBtn.innerHTML = '<span class="spinner"></span>Loading More...';
+    } else if (loadMoreBtn) {
+        loadMoreBtn.innerHTML = 'More Photos';
+    }
+}
+
+function createPhotoCard(photo) {
+    return `
+        <div class="photo-card">
+            <img 
+                src="${photo.download_url}" 
+                alt="Photo by ${photo.author}"
+                class="photo-img ${isGrayscale ? 'grayscale' : ''}"
+                loading="lazy"
+            >
+            <div class="photo-info">
+                <h3>Photo by ${photo.author}</h3>
+                <p>ID: ${photo.id}</p>
+                <p>${photo.width} × ${photo.height}</p>
+            </div>
+        </div>
+    `;
+}
+
+function renderPhotos() {
+    if (!photoGrid) return;
+    
+    if (photos.length === 0 && !isLoading) {
+        photoGrid.innerHTML = '<div class="loading">No photos loaded. Click "Fetch New Photos" to start!</div>';
+        return;
+    }
+    
+    let html = '';
+    photos.forEach(photo => {
+        html += createPhotoCard(photo);
+    });
+    
+    photoGrid.innerHTML = html;
+}
+
+function updateGrayscaleMode() {
+    const photoImages = document.querySelectorAll('.photo-card img');
+    photoImages.forEach(img => {
+        if (isGrayscale) {
+            img.classList.add('grayscale');
+        } else {
+            img.classList.remove('grayscale');
+        }
+    });
+}
+
+
+async function fetchPhotos(limit = 4, append = false) {
+    console.log('Fetching photos:', { limit, append });
+    setLoading(true);
+    
+    try {
+        // Get random page to vary the photos
+        const page = Math.floor(Math.random() * 10) + 1;
+        const apiUrl = `https://picsum.photos/v2/list?page=${page}&limit=${limit}`;
+        console.log('API URL:', apiUrl);
+        
+        const response = await fetch(apiUrl);
+        console.log('Response status:', response.status);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const newPhotos = await response.json();
+        console.log('Fetched photos:', newPhotos.length);
+        
+       
+        const photosWithUrls = newPhotos.map(photo => ({
+            ...photo,
+            download_url: `https://picsum.photos/id/${photo.id}/400/600`
+        }));
+        
+        if (append) {
+            
+            const existingIds = photos.map(p => p.id);
+            const uniquePhotos = photosWithUrls.filter(photo => !existingIds.includes(photo.id));
+            photos = [...photos, ...uniquePhotos];
+        } else {
+            photos = photosWithUrls;
+        }
+        
+        console.log('Total photos now:', photos.length);
+        renderPhotos();
+        
+    } catch (error) {
+        console.error('Error fetching photos:', error);
+        
+        if (photoGrid) {
+            photoGrid.innerHTML = `
+                <div class="loading" style="grid-column: 1 / -1; text-align: center;">
+                    <h3>Failed to load photos</h3>
+                    <p>Error: ${error.message}</p>
+                    <p>Please check your internet connection and try again.</p>
+                    <br>
+                    <button class="fetch-button" onclick="fetchPhotos(4, false)">Retry</button>
+                </div>
+            `;
+        }
+    } finally {
+        setLoading(false);
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    if (grayscaleToggle) {
+        grayscaleToggle.addEventListener('change', () => {
+            isGrayscale = grayscaleToggle.checked;
+            updateGrayscaleMode();
+        });
+    }
+
+    
+    if (fetchNewBtn) {
+        fetchNewBtn.addEventListener('click', () => {
+            fetchPhotos(4, false);
+        });
+    }
+
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            fetchPhotos(4, true);
+        });
+    }
+
+    
+    fetchPhotos(4, false);
+});
+
+
+document.addEventListener('error', (e) => {
+    if (e.target.tagName === 'IMG' && e.target.classList.contains('photo-img')) {
+        e.target.src = 'https://via.placeholder.com/400x600/e5e7eb/6b7280?text=Image+Not+Found';
+        e.target.alt = 'Image not found';
+    }
+}, true);
