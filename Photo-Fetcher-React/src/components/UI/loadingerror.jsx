@@ -1,4 +1,3 @@
-// components/UI/LoadingError.jsx
 import React from 'react';
 import Button from './button';
 
@@ -10,5 +9,6 @@ const LoadingError = ({ error, onRetry }) => (
     <Button onClick={onRetry}>Retry</Button>
   </div>
 );
+
 
 export default LoadingError;
