@@ -1,4 +1,3 @@
-// components/UI/Header.jsx
 import React from 'react';
 
 const Header = () => (
@@ -6,5 +5,6 @@ const Header = () => (
     <h1 className="text-4xl font-bold text-gray-800">Photo Fetcher</h1>
   </header>
 );
+
 
 export default Header;
