@@ -1,4 +1,3 @@
-// components/UI/PhotoGallery.jsx
 import React from 'react';
 import PhotoCard from './PhotoCard';
 
@@ -23,5 +22,6 @@ const PhotoGallery = ({ photos, isGrayscale, loading }) => {
     </div>
   );
 };
+
 
 export default PhotoGallery;
