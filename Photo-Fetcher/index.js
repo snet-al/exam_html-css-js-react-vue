@@ -98,11 +98,13 @@ async function fetchPhotosFromAPI(photosPerPage = 4, shouldAppend = false) {
         const newPhotos = await response.json();
         console.log('Fetched photos:', newPhotos.length);
         
+        // Create new array with updated URLs
         const photosWithUrls = newPhotos.map(photo => ({
             ...photo,
             download_url: `https://picsum.photos/id/${photo.id}/400/600`
         }));
         
+        // Update photos array immutably
         photos = shouldAppend 
             ? [...photos, ...photosWithUrls.filter(photo => !photos.some(p => p.id === photo.id))]
             : photosWithUrls;
