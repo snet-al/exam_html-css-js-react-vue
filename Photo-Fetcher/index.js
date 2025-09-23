@@ -71,14 +71,21 @@ function updateGrayscaleMode() {
 }
 
 
-async function fetchPhotos(limit = 4, append = false) {
-    console.log('Fetching photos:', { limit, append });
+async function fetchNewPhotos() {
+    await fetchPhotosFromAPI(4, false);
+}
+
+async function appendMorePhotos() {
+    await fetchPhotosFromAPI(4, true);
+}
+
+async function fetchPhotosFromAPI(photosPerPage = 4, shouldAppend = false) {
+    console.log('Fetching photos:', { photosPerPage, shouldAppend });
     setLoading(true);
     
     try {
-        // Get random page to vary the photos
         const page = Math.floor(Math.random() * 10) + 1;
-        const apiUrl = `https://picsum.photos/v2/list?page=${page}&limit=${limit}`;
+        const apiUrl = `https://picsum.photos/v2/list?page=${page}&limit=${photosPerPage}`;
         console.log('API URL:', apiUrl);
         
         const response = await fetch(apiUrl);
@@ -91,20 +98,14 @@ async function fetchPhotos(limit = 4, append = false) {
         const newPhotos = await response.json();
         console.log('Fetched photos:', newPhotos.length);
         
-       
         const photosWithUrls = newPhotos.map(photo => ({
             ...photo,
             download_url: `https://picsum.photos/id/${photo.id}/400/600`
         }));
         
-        if (append) {
-            
-            const existingIds = photos.map(p => p.id);
-            const uniquePhotos = photosWithUrls.filter(photo => !existingIds.includes(photo.id));
-            photos = [...photos, ...uniquePhotos];
-        } else {
-            photos = photosWithUrls;
-        }
+        photos = shouldAppend 
+            ? [...photos, ...photosWithUrls.filter(photo => !photos.some(p => p.id === photo.id))]
+            : photosWithUrls;
         
         console.log('Total photos now:', photos.length);
         renderPhotos();
@@ -119,7 +120,7 @@ async function fetchPhotos(limit = 4, append = false) {
                     <p>Error: ${error.message}</p>
                     <p>Please check your internet connection and try again.</p>
                     <br>
-                    <button class="fetch-button" onclick="fetchPhotos(4, false)">Retry</button>
+                    <button class="fetch-button" onclick="fetchNewPhotos()">Retry</button>
                 </div>
             `;
         }
@@ -140,20 +141,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     if (fetchNewBtn) {
-        fetchNewBtn.addEventListener('click', () => {
-            fetchPhotos(4, false);
-        });
+        fetchNewBtn.addEventListener('click', fetchNewPhotos);
     }
 
     
     if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', () => {
-            fetchPhotos(4, true);
-        });
+        loadMoreBtn.addEventListener('click', appendMorePhotos);
     }
 
     
-    fetchPhotos(4, false);
+    fetchNewPhotos();
 });
 
 
