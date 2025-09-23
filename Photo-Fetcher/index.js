@@ -51,12 +51,12 @@ function renderPhotos() {
         return;
     }
     
-    let html = '';
+    let photoCardsMarkup = '';
     photos.forEach(photo => {
-        html += createPhotoCard(photo);
+        photoCardsMarkup += createPhotoCard(photo);
     });
     
-    photoGrid.innerHTML = html;
+    photoGrid.innerHTML = photoCardsMarkup;
 }
 
 function updateGrayscaleMode() {
