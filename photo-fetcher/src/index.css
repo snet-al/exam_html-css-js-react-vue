@@ -107,3 +107,8 @@ figcaption {
 }
 
 .link:hover { text-decoration: underline; }
+
+.is-grayscale img {
+  filter: grayscale(100%);
+}
+
