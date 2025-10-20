@@ -92,6 +92,22 @@ figcaption {
   color: white;
 }
 
+figcaption .name {
+  display: block;       /* new line */
+  font-weight: bold;
+  margin: 0 0 2px;      
+  line-height: 1.2;
+}
+
+figcaption .link {
+  display: block;       /* new line */
+  font-size: 12px;
+  color: #ddd;
+  text-decoration: none;
+  overflow-wrap: anywhere; 
+}
+
+
 .name {
   font-weight: bold;
   margin: 0;
