@@ -1,0 +1,50 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    max-width: 750px;
+    justify-self: center;
+}
+
+.headerBtns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grayscaleBtn{
+    display: flex;
+}
+
+.fetchBtn{
+    color: white;
+    background-color: blueviolet;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 30px;
+}
+
+.container{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 50% 50%;
+    
+}
+
+.photoContainer{
+    background-color: red;
+    height: 280px;
+    width:367px;
+    position: relative;
+}
+
+.infoCont{
+    background-color: black;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    width: 94.5%;
+    padding: 0 10px;
+}
