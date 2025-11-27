@@ -1,12 +1,12 @@
 import PhotoFetcher from "@/components/UI/photo_fetcher";
+import Layout from "@/layout/layout";
 
 export default function Home() {
 
   
 
   return (
-    <div className="max-w-[750px] justify-self-center">
-      
+    <Layout>
       {/*Header*/}
       <div className="w-full p-4">
         <p className="text-4xl">Photo Fetcher</p>
@@ -27,6 +27,8 @@ export default function Home() {
 
       {/*photo fetcher*/}
         <PhotoFetcher/>
-    </div>
+    </Layout>
+      
+      
   );
 }
