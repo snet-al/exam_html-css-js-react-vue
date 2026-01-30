@@ -1,0 +1,117 @@
+/* Perdorimi i variablave per te bere update styles ne menyre me te thjeshte */
+:root {
+  --max: 750px;
+  --gap: 16px;
+  --purple: #6c63ff;
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+}
+
+.page { padding: 32px 16px; 
+        display: flex; 
+        justify-content: center; }
+
+.container { width: 100%; 
+             max-width: var(--max); }
+
+.title { margin: 0 0 18px; 
+        font-size: 28px; 
+        font-weight: 700; }
+
+  /* Kodi per Controls , Toggle + Button */      
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 0;
+  background: var(--purple);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:active { transform: translateY(2px); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.card {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #eee;
+  min-height: 230px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+}
+
+.overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 10px 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0));
+  color: white;
+}
+.author { margin: 0; 
+          font-weight: 700; }
+          
+.link { color: rgba(255,255,255,0.85); 
+        font-size: 12px; 
+        text-decoration: none; }
+
+.footer { margin-top: 18px; }
+
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+
+.switch { display: inline-flex; 
+          align-items: center; 
+          gap: 10px; 
+          cursor: pointer; }
+
+.switch input { display: none; }
+.slider {
+  width: 44px; 
+  height: 24px; 
+  border-radius: 999px;
+  background: #d1d5db; 
+  position: relative; 
+  flex: 0 0 auto;
+}
+.slider::after {
+  content: "";
+  width: 18px; height: 18px; border-radius: 999px;
+  background: white; position: absolute; top: 3px; left: 3px;
+  transition: transform 160ms ease;
+}
+.switch input:checked + .slider { background: #192746; }
+.switch input:checked + .slider::after { transform: translateX(20px); }
+.switch-label { color: var(--muted); font-size: 14px; }
