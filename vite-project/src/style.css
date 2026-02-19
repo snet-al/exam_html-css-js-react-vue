@@ -50,7 +50,8 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
   gap: var(--gap);
 }
 
@@ -86,7 +87,6 @@ body {
 
 .footer { margin-top: 18px; }
 
-
 @media (max-width: 560px) {
   .grid { grid-template-columns: 1fr; }
 }
@@ -115,3 +115,6 @@ body {
 .switch input:checked + .slider { background: #192746; }
 .switch input:checked + .slider::after { transform: translateX(20px); }
 .switch-label { color: var(--muted); font-size: 14px; }
+
+.img.is-gray { filter: grayscale(100%); }
+
