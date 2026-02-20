@@ -2,7 +2,7 @@ import { useState } from "react";
 import Toggle from "./components/UI/Toggle";
 import Button from "./components/UI/Button";
 import PhotoGrid from "./components/PhotoGrid";
-import "./App.css";
+import "./style.css";
 
 const staticPhotos = [
   { id: "1", author: "Author 1", url: "https://picsum.photos/", download_url: "https://picsum.photos/seed/1/800/600" },
