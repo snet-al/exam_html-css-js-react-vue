@@ -1,13 +1,11 @@
+import MainLayout from "./layout/MainLayout";
 import HomePage from "./pages/HomePage";
-import "./style.css";
-
+import "./App.css";
 
 export default function App() {
   return (
-    <main className="page">
-      <section className="container">
-        <HomePage />
-      </section>
-    </main>
+    <MainLayout>
+      <HomePage />
+    </MainLayout>
   );
 }
