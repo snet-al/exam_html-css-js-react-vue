@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Fetcher SNET</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="container" aria-label="Photo Fetcher">
+        <header class="header">
+          <h1 class="title">Photo Fetcher</h1>
+
+          <div class="controls">
+            <label class="switch" for="grayscale">
+              <input id="grayscale" type="checkbox" />
+              <span class="slider" aria-hidden="true"></span>
+              <span class="switch-label">Make photos grayscale</span>
+            </label>
+
+            <button class="btn" type="button">Fetch New Photos</button>
+          </div>
+        </header>
+
+        <section class="grid" aria-label="Photos Grid">
+          
+          <article class="card">
+            <img class="img" src="https://picsum.photos/seed/1/800/600" alt="Random 1" />
+            <div class="overlay">
+              <p class="author">Author Name</p>
+              <a class="link" href="#" target="_blank" rel="noreferrer">https://picsum.photos/</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="img" src="https://picsum.photos/seed/2/800/600" alt="Random 2" />
+            <div class="overlay">
+              <p class="author">Author Name</p>
+              <a class="link" href="#" target="_blank" rel="noreferrer">https://picsum.photos/</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="img" src="https://picsum.photos/seed/3/800/600" alt="Random 3" />
+            <div class="overlay">
+              <p class="author">Author Name</p>
+              <a class="link" href="#" target="_blank" rel="noreferrer">https://picsum.photos/</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="img" src="https://picsum.photos/seed/4/800/600" alt="Random 4" />
+            <div class="overlay">
+              <p class="author">Author Name</p>
+              <a class="link" href="#" target="_blank" rel="noreferrer">https://picsum.photos/</a>
+            </div>
+          </article>
+        </section>
+
+        <footer class="footer">
+  <p>Photos provided by Picsum · Photo Fetcher</p>
+</footer>
+
+      </section>
+    </main>
+  </body>
+</html>
