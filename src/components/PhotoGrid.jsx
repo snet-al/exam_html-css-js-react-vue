@@ -5,7 +5,9 @@ export default function PhotoGrid({ photos, grayscale }) {
     <section className="grid" aria-label="Photos grid">
       {photos.map((p) => (
         <PhotoCard key={p.id} photo={p} grayscale={grayscale} />
+        
       ))}
     </section>
   );
 }
+

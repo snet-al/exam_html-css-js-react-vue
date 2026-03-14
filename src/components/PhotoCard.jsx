@@ -7,6 +7,7 @@ export default function PhotoCard({ photo, grayscale }) {
         alt={photo.author}
         loading="lazy"
       />
+
       <div className="overlay">
         <p className="author">{photo.author}</p>
         <a className="link" href={photo.url} target="_blank" rel="noreferrer">

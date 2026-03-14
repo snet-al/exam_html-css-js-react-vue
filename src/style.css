@@ -69,6 +69,7 @@ body {
   display: block;
   object-fit: cover;
   aspect-ratio: 4 / 3;
+  
 }
 
 .overlay {
@@ -118,3 +119,27 @@ body {
 
 .img.is-gray { filter: grayscale(100%); }
 
+.skeleton {
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 50%, #e5e7eb 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  min-height: 230px;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 14px;
+  margin: 0 0 12px;
+}
