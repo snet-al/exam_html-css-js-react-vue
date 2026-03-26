@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Toggle from "./components/UI/Toggle";
 import Button from "./components/UI/Button";
-import PhotoGrid from "./components/PhotoGrid";
+import PhotoCard from "./components/PhotoCard";
 import "./style.css";
 
 const staticPhotos = [
@@ -30,7 +30,11 @@ export default function App() {
           </div>
         </header>
 
-        <PhotoGrid photos={staticPhotos} grayscale={grayscale} />
+        <section className="grid" aria-label="Photos grid">
+          {staticPhotos.map((p) => (
+            <PhotoCard key={p.id} photo={p} grayscale={grayscale} />
+          ))}
+        </section>
       </section>
     </main>
   );
