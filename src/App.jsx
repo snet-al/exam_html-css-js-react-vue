@@ -1,16 +1,7 @@
-import Header from "./components/Header";
-import Gallery from "./components/Gallery";
-import Footer from "./components/Footer";
-import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
-  return (
-    <div className="app">
-      <Header />
-      <Gallery />
-      <Footer />
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;
