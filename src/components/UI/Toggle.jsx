@@ -1,8 +1,8 @@
-function Toggle() {
+function Toggle({ checked, onChange }) {
   return (
     <label className="toggle">
-      <input type="checkbox" />
-      <span class="slider"></span> 
+      <input type="checkbox" checked={checked} onChange={onChange} />
+      <span className="slider"></span>
       <span className="label-text">Make photos grayscale</span>
     </label>
   );

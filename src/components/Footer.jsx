@@ -1,9 +1,9 @@
 import Button from "./UI/Button";
 
-function Footer() {
+function Footer({ onLoadMore }) {
   return (
     <footer className="footer container">
-      <Button className="full-width">More Photos</Button>
+      <Button className="full-width" onClick={onLoadMore}>More Photos</Button>
     </footer>
   );
 }
