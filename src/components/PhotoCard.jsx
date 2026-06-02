@@ -1,12 +1,12 @@
-function PhotoCard() {
+function PhotoCard({ photo }) {
   return (
     <article className="card">
-      <img src="https://picsum.photos/400/300?random=1" alt="photo" />
+      <img src={photo.download_url} alt={`Photo by ${photo.author}`} />
       <div className="card-content">
-        <h3>Lukas Budimaier</h3>
+        <h3>{photo.author}</h3>
         <p>
-          <a href="https://unsplash.com/photos" target="_blank" rel="noreferrer">
-            https://unsplash.com/photos
+          <a href={photo.url} target="_blank" rel="noreferrer">
+            {photo.url}
           </a>
         </p>
       </div>
