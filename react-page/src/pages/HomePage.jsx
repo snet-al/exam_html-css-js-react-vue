@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Cart from '../card.jsx'
-import Layout from '../layout/Layout.jsx'
 
 function HomePage() {
     const [photos, setPhotos] = useState([])
@@ -13,10 +12,13 @@ function HomePage() {
             .then(data => setPhotos(data))
     }
 
-    useEffect(() => { fetchPhotos() }, [])
+    useEffect(() => {
+        fetchPhotos()
+    }, [])
 
     return (
-        <Layout>
+        <div>
+            <header><h1>Photo Fetcher</h1></header>
             <div className="full">
                 <div className="toggle-row">
                     <label className="switch">
@@ -40,7 +42,7 @@ function HomePage() {
                     />
                 ))}
             </div>
-        </Layout>
+        </div>
     )
 }
 
