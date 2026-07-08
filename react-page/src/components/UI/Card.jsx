@@ -1,6 +1,6 @@
-function Cart({ photo, grayscale }) {//creates the setup of the carts
+function Card({ photo, grayscale }) {
     return (
-        <div className="cart">
+        <article className="cart">
             <img 
                 src={photo.image} 
                 alt={photo.name}
@@ -10,8 +10,8 @@ function Cart({ photo, grayscale }) {//creates the setup of the carts
                 <h4>{photo.name}</h4>
                 <p>{photo.link}</p>
             </div>
-        </div>
-    );
+        </article>
+    )
 }
 
-export default Cart;
+export default Card

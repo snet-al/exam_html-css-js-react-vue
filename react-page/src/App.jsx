@@ -1,52 +1,47 @@
 import { useState, useEffect } from 'react'
-import Cart from './card.jsx'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import Toggle from './components/UI/Toggle.jsx'
+import Button from './components/UI/Button.jsx'
+import Card from './components/UI/Card.jsx'
 import './photos.css'
 
 function App() {
-    const [photos, setPhotos] = useState([])//stores the fetched photos
-    const [grayscale, setGrayscale] = useState(false)//controls if photos are shown in grayscale
+    const [photos, setPhotos] = useState([])
+    const [grayscale, setGrayscale] = useState(false)
 
     function fetchPhotos() {
-        // gets 4 random photos from picsum
-        const randomPage = Math.floor(Math.random() * 50)//gets a random number
-        fetch(`https://picsum.photos/v2/list?limit=4&page=${randomPage}`)//request photos from the api
-            .then(res => res.json())//convert the response to json
-            .then(data => setPhotos(data))//saves the fetched photos in state
+        const randomPage = Math.floor(Math.random() * 50)
+        fetch(`https://picsum.photos/v2/list?limit=4&page=${randomPage}`)
+            .then(res => res.json())
+            .then(data => setPhotos(data))
     }
 
-    // fetch photos once when page loads
-    useEffect(() => {//runs the code after render
+    useEffect(() => {
         fetchPhotos()
     }, [])
 
     return (
         <div>
-            <header><h1>Photo Fetcher</h1></header>
-
+            <Header />
             <div className="full">
-                <div className="toggle-row">
-                    <label className="switch">
-                        <input type="checkbox" onChange={() => setGrayscale(!grayscale)} />
-                        <span className="slider"></span>
-                    </label>
-                    <span className="label-text">Make photos grayscale</span>
-                </div>
-                <button className="fetch-btn" onClick={fetchPhotos}>Fetch New Photos</button>
+                <Toggle onChange={() => setGrayscale(!grayscale)} />
+                <Button label="Fetch New Photos" onClick={fetchPhotos} />
             </div>
-
             <div className="holder">
                 {photos.map(photo => (
-                    <Cart
+                    <Card
                         key={photo.id}
                         photo={{
                             image: photo.download_url,
                             name: photo.author,
                             link: photo.url
-                        }}//using Cart from cart.jsx and passing it data
+                        }}
                         grayscale={grayscale}
-                    />//prepares the carts holder
+                    />
                 ))}
             </div>
+            <Footer />
         </div>
     )
 }
