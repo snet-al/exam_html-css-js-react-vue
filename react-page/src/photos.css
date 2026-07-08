@@ -1,0 +1,155 @@
+* {
+    margin: 0;/*removes default space around elements*/
+    padding: 0;/*removes inner spacing*/
+    box-sizing: border-box;/*makes width/height calculations include padding + border*/
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    padding: 2rem;/*adds space around the whole page*/
+}
+
+header {
+    max-width: 750px;/*limits how wide header can be*/
+    margin: 0 auto 1.5rem auto;/*auto centers the header horizonatlly*/
+}
+
+header h1 {
+    font-size: 2rem;/*makes title bigger*/
+    font-weight: 400;/*normal thickness*/
+}
+
+/* toolbar row */
+.full {
+    max-width: 750px;
+    margin: 0 auto 1rem auto;
+    display: flex;/*puts children in a row*/
+    justify-content: space-between;/*pushes iteams to left and right*/
+    align-items: center;/*vertically centers items*/
+}
+
+.toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* toggle switch */
+.switch {
+    position: relative;/*needed for inner circle positioning*/
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #ccc;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;/*fills parent*/
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+    background: #555;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+/* fetch button */
+.fetch-btn {
+    background: #6c47ff;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* photo grid */
+.holder {
+    max-width: 750px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* all 4 photo cards share the same rules */
+.photo{
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.cart {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.cart img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.grayscale {
+    filter: grayscale(100%);/*turns images black and white*/
+}
+
+/* text overlay on image */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 0.75rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+}
+
+.overlay h4 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.overlay p {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+footer {
+    max-width: 750px;
+    margin: 1.5rem auto 0 auto;
+    position: center;
+}
