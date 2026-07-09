@@ -1,15 +1,14 @@
 import PhotoCard from "./PhotoCard";
-import dummyData from "../store/dummyData"; 
 
-function Gallery() {
+function Gallery({photos}) {
   return (
-    <main className="container">
+    <div className="container">
       <section className="gallery-grid">
-        {dummyData.map((item) => (
+        {photos.map((item) => (
           <PhotoCard key={item.id} photo={item} />
         ))}
       </section>
-    </main>
+    </div>
   );
 }
 
