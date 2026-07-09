@@ -4,17 +4,17 @@ import Toggle from '../components/UI/Toggle.jsx'
 import Button from '../components/UI/Button.jsx'
 import Card from '../components/UI/Card.jsx'
 import dummyData from '../store/dummyData.js'
+import { getPhotos } from '../services/photoApi.js'
+
 
 function HomePage() {
     const [photos, setPhotos] = useState(dummyData)
     const [grayscale, setGrayscale] = useState(false)
 
     function fetchPhotos() {
-        const randomPage = Math.floor(Math.random() * 50)
-        fetch(`https://picsum.photos/v2/list?limit=4&page=${randomPage}`)
-            .then(res => res.json())
-            .then(data => setPhotos(data))
+        getPhotos().then(data => setPhotos(data))
     }
+    
 
     useEffect(() => {
         fetchPhotos()
