@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import Header from '../components/Header.jsx'
-import Footer from '../components/Footer.jsx'
+import Layout from '../layout/Layout.jsx'
 import Toggle from '../components/UI/Toggle.jsx'
 import Button from '../components/UI/Button.jsx'
 import Card from '../components/UI/Card.jsx'
@@ -21,8 +20,7 @@ function HomePage() {
     }, [])
 
     return (
-        <div>
-            <Header />
+        <Layout>
             <div className="full">
                 <Toggle onChange={() => setGrayscale(!grayscale)} />
                 <Button label="Fetch New Photos" onClick={fetchPhotos} />
@@ -40,8 +38,7 @@ function HomePage() {
                     />
                 ))}
             </div>
-            <Footer />
-        </div>
+        </Layout>
     )
 }
 
