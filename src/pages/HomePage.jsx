@@ -3,7 +3,7 @@ import Gallery from "../components/Gallery";
 import Footer from "../components/Footer";
 import "../App.css";
 
-function Home() {
+function HomePage() {
   return (
     <div className="app">
       <Header />
@@ -13,4 +13,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;
