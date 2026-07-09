@@ -6,17 +6,15 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { fetchPhotosFromApi } from "../services/photoService";
 
-function Home() {
-    const [displayedPhotos, setDisplayedPhotos] = useState([]);
+function HomePage() {
+  const [displayedPhotos, setDisplayedPhotos] = useState([]);
   const [grayscale, setGrayscale] = useState(() => {
     return localStorage.getItem("grayscale") === "true";
   });
-  
   const poolPhotos = useRef([]);
   const pageRef = useRef(1);
   const photosPerLoad = 4;
-
-    const getRandomPhotos = async (count) => {
+  const getRandomPhotos = async (count) => {
     const selected = [];
     let currentPool = [...poolPhotos.current];
 
@@ -41,10 +39,8 @@ function Home() {
     setDisplayedPhotos([]); 
     pageRef.current = 1;    
     poolPhotos.current = []; 
-
     const data = await fetchPhotosFromApi(pageRef.current, 100);
     poolPhotos.current = data;
-
     const initialFour = await getRandomPhotos(photosPerLoad);
     setDisplayedPhotos(initialFour);
   };
@@ -64,7 +60,6 @@ function Home() {
       localStorage.setItem("grayscale", nextValue); 
       return nextValue;
     });
-  
   }
   return (
     <MainLayout>
@@ -81,4 +76,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;
