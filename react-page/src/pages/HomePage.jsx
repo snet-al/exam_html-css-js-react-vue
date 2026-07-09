@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import Header from '../components/Header.jsx'
-import Footer from '../components/Footer.jsx'
+import Layout from '../layout/Layout.jsx'
 import Toggle from '../components/UI/Toggle.jsx'
 import Button from '../components/UI/Button.jsx'
 import Card from '../components/UI/Card.jsx'
+import dummyData from '../store/dummyData.js'
 
 function HomePage() {
-    const [photos, setPhotos] = useState([])
+    const [photos, setPhotos] = useState(dummyData)
     const [grayscale, setGrayscale] = useState(false)
 
     function fetchPhotos() {
@@ -21,8 +21,7 @@ function HomePage() {
     }, [])
 
     return (
-        <div>
-            <Header />
+        <Layout>
             <div className="full">
                 <Toggle onChange={() => setGrayscale(!grayscale)} />
                 <Button label="Fetch New Photos" onClick={fetchPhotos} />
@@ -32,16 +31,15 @@ function HomePage() {
                     <Card
                         key={photo.id}
                         photo={{
-                            image: photo.download_url,
-                            name: photo.author,
-                            link: photo.url
+                            image: photo.download_url || photo.image,
+                            name: photo.author || photo.name,
+                            link: photo.url || photo.link
                         }}
                         grayscale={grayscale}
                     />
                 ))}
             </div>
-            <Footer />
-        </div>
+        </Layout>
     )
 }
 
