@@ -3,9 +3,12 @@ import React from "react";
 
 function Photocard({ Photo }) {
     return (
-        <div className="photocard">
+        <div className="photo-card">
             <img src={Photo.download_url} alt={`Photo by ${Photo.author}`} />
-            <p>{Photo.author}</p>
+            <div className="photo-info">
+                <p className="photo-author">{Photo.author}</p>
+                <p className="photo-url">{Photo.download_url}</p>
+            </div>
         </div>
     );
 }

@@ -1,20 +1,21 @@
 import React from "react";
-import Photocard from "../Photocard"; 
-import Skeletons from "./Skeletons";   
+import Skeletons from "./Skeletons.jsx";   
 
 const photoCount = 4;
 
 function Grid({ photos, loading, grayscale }) {
     return (
-        // Apply grayscale class conditionally 
-        <div className={`grid ${grayscale ? "grayscale" : ""}`}>
-            {loading ? (
-                <Skeletons count={photoCount} />
-            ) : (
-                photos.map((photo, index) => (
-                    <Photocard key={index} Photo={{ download_url: photo, author: `Author ${index + 1}` }} />
-                ))
-            )}
+        <div className="container">
+            <div className={`grid ${grayscale ? "grayscale" : ""}`}>
+                {loading ? (
+                    <Skeletons count={photoCount} />
+                ) : (
+                    photos.map((photo, index) => (
+                     
+                        <Photocard key={index} Photo={photo} />
+                    ))
+                )}
+            </div>
         </div>
     );
 }
