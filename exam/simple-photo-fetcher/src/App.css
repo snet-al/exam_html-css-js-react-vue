@@ -10,7 +10,15 @@ body {
   color: #111;
 }
 
+
 .container {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Page structural elements */
+.home-page {
   max-width: 750px;
   margin: 0 auto;
   padding: 0 16px;
@@ -25,7 +33,7 @@ h1 {
   font-weight: 500;
 }
 
-/* Controls */
+/* Controls layout */
 .controls {
   display: flex;
   align-items: center;
@@ -42,7 +50,7 @@ h1 {
   user-select: none;
 }
 
-/* Styled toggle switch */
+/* Styled custom toggle switch input fields */
 .toggle-switch {
   position: relative;
   width: 44px;
@@ -86,8 +94,8 @@ h1 {
   transform: translateX(20px);
 }
 
-/* Buttons */
-button {
+
+button, .button {
   background: #5c45e8;
   color: white;
   border: none;
@@ -95,32 +103,40 @@ button {
   border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-button:hover {
+button:hover, .button:hover {
   background: #4a36c5;
 }
 
-button:disabled {
+button:disabled, .button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-/* Grid */
-.grid {
+.grid, .skeletons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  width: 100%;
 }
 
-/* Photo card */
-.photo-card {
+
+.grid.grayscale img {
+  filter: grayscale(100%);
+  transition: filter 0.25s ease;
+}
+
+/* Photo card layouts */
+.photocard, .photo-card {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
-.photo-card img {
+.photocard img, .photo-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -139,7 +155,7 @@ button:disabled {
   gap: 2px;
 }
 
-.photo-author {
+.photocard p, .photo-author {
   color: white;
   font-size: 13px;
   font-weight: 600;
@@ -153,16 +169,17 @@ button:disabled {
   text-overflow: ellipsis;
 }
 
-/* Skeleton */
-.skeleton-card {
+/* animatetd skeletons */
+.skeleton, .skeleton-card {
   border-radius: 8px;
   aspect-ratio: 4 / 3;
-  background: #8a8888;
+  background: #e0e0e0;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
-.skeleton-card::after {
+.skeleton::after, .skeleton-card::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -175,7 +192,6 @@ button:disabled {
   100% { transform: translateX(100%); }
 }
 
-/* More button */
 .more-btn {
   display: block;
   width: 100%;
@@ -183,7 +199,7 @@ button:disabled {
   padding: 12px;
 }
 
-/* Footer */
+
 footer {
   border-top: 1px solid #eee;
   padding: 20px 0;

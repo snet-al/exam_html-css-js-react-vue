@@ -1,11 +1,12 @@
 import React from "react";
-import Photocard from "../Photocard"; // Go up one folder to find Photocard
-import Skeletons from "./Skeletons";   // Look in the same UI folder
+import Photocard from "../Photocard"; 
+import Skeletons from "./Skeletons";   
 
 const photoCount = 4;
 
 function Grid({ photos, loading, grayscale }) {
     return (
+        // Apply grayscale class conditionally 
         <div className={`grid ${grayscale ? "grayscale" : ""}`}>
             {loading ? (
                 <Skeletons count={photoCount} />
