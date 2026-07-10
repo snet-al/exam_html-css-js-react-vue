@@ -3,8 +3,9 @@ import Header from '../components/UI/Header'
 import Controls from '../components/Controls'
 import Grid from '../components/UI/Grid'
 import Footer from '../components/UI/Footer'
-
-
+import { getPhotos } from '../utils/photoFetcher'
+import Button from '../components/UI/Button'
+import Toggle from '../components/UI/Toggle'
 
 function HomePage() {
     const [photos, setPhotos] = useState([]);
