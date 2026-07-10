@@ -1,25 +1,8 @@
 import React from "react";
+import Photocard from "../Photocard"; // Go up one folder to find Photocard
+import Skeletons from "./Skeletons";   // Look in the same UI folder
 
 const photoCount = 4;
-
-function getPhotos(count){
-    const photos = [];
-    for (let i = 0; i < count; i++) {
-        photos.push(`https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`);
-    }
-    return photos;
-}
-
-//fetch function to be implemtented to fetch photos from picsum.photos API
-
-function Photocard({ Photo }) {
-    return (
-        <div className="photocard">
-            <img src={Photo.download_url} alt={`Photo by ${Photo.author}`} />
-            <p>{Photo.author}</p>
-        </div>
-    );
-}
 
 function Grid({ photos, loading, grayscale }) {
     return (
@@ -35,13 +18,4 @@ function Grid({ photos, loading, grayscale }) {
     );
 }
 
-function Skeletons({ count }) {
-  const skeletons = Array.from({ length: count }, (_, index) => (
-    <div key={index} className="skeleton"></div>
-  ));
-
-    return <div className="skeletons">{skeletons}</div>;
-}
-
-export default Skeletons;
-
+export default Grid;

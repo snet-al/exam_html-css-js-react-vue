@@ -4,8 +4,9 @@ import Controls from '../components/Controls'
 import Grid from '../components/UI/Grid'
 import Footer from '../components/UI/Footer'
 import { getPhotos } from '../utils/photoFetcher'
-import Button from '../components/UI/Button'
-import Toggle from '../components/UI/Toggle'
+
+
+const PHOTO_COUNT = 4;
 
 function HomePage() {
     const [photos, setPhotos] = useState([]);
@@ -14,15 +15,14 @@ function HomePage() {
 
     useEffect(() => {
         setLoading(true);
-        const newPhotos = getPhotos(photoCount);
+        const newPhotos = getPhotos(PHOTO_COUNT); 
         setPhotos(newPhotos);
         setLoading(false);
-    }
-, []);
+    }, []);
 
     const handleRefresh = () => {
         setLoading(true);
-        const newPhotos = getPhotos(photoCount);
+        const newPhotos = getPhotos(PHOTO_COUNT); 
         setPhotos(newPhotos);
         setLoading(false);
     }
@@ -36,3 +36,5 @@ function HomePage() {
         </div>
     )
 }
+
+export default HomePage;

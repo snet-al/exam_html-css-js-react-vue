@@ -8,3 +8,5 @@ function Toggle({ isOn, onToggle }) {
     </label>
   );
 }
+
+export default Toggle;

@@ -1,6 +1,6 @@
 import React from "react";
-
-//use button and toggle components to create controls component
+import Button from "./UI/Button";
+import Toggle from "./UI/Toggle";
 
 function Controls({ grayscale, setGrayscale, onRefresh }) {
   return (
@@ -11,3 +11,4 @@ function Controls({ grayscale, setGrayscale, onRefresh }) {
   );
 }
 
+export default Controls;
