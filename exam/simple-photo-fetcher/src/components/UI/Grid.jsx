@@ -1,6 +1,6 @@
 import React from "react";
 import Skeletons from "./Skeletons.jsx";   
-import Photocard from "./Photocard.jsx";
+import Photocard from "../Photocard.jsx";
 
 const photoCount = 4;
 

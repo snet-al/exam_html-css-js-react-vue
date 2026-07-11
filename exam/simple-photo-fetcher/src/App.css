@@ -212,3 +212,9 @@ footer a {
   color: #5c45e8;
   text-decoration: none;
 }
+
+.error-message {
+  color: #b91c1c;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
