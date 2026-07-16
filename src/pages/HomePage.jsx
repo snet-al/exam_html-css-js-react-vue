@@ -4,7 +4,7 @@ import "../App.css";
 import { useState, useEffect, useRef } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { fetchPhotosFromApi } from "../services/photoService";
+import { PhotoService } from "../services/photoService";
 
 function HomePage() {
   const [displayedPhotos, setDisplayedPhotos] = useState([]);
@@ -21,7 +21,7 @@ function HomePage() {
     while (selected.length < count) {
       if (currentPool.length === 0) {
         pageRef.current += 1;
-        const newData = await fetchPhotosFromApi(pageRef.current, 100);
+        const newData = await PhotoService.get(pageRef.current, 100);
         currentPool = currentPool.concat(newData);
       }
 
@@ -39,7 +39,7 @@ function HomePage() {
     setDisplayedPhotos([]); 
     pageRef.current = 1;    
     poolPhotos.current = []; 
-    const data = await fetchPhotosFromApi(pageRef.current, 100);
+    const data = await PhotoService.get(pageRef.current, 100);
     poolPhotos.current = data;
     const initialFour = await getRandomPhotos(photosPerLoad);
     setDisplayedPhotos(initialFour);
