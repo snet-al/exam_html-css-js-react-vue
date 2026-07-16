@@ -17,7 +17,7 @@ body {
   padding: 0 16px;
 }
 
-/* Page structural elements */
+
 .home-page {
   max-width: 750px;
   margin: 0 auto;
@@ -33,7 +33,7 @@ h1 {
   font-weight: 500;
 }
 
-/* Controls layout */
+
 .controls {
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@ h1 {
   user-select: none;
 }
 
-/* Styled custom toggle switch input fields */
+
 .toggle {
   position: relative;
   width: 44px;
@@ -128,7 +128,7 @@ button:disabled, .button:disabled {
   transition: filter 0.25s ease;
 }
 
-/* Photo card layouts */
+
 .photocard, .photo-card {
   border-radius: 8px;
   overflow: hidden;
@@ -169,7 +169,7 @@ button:disabled, .button:disabled {
   text-overflow: ellipsis;
 }
 
-/* animatetd skeletons */
+
 .skeleton, .skeleton-card {
   border-radius: 8px;
   aspect-ratio: 4 / 3;

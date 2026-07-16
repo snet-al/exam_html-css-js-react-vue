@@ -3,7 +3,7 @@ import Controls from '../components/Controls.jsx'
 import Grid from '../components/UI/Grid.jsx'
 import Footer from '../components/Footer.jsx'
 import { useState, useEffect } from 'react'
-import { fetchPhotos } from '../services/photoService.js'
+import photoService from '../services/photoService.js'
 
 function HomePage() {
    
@@ -16,7 +16,7 @@ function HomePage() {
         setLoading(true);
         setError('');
         try {
-            const data = await fetchPhotos();
+            const data = await photoService.fetchPhotos();
             setPhotos(data);
         } catch (err) {
             setError('Failed to load photos. Please try again.');
