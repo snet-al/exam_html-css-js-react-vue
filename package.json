@@ -1,0 +1,29 @@
+{
+  "name": "exam_html-css-js-react-vue",
+  "version": "1.0.0",
+  "description": "First Exam after Learning the basics of HTML CSS JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snet-al/exam_html-css-js-react-vue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/snet-al/exam_html-css-js-react-vue/issues"
+  },
+  "homepage": "https://github.com/snet-al/exam_html-css-js-react-vue#readme",
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "vite": "^8.1.4"
+  }
+}
