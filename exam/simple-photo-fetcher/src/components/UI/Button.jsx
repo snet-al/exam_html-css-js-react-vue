@@ -5,7 +5,6 @@ function Button({ onClick, disabled, children }) {
     <button onClick={onClick} disabled={disabled}>
       {children}
     </button>
-    //button component to be implemented children is text
   )
 }
 
