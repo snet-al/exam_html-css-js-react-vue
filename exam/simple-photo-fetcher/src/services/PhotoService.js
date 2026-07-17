@@ -1,5 +1,3 @@
-
-
 export class PhotoService {
   async fetchPhotos() {
     const page = Math.floor(Math.random() * 10) + 1;
