@@ -4,49 +4,10 @@ const loadPhotosBtn = document.querySelector(".load-btn");
 
 
 grayscaleBtn.addEventListener("click", grayScaleFunction);
-fetchPhotosBtn.addEventListener("click", fetchPhotosFunction);
+fetchPhotosBtn.addEventListener("click", () => {fetchPhotosFunction(true)});
 loadPhotosBtn.addEventListener("click", loadPhotosFunction);
 
-let imgCount = 1;
-
-let seed = () => Math.floor(Math.random() * 101);
-let isGray = false;
-
-function fetchPhotosFunction(){
-    const photos = document.querySelectorAll(".photo");
-    const links = document.querySelectorAll(".link");
-    photos.forEach((photo, index) => {
-        let randomseed = seed();
-        photo.setAttribute("src", 
-            "https://picsum.photos/seed/"+randomseed+"/2160?");
-        links[index].innerHTML = "https://picsum.photos/seed/"+randomseed+"/2160?";
-    });
-    
-}
-
-function grayScaleFunction(){
-    const photos = document.querySelectorAll(".photo");
-    const links = document.querySelectorAll(".link");
-    isGray = !isGray;
-
-    photos.forEach((photo, index) => {
-        let src = photo.getAttribute("src")
-
-        if(isGray){
-            src += "grayscale"
-            photo.setAttribute("src", src);
-            links[index].innerHTML = src;
-        }else{
-            let srcc = src.slice(0, -9);
-            photo.setAttribute("src", srcc);
-            links[index].innerHTML = srcc;
-        }        
-    });
-}
-
-function loadPhotosFunction(){
-    imgCount += 1;
-    let html = `<figure class="figure">
+let html = `<figure class="figure">
                         <img src="" 
                         alt="photo" class="photo">
                         <div class="description">
@@ -79,10 +40,59 @@ function loadPhotosFunction(){
                         </div>
                     </figure>`;
 
-    document.querySelector(".photo-grid").innerHTML = html.repeat(imgCount);
-    
-    fetchPhotosFunction();
+
+let seed = () => Math.floor(Math.random() * 101);
+let isGray = false;
+
+function fetchPhotosFunction(fetch){
+    const photos = document.querySelectorAll(".photo");
+    const links = document.querySelectorAll(".link");
+
+    if (fetch == false){
+        photos.forEach((photo, index) => {
+            if(photo.getAttribute("alt") == "photo"){
+                let randomseed = seed();
+                photo.setAttribute("src", 
+                    "https://picsum.photos/seed/"+randomseed+"/2160?");
+
+                photo.setAttribute("alt", "photo-linked");
+
+                links[index].innerHTML = "https://picsum.photos/seed/"+randomseed+"/2160?"; 
+            }
+            return;
+        });    
+    }else{
+        document.querySelector(".photo-grid").innerHTML = html;
+        fetchPhotosFunction(false);
+    }
+
 }
 
-fetchPhotosFunction();
-console.log(seed())
+function grayScaleFunction(){
+    const photos = document.querySelectorAll(".photo");
+    const links = document.querySelectorAll(".link");
+    isGray = !isGray;
+
+    photos.forEach((photo, index) => {
+        let src = photo.getAttribute("src")
+
+        if(isGray){
+            src += "grayscale"
+            photo.setAttribute("src", src);
+            links[index].innerHTML = src;
+        }else{
+            let srcc = src.slice(0, -9);
+            photo.setAttribute("src", srcc);
+            links[index].innerHTML = srcc;
+        }        
+    });
+}
+
+function loadPhotosFunction(){
+
+    document.querySelector(".photo-grid").innerHTML += html;
+    
+    fetchPhotosFunction(false);
+}
+
+fetchPhotosFunction(true);
