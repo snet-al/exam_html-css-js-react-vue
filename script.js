@@ -1,15 +1,20 @@
 const grayscaleBtn = document.querySelector(".grayscale-btn");
 const fetchPhotosBtn = document.querySelector(".fetch-btn");
-const photos = document.querySelectorAll(".photo");
-const links = document.querySelectorAll(".link")
+const loadPhotosBtn = document.querySelector(".load-btn");
+
 
 grayscaleBtn.addEventListener("click", grayScaleFunction);
 fetchPhotosBtn.addEventListener("click", fetchPhotosFunction);
+loadPhotosBtn.addEventListener("click", loadPhotosFunction);
+
+let imgCount = 1;
 
 let seed = () => Math.floor(Math.random() * 101);
 let isGray = false;
 
 function fetchPhotosFunction(){
+    const photos = document.querySelectorAll(".photo");
+    const links = document.querySelectorAll(".link");
     photos.forEach((photo, index) => {
         let randomseed = seed();
         photo.setAttribute("src", 
@@ -20,6 +25,8 @@ function fetchPhotosFunction(){
 }
 
 function grayScaleFunction(){
+    const photos = document.querySelectorAll(".photo");
+    const links = document.querySelectorAll(".link");
     isGray = !isGray;
 
     photos.forEach((photo, index) => {
@@ -35,6 +42,46 @@ function grayScaleFunction(){
             links[index].innerHTML = srcc;
         }        
     });
+}
+
+function loadPhotosFunction(){
+    imgCount += 1;
+    let html = `<figure class="figure">
+                        <img src="" 
+                        alt="photo" class="photo">
+                        <div class="description">
+                            <h3 class="title">Photo</h3>
+                            <p class="link"></p>
+                        </div>
+                    </figure>
+                    <figure class="figure">
+                        <img src="" 
+                        alt="photo" class="photo">
+                        <div class="description">
+                            <h3 class="title">Photo</h3>
+                            <p class="link"></p>
+                        </div>
+                    </figure>
+                    <figure class="figure">
+                        <img src="" 
+                        alt="photo" class="photo">
+                        <div class="description">
+                            <h3 class="title">Amazing photo</h3>
+                            <p class="link"></p>
+                        </div>
+                    </figure>
+                    <figure class="figure">
+                        <img src="" 
+                        alt="photo" class="photo">
+                        <div class="description">
+                            <h3 class="title">Photo</h3>
+                            <p class="link"></p>
+                        </div>
+                    </figure>`;
+
+    document.querySelector(".photo-grid").innerHTML = html.repeat(imgCount);
+    
+    fetchPhotosFunction();
 }
 
 fetchPhotosFunction();

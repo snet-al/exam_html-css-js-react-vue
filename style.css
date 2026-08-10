@@ -110,3 +110,8 @@ button{
     border: solid 2px rgb(160, 64, 250);
     background-color: #fff;
 }
+
+.photo{
+    background-color: #e0e0e0;
+    height: 359px;
+}
