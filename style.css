@@ -23,7 +23,7 @@ button{
 }
 
 .photo-grid{
-    margin-top: 10px;
+    margin: 10px auto 10px;
     display: flex;
     flex-wrap: wrap;
     max-width: 750px;
@@ -50,7 +50,8 @@ button{
     justify-content: space-between;
     align-items: center;
     max-width: 734px;
-    margin-right: 16px;
+    margin: 0px auto 0px;
+    padding-right: 8px;
 }
 
 .fetch-btn{
@@ -80,4 +81,32 @@ button{
 
 .grayscale-btn:hover{
     background-color: gray;
+}
+
+.inf-button-section{
+    max-width: 750px;
+    margin: 10px auto 10px;
+    text-align: center;
+    padding-right: 16px;
+    background-color: #fff;
+}
+
+.load-btn{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(183, 112, 249);
+    color: #fff;
+    font-size: larger;
+    border-radius: 5px;
+    border: solid 2px transparent;
+}
+
+.load-btn:hover{
+    background-color: rgb(160, 64, 250);
+}
+
+.load-btn:active{
+    color: rgb(160, 64, 250);
+    border: solid 2px rgb(160, 64, 250);
+    background-color: #fff;
 }
