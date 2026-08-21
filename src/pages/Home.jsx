@@ -3,26 +3,68 @@ import FetchBtn from '../components/UI/FetchBtn'
 import LoadBtn from '../components/UI/LoadBtn'
 import PhotoCard from "../components/PhotoCard"
 import { useEffect, useState } from "react"
+import {data} from "../store/store.js"
 import "../css/Home.css"
 
 function Home () {
-    return (
-       <main>
-        <section className="button-section">
-            <GreyScaleBtn/>
-            <FetchBtn/>
-        </section>
 
-        <section className="photo-grid">
-            <PhotoCard/>
-            <PhotoCard/>
-            <PhotoCard/>
-            <PhotoCard/>
-        </section>
-        <section className="load-more-section">
-            <LoadBtn/>
-        </section>
-       </main>
+    const [currentPhotos, setCurrentPhotos] = useState([])
+    const [makeGray, setMakeGray] = useState("")
+    const [loading, setLoading] = useState(false)
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [error, setError] = useState(null)
+
+    const fetchNewPhotosFunction = () => {
+        setCurrentIndex(0)
+        load4Photos()
+    }
+
+    const load4Photos = () => {
+        if (loading) return;
+        setLoading(true);
+        for(let b = 0; b < 4; b++){
+            try{
+                const photo = data[currentIndex + b]
+                setCurrentPhotos((prev) => [...prev, photo])
+            }catch(error){
+                setError(error)
+                console.log(error)
+                // const photo = await loadPhoto(randomIdArray[currentIndex + (b - 1)])
+                // setCurrentPhotos((prev) => [...prev, photo])
+            }
+        }
+        setCurrentIndex((prev) => prev + 4)
+        setLoading(false)
+    }
+
+    const makeGreyFunc = (isgray) => {
+        isgray? setMakeGray("?grayscale"): setMakeGray("")
+    }
+
+
+    useEffect(() => {
+        load4Photos()
+        
+    }, [])
+
+
+    return (
+        <main>
+            <section className="button-section">
+                <GreyScaleBtn onClickFunction={makeGreyFunc}/>
+                <FetchBtn onClickFunction={fetchNewPhotosFunction}/>
+            </section>
+
+
+            <section className="photo-grid">
+                {currentPhotos.map(photo => <PhotoCard photo={photo} key={photo.id} makeGray={makeGray}/>)}
+            </section>
+
+            
+            <section className="load-more-section">
+                <LoadBtn onClickFunction={load4Photos}/>
+            </section>    
+        </main>
     )
 }
 

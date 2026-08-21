@@ -1,15 +1,15 @@
 import "../css/PhotoCard.css"
 
-function PhotoCard(){
+function PhotoCard({photo, makeGray}){
     return (
         <figure>
             <button className="favoriteBtn">♥</button>
-            <img src="https://picsum.photos/200/300" alt="photo" />
+            <img src= {`https://picsum.photos/id/${photo.id}/${photo.width}${makeGray}`} alt="photo.url" />
             <figcaption>
-                <h3 className="title">title</h3>
+                <h3 className="title">{photo.author}</h3>
                 <a className="link" 
                     target="_blank"
-                    href="#">urljkndfg;kjadlkjfshg</a>
+                    href={photo.url}>{photo.url}</a>
             </figcaption>  
         </figure>
     )
