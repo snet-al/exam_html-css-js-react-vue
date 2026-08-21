@@ -1,27 +1,21 @@
-import PhotoCard from "./components/PhotoCard"
-import GrayScaleBtn from "./components/UI/GrayScaleBtn"
-import FetchBtn from "./components/UI/FetchBtn"
-import LoadBtn from "./components/UI/LoadBtn"
+import { useState } from 'react'
+import {Routes, Route} from "react-router-dom"
 import "./css/App.css"
+import Home from "./pages/Home"
+import Navbar from './components/Navbar'
+import Favorites from './pages/Favorites'
 
 function App() {
 
+
   return (
-    <>
-      <section className="buttons">
-        <GrayScaleBtn/>
-        <FetchBtn/>
-      </section>
       <main>
-        <PhotoCard/>
-        <PhotoCard/>
-        <PhotoCard/>
-        <PhotoCard/>
+        <Navbar/>
+        <Routes> 
+          <Route index element={<Home />} />
+          <Route path='Favorites' element={<Favorites />} />
+        </Routes>
       </main>
-      <section className="load-more-section">
-        <LoadBtn/>
-      </section>
-    </>
   )
 }
 
