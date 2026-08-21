@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+main{
+    margin: 10px auto 10px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 750px;
+    gap: 16px;
+    padding-left: 16px;
+}
+
+.buttons{
+    max-width: 750px;
+    padding: 0px 16px;
+    margin: 0px auto 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.load-more-section{
+    display: flex;
+    max-width: 750px;
+    margin: 0px auto 0px;
+    padding: 0px 16px;
+}
