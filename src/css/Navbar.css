@@ -1,0 +1,23 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    background-color: grey;
+    margin: 10px;
+}
+
+.navbar h2{
+    color: #fff;
+}
+
+.links{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+}

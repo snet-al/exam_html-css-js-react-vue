@@ -1,0 +1,15 @@
+.grayScaleBtn{
+    margin-right: 10px;
+    background-color: gray;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: solid 2px transparent;
+    color: #fff;
+}
+
+
+.grayScaleBtn.active-class{
+    border: solid 2px darkgray;
+    background-color: #fff;
+    color: darkgray;
+}
