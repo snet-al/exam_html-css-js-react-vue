@@ -36,6 +36,6 @@ figure:hover .favoriteBtn{
     height: 30px;
     color: #fff;
     border: 0px solid #000;
-    background-color: rgba(rgba(57, 55, 55, 0.501), green, blue, alpha);
+    background-color: rgba(57, 55, 55, 0.501);
     font-size: large;
 }

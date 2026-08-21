@@ -3,7 +3,7 @@ import FetchBtn from '../components/UI/FetchBtn'
 import LoadBtn from '../components/UI/LoadBtn'
 import PhotoCard from "../components/PhotoCard"
 import { useEffect, useState } from "react"
-import {data} from "../store/store.js"
+import {loadPhoto} from "../services/api.js"
 import "../css/Home.css"
 
 function Home () {
@@ -14,17 +14,29 @@ function Home () {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [error, setError] = useState(null)
 
+    const makeIdList = () => {
+        // 1085 photos in photofetcher api
+        const N = 1085;
+        // Array containing the 1085 photo IDs in order
+        const idArray = Array.from({length: N}, (_, i) => i );
+        // shuffles the array randomly
+        return idArray.toSorted( () => Math.random()-0.5 )
+    }
+    const [randomIdArray, setRandomIdArray] = useState(makeIdList)
+
     const fetchNewPhotosFunction = () => {
+        setCurrentPhotos([])
+        setRandomIdArray(makeIdList)
         setCurrentIndex(0)
         load4Photos()
     }
 
-    const load4Photos = () => {
+    const load4Photos = async () => {
         if (loading) return;
         setLoading(true);
         for(let b = 0; b < 4; b++){
             try{
-                const photo = data[currentIndex + b]
+                const photo = await loadPhoto(randomIdArray[currentIndex + b])
                 setCurrentPhotos((prev) => [...prev, photo])
             }catch(error){
                 setError(error)
