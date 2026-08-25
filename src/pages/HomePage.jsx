@@ -49,7 +49,6 @@ function HomePage () {
     }
 
     const toggleGray = (e) => {
-        e.target.classList.toggle("active-class");
         setIsGray(!isGray)
         isGray? setGrayScale(""): setGrayScale("?grayscale")
     }
@@ -64,7 +63,10 @@ function HomePage () {
     return (
         <main>
             <header className="button-section">
-                <Button onClick={toggleGray} label="Make Greyscale" className="grayScaleBtn" />
+                <Button onClick={toggleGray} 
+                        label="Make Greyscale" 
+                        className={`grayScaleBtn ${isGray? "active-class" : ""}`} />
+
                 <Button onClick={fetchNewPhotos} label="Fetch New Photos" className="fetchBtn" />
             </header>
 
