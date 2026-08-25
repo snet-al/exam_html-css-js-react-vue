@@ -3,72 +3,68 @@ const fetchPhotosBtn = document.querySelector(".fetch-btn");
 const loadPhotosBtn = document.querySelector(".load-btn");
 
 
-grayscaleBtn.addEventListener("click", grayScaleFunction);
-fetchPhotosBtn.addEventListener("click", () => {fetchPhotosFunction(true)});
+grayscaleBtn.addEventListener("click", toggleGrayScale);
+fetchPhotosBtn.addEventListener("click", fetchNewPhotos);
 loadPhotosBtn.addEventListener("click", loadPhotosFunction);
 
 let html = `<figure class="figure">
                         <img src="" 
                         alt="photo" class="photo">
-                        <div class="description">
-                            <h3 class="title">Photo</h3>
-                            <p class="link"></p>
-                        </div>
-                    </figure>
-                    <figure class="figure">
-                        <img src="" 
-                        alt="photo" class="photo">
-                        <div class="description">
-                            <h3 class="title">Photo</h3>
-                            <p class="link"></p>
-                        </div>
-                    </figure>
-                    <figure class="figure">
-                        <img src="" 
-                        alt="photo" class="photo">
-                        <div class="description">
+                        <figcaption class="description">
                             <h3 class="title">Amazing photo</h3>
                             <p class="link"></p>
-                        </div>
+                        </figcaption>
                     </figure>
                     <figure class="figure">
                         <img src="" 
                         alt="photo" class="photo">
-                        <div class="description">
+                        <figcaption class="description">
+                            <h3 class="title">Amazing photo</h3>
+                            <p class="link"></p>
+                        </figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="" 
+                        alt="photo" class="photo">
+                        <figcaption class="description">
+                            <h3 class="title">Amazing photo</h3>
+                            <p class="link"></p>
+                        </figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="" 
+                        alt="photo" class="photo">
+                        <figcaption class="description">
                             <h3 class="title">Photo</h3>
                             <p class="link"></p>
-                        </div>
+                        </figcaption>
                     </figure>`;
 
 
 let seed = () => Math.floor(Math.random() * 101);
 let isGray = false;
 
-function fetchPhotosFunction(fetch){
+function getPhotos() {
     const photos = document.querySelectorAll(".photo");
     const links = document.querySelectorAll(".link");
 
-    if (fetch == false){
-        photos.forEach((photo, index) => {
-            if(photo.getAttribute("alt") == "photo"){
-                let randomseed = seed();
-                photo.setAttribute("src", 
-                    "https://picsum.photos/seed/"+randomseed+"/2160?");
+    photos.forEach((photo, index) => {
+        if (photo.getAttribute("src")) return;
 
-                photo.setAttribute("alt", "photo-linked");
+        const randomseed = seed();
+        const url = "https://picsum.photos/seed/" + randomseed + "/2160?";
 
-                links[index].innerHTML = "https://picsum.photos/seed/"+randomseed+"/2160?"; 
-            }
-            return;
-        });    
-    }else{
-        document.querySelector(".photo-grid").innerHTML = html;
-        fetchPhotosFunction(false);
-    }
-
+        photo.setAttribute("src", url);
+        links[index].innerHTML = url;
+    });
 }
 
-function grayScaleFunction(){
+function fetchNewPhotos() {
+    document.querySelector(".photo-grid").innerHTML = html;
+    getPhotos();
+}
+
+function toggleGrayScale(){
     const photos = document.querySelectorAll(".photo");
     const links = document.querySelectorAll(".link");
     isGray = !isGray;
@@ -89,10 +85,8 @@ function grayScaleFunction(){
 }
 
 function loadPhotosFunction(){
-
     document.querySelector(".photo-grid").innerHTML += html;
-    
-    fetchPhotosFunction(false);
+    getPhotos();
 }
 
-fetchPhotosFunction(true);
+fetchNewPhotos();
