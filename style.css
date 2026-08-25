@@ -1,0 +1,117 @@
+/* All Page */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+img{
+    width:100%;
+}
+
+button{
+    border: none;
+    background-color: #fff;
+}
+
+/* Photo Fetcher styling */
+
+main{
+    margin: 10px auto;
+}
+
+.photo-grid{
+    margin: 10px auto 10px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 750px;
+    gap: 16px;
+}
+
+.photo-grid .figure{
+    width: calc(50% - 16px);
+    position: relative;
+}
+
+.photo-grid .figure .description{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 15px;
+    font-size: small;
+}
+
+.button-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 734px;
+    margin: 0px auto 0px;
+    padding-right: 8px;
+}
+
+.fetch-btn{
+    background-color: rgb(183, 112, 249);
+    padding: 10px;
+    border-radius: 2px;
+    color: #fff;
+    border: solid 2px transparent;
+}
+
+.fetch-btn:hover{
+    background-color: rgb(160, 64, 250);
+}
+
+.fetch-btn:active {
+    color: rgb(160, 64, 250);
+    border: solid 2px rgb(160, 64, 250);
+    background-color: #fff;
+}
+
+.grayscale-btn{
+    margin-right: 10px;
+    background-color: lightgray;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+.grayscale-btn:hover{
+    background-color: gray;
+}
+
+.inf-button-section{
+    max-width: 750px;
+    margin: 10px auto 10px;
+    text-align: center;
+    padding-right: 16px;
+    background-color: #fff;
+}
+
+.load-btn{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(183, 112, 249);
+    color: #fff;
+    font-size: larger;
+    border-radius: 5px;
+    border: solid 2px transparent;
+}
+
+.load-btn:hover{
+    background-color: rgb(160, 64, 250);
+}
+
+.load-btn:active{
+    color: rgb(160, 64, 250);
+    border: solid 2px rgb(160, 64, 250);
+    background-color: #fff;
+}
+
+.photo{
+    background-color: #e0e0e0;
+    height: 359px;
+}
