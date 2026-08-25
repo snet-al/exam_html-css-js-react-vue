@@ -23,7 +23,7 @@ function HomePage () {
     }
     const [randomIdArray, setRandomIdArray] = useState(makeIdList)
 
-    const fetchNewPhotosFunction = () => {
+    const fetchNewPhotos = () => {
         setCurrentPhotos([])
         setRandomIdArray(makeIdList)
         setCurrentIndex(0)
@@ -65,7 +65,7 @@ function HomePage () {
         <main>
             <header className="button-section">
                 <Button onClick={toggleGray} label="Make Greyscale" className="grayScaleBtn" />
-                <Button onClick={fetchNewPhotosFunction} label="Fetch New Photos" className="fetchBtn" />
+                <Button onClick={fetchNewPhotos} label="Fetch New Photos" className="fetchBtn" />
             </header>
 
             <PhotoGrid currentPhotos ={currentPhotos} grayScale={grayScale}/>
