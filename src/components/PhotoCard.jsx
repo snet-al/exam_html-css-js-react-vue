@@ -1,10 +1,10 @@
-import "../css/PhotoCard.css"
+import "../styles/PhotoCard.css"
 
-function PhotoCard({photo, makeGray}){
+function PhotoCard({photo, grayScale}){
     return (
         <figure>
             <button className="favoriteBtn">♥</button>
-            <img src= {`https://picsum.photos/id/${photo.id}/${photo.width}${makeGray}`} alt="photo" />
+            <img src= {`https://picsum.photos/id/${photo.id}/${photo.width}${grayScale}`} alt="photo" />
             <figcaption>
                 <h3 className="title">{photo.author}</h3>
                 <a className="link" 
