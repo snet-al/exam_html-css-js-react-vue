@@ -1,7 +1,7 @@
 import Button from "../components/UI/Button.jsx"
 import PhotoGrid from "../components/PhotoGrid.jsx"
 import { useEffect, useState } from "react"
-import {loadPhoto} from "../services/api.js"
+import { Photos } from "../services/Photos.js"
 import "../styles/Home.css"
 
 function HomePage () {
@@ -35,7 +35,7 @@ function HomePage () {
         setLoading(true);
         for(let b = 0; b < N; b++){
             try{
-                const photo = await loadPhoto(randomIdArray[currentIndex + b])
+                const photo = await Photos.getPhotos(randomIdArray[currentIndex + b])
                 setCurrentPhotos((prev) => [...prev, photo])
             }catch(error){
                 setError(error)
