@@ -11,21 +11,21 @@ function HomePage () {
     const [isGray, setIsGray] = useState(false)
     const [loading, setLoading] = useState(false)
     const [currentIndex, setCurrentIndex] = useState(0)
-    const [error, setError] = useState(null)
+    const [err, setErr] = useState(null)
 
-    const makeIdList = () => {
+    const makePageList = () => {
         // 1085 photos in photofetcher api
-        const N = 1085;
+        const N = 248;
         // Array containing the 1085 photo IDs in order
-        const idArray = Array.from({length: N}, (_, i) => i );
+        const pageArray = Array.from({length: N}, (_, i) => i );
         // shuffles the array randomly
-        return idArray.toSorted( () => Math.random()-0.5 )
+        return pageArray.toSorted( () => Math.random()-0.5 )
     }
-    const [randomIdArray, setRandomIdArray] = useState(makeIdList)
+    const [randomPageArray, setRandomPageArray] = useState(makePageList)
 
     const fetchNewPhotos = () => {
         setCurrentPhotos([])
-        setRandomIdArray(makeIdList)
+        setRandomPageArray(makePageList)
         setCurrentIndex(0)
         loadPhotos()
     }
@@ -33,19 +33,17 @@ function HomePage () {
     const loadPhotos = async (N = 4) => {
         if (loading) return;
         setLoading(true);
-        for(let b = 0; b < N; b++){
-            try{
-                const photo = await Photos.getPhotos(randomIdArray[currentIndex + b])
-                setCurrentPhotos((prev) => [...prev, photo])
-            }catch(error){
-                setError(error)
-                console.log(error + "\nbasically the photo id doesn`t exist")
-                // if theres an error try to load another one so theres still 4 photos loadied instead of 3 or less
-                N++;
-            }
+        try{
+            const photoPage = await Photos.getPhotos(randomPageArray[currentIndex], N)
+            setCurrentPhotos((prev) => [...prev, ...photoPage])
+            setCurrentIndex((prev) => prev + 1)
+            console.log(randomPageArray[currentIndex])
+        }catch(error){
+            setErr(error)
+            console.log(err)
+        }finally{
+            setLoading(false)
         }
-        setCurrentIndex((prev) => prev + N)
-        setLoading(false)
     }
 
     const toggleGray = (e) => {
@@ -70,7 +68,7 @@ function HomePage () {
                 <Button onClick={fetchNewPhotos} label="Fetch New Photos" className="fetchBtn" />
             </header>
 
-            <PhotoGrid currentPhotos ={currentPhotos} grayScale={grayScale}/>
+            <PhotoGrid currentPhotos={currentPhotos} grayScale={grayScale}/>
 
             <footer className="load-more-section">
                 <Button onClick={() => loadPhotos()} className="loadBtn" label="Load More Photos" />
