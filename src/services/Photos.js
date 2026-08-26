@@ -6,5 +6,5 @@ export class Photos {
         return data;
     }
 
-    // currently no need for other photos
+    // currently no need for other photos 
 }
