@@ -25,7 +25,6 @@ function HomePage () {
         try{
             const photoPage = await Photos.getPhotos(randomPage(), N)
             setCurrentPhotos((prev) => [...prev, ...photoPage])
-            setCurrentIndex((prev) => prev + 1)
         }catch(error){
             setErr(error)
             console.log(err)
