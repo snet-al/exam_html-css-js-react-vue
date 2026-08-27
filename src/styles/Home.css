@@ -1,0 +1,18 @@
+main{
+    margin-top: 20px;
+}
+
+.button-section{
+    max-width: 750px;
+    padding: 0px 16px;
+    margin: 0px auto 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.load-more-section{
+    display: flex;
+    max-width: 750px;
+    margin: 0px auto 0px;
+    padding: 0px 16px;
+}
