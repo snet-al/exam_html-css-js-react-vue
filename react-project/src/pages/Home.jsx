@@ -1,24 +1,9 @@
-import { useState, useEffect } from 'react';
 import Controls from '../components/UI/Controls';
 import PhotoGallery from '../components/UI/PhotoGallery';
+import { usePhotos } from '../store/PhotoContext';
 
 export default function Home() {
-  const [isGrayscale, setIsGrayscale] = useState(false);
-  const [photos, setPhotos] = useState([]);
-
-  const fetchPhotos = async () => {
-    try {
-      const response = await fetch('https://picsum.photos/v2/list?page=1&limit=3');
-      const data = await response.json();
-      setPhotos(data);
-    } catch (error) {
-      console.error('Error fetching photos:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchPhotos();
-  }, []);
+  const { isGrayscale, setIsGrayscale, photos, fetchPhotos } = usePhotos();
 
   return (
     <>
