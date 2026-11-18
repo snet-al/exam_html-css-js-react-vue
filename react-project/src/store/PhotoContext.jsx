@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
+import { fetchPhotosFromApi } from "../services/photoService";
 
 const PhotoContext = createContext();
 
@@ -9,11 +10,10 @@ export function PhotoProvider({ children }) {
   const fetchPhotos = async () => {
     try {
       const randomPage = Math.floor(Math.random() * 50) + 1;
-      const response = await fetch(`https://picsum.photos/v2/list?page=${randomPage}&limit=4`);
-      const data = await response.json();
+      const data = await fetchPhotosFromApi(randomPage, 4);
       setPhotos(data);
     } catch (error) {
-      console.error("Error fetching photos:", error);
+      console.error("Error fetching photos in provider:", error);
     }
   };
 
