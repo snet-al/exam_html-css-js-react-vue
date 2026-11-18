@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Header from '../components/UI/Header';
 import Controls from '../components/UI/Controls';
 import PhotoGallery from '../components/UI/PhotoGallery';
 
@@ -22,16 +21,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="container">
-      <Header />
-      <main className="container">
-        <Controls 
-          isGrayscale={isGrayscale} 
-          onToggleGrayscale={setIsGrayscale} 
-          onFetchPhotos={fetchPhotos} 
-        />
-        <PhotoGallery photos={photos} isGrayscale={isGrayscale} />
-      </main>
-    </div>
+    <>
+      <Controls 
+        isGrayscale={isGrayscale} 
+        onToggleGrayscale={setIsGrayscale} 
+        onFetchPhotos={fetchPhotos} 
+      />
+      <PhotoGallery photos={photos} isGrayscale={isGrayscale} />
+    </>
   );
 }
