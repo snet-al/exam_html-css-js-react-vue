@@ -23,7 +23,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-.toggle-conainer {
+.toggle-container {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -61,6 +61,7 @@ h2 {
 }
 
 .slider::before {
+    content: "";
     position: absolute;
     align-items: center;
     background-color: white;
@@ -104,6 +105,10 @@ h2 {
 
 }
 
+.gallery.grayscale img {
+    filter: grayscale(100%);
+}
+
 .photo-card {
     position: relative;
     background: white;
@@ -142,3 +147,9 @@ figcaption a {
     font-size: 12px;
     margin: 5px;
 }
+
+.more-photos-btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
