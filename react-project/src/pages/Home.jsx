@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import Controls from "../components/UI/Controls";
-import PhotoGallery from "../components/UI/PhotoGallery";
-import { fetchPhotosFromApi } from "../services/photoService";
+import { useState, useEffect } from 'react';
+import Controls from '../components/UI/Controls';
+import PhotoGallery from '../components/UI/PhotoGallery';
+import { fetchPhotosFromApi } from '../services/photoService';
 
 export default function Home() {
   const [isGrayscale, setIsGrayscale] = useState(false);
@@ -13,7 +13,7 @@ export default function Home() {
       const data = await fetchPhotosFromApi(randomPage, 4);
       setPhotos(data);
     } catch (error) {
-      console.error("Error loading photos:", error);
+      console.error('Error loading photos:', error);
     }
   };
 
