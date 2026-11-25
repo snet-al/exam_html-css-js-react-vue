@@ -74,4 +74,4 @@ document.addEventListener("DOMContentLoaded", () => {
   if (fetchBtn) {
     fetchBtn.addEventListener("click", fetchAndDisplayPhotos);
   }
-});
+});});
